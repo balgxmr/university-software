@@ -10,7 +10,7 @@ int main(){
     max=est;
     min=est;
     while(est==0){ // Mientras est sea =! de 0, se cumple lo otro.
-        if(est>max){ // Si max>est, la nueva est será max
+        if(est>max){ // Si est>max, la nueva est será max
             max=est;
         }
             else if(est<min){ // Si min>est, la nueva est será min
