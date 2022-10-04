@@ -9,27 +9,27 @@ Solamente podrá utilizar la estructura while.
 #include<stdio.h>
 // Declaración de variables
 float estatura, prom, max, min, z;
-int x, cont;
+int cont;
+
 // Bloque de instrucciones
 int main(){
-    printf("Introduzca 1 para inicializar el programa o introduzca 0 para salir. ");
-    scanf("%i",&x);
+    printf("Introduzca la primera estatura: ");
+    scanf("%f",&estatura);
     cont=0;
-    max=0;
-    min=999;
-    while(x==1){
-        printf("Introduzca la estatura de los miembros: ");
+    z=estatura;
+    max=estatura;
+    min=estatura;
+    while(estatura!=0){
+        printf("Introduzca la siguiente estatura o introduzca 0 para finalizar: ");
         scanf("%f",&estatura);
         if(estatura>max){
             max=estatura;
         }
-        if(estatura<min){
+        else if(estatura<min && estatura>0){
             min=estatura;
         }
         z=estatura+z;
         cont=cont+1;
-        printf("Introduzca 1 para continuar, 0 para salir. ");
-        scanf("%i",&x);
         }
     prom=z/cont;
     printf("Su estatura promedio es: %.2f \n",prom);
