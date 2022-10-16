@@ -25,7 +25,7 @@ int main(){
     maltas=0;
     montototal=0;
     while(x==1){
-        printf("\nIntroduzca el articulo que desea comprar\n1 para soda\n2 para jugo natural\n3 para botella de agua\n4 para malta.\nProducto: ");
+        printf("\n¿Qué articulo desea comprar?\n1 para soda\n2 para jugo natural\n3 para botella de agua\n4 para malta.\nIngrese el número del producto: ");
         scanf("%i",&articulo);
             switch(articulo)
             {
