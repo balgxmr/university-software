@@ -12,8 +12,8 @@ int CalcularVuelto (float dinero, float moneda){
 #include<stdio.h>
 
 // Declaración de variables
-float montototal, dinero, pagado, vuelto1, vuelto2, vuelto3, vuelto4, vuelto5, vueltofinal;
-int articulo, x, sodas, jugos, agua, maltas, cantidadProducto;
+float montototal, dinero, pagado, vueltofinal;
+int articulo, x, vuelto1, vuelto2, vuelto3, vuelto4, vuelto5, sodas, jugos, agua, maltas, cantidadProducto;
 
 //Bloque de instrucciones
 int main(){
@@ -82,19 +82,19 @@ int main(){
 
     printf("\nSu vuelto es de: %.2f",vueltofinal);
     if(vuelto1>0){
-    printf("\nLa cantidad de billetes de 5 dolares es de: %.0f", vuelto1);
+    printf("\nLa cantidad de billetes de 5 dolares es de: %i", vuelto1);
     }
     if(vuelto2>0){
-    printf("\nLa cantidad de billetes de 1 dolar es de: %.0f", vuelto2);
+    printf("\nLa cantidad de billetes de 1 dolar es de: %i", vuelto2);
     }
     if(vuelto3>0){
-    printf("\nLa cantidad de monedas de 0.25 es de: %.0f", vuelto3);
+    printf("\nLa cantidad de monedas de 0.25 es de: %i", vuelto3);
     }
     if(vuelto4>0){
-    printf("\nLa cantidad de monedas de 0.10 es de: %.0f", vuelto4);
+    printf("\nLa cantidad de monedas de 0.10 es de: %i", vuelto4);
     }
     if(vuelto5>0){
-    printf("\nLa cantidad de monedas de 0.05 es de: %.0f", vuelto5);
+    printf("\nLa cantidad de monedas de 0.05 es de: %i", vuelto5);
     }
 
     if(sodas>0){
