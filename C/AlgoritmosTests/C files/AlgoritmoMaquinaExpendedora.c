@@ -1,3 +1,17 @@
+/* 
+Se requiere de un algoritmo para programar un sistema de máquina de refrescos. En este prototipo existen 4 opciones de compra. 
+1: soda a $0.80 centavos. 
+2: Jugos naturales a $1.00. 
+3: Agua embotellada a $1.25. 
+4: Malta a $0.75 centavos. 
+- La máquina acepta monedas de 5, 10, 25 y dólares de $1 y $5. 
+- En este prototipo se le pregunta al usuario qué opciones desea adquirir, el usuario puede pedir de diferentes opciones y diferentes cantidades. 
+- El prototipo debe mostrar el monto a pagar y el usuario deberá proporcionar el monto en cantidades dependiendo si es moneda o dólares. 
+- Finalmente, el prototipo deberá indicar al usuario si puede retirar el producto, además, de dar el vuelto en monedas si lo amerita.
+- El vuelto solo se da en dólares o monedas de mayor a menos denominaciones.
+- Utilizar la estructura según, y al menos una función.
+*/
+
 int CalcularVuelto (float dinero, float moneda){
     int cont;
     cont=0;
