@@ -1,4 +1,5 @@
-/* 
+/*
+>>> Algoritmo - Maquina de Refrescos <<<
 Se requiere de un algoritmo para programar un sistema de máquina de refrescos. En este prototipo existen 4 opciones de compra. 
 1: soda a $0.80 centavos. 
 2: Jugos naturales a $1.00. 
@@ -22,13 +23,10 @@ int CalcularVuelto (float dinero, float moneda){
     return cont;
 }
 
-// Algoritmo Maquina de Refrescos
 #include<stdio.h>
-
 // Declaración de variables
 float montototal, dinero, pagado, vueltofinal;
 int articulo, x, vuelto1, vuelto2, vuelto3, vuelto4, vuelto5, sodas, jugos, agua, maltas, cantidadProducto;
-
 //Bloque de instrucciones
 int main(){
     printf("Los costos de los productos son: \n0.80$ para la soda\n1.00$ para los jugos naturales\n1.25$ para la botella de agua\n0.75$ para la malta");
