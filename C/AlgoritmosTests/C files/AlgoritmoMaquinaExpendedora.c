@@ -85,6 +85,7 @@ int main(){
         scanf("%i",&y);
     }
     else if(montototal<pagado){
+        y=0;
     // Utilizando la función CalcularVuelto para devolver el cambio.
     dinero=pagado-montototal;
     vuelto1=CalcularVuelto(dinero, 5);
