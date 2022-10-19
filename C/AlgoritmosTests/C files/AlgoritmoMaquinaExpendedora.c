@@ -77,14 +77,14 @@ int main(){
     }
     x=1;
     while(x==1){
-    printf("\nSu total a pagar es: %.2f", montototal);
+    printf("\nSu total a pagar es: %.2f$", montototal);
     printf("\nIngrese el dinero en monedas o en dólares: ");
     scanf("%f",&pagado);
       if(montototal>pagado){
         printf("\nEl dinero ingresado no es suficiente! Intente nuevamente, presione 1 para intentar nuevamente, 0 para salir: ");
         scanf("%i",&x);
         if(x==0){
-            printf("Se le ha devuelto la cantidad ingresada que fue de: %f",pagado);
+            printf("Se le ha devuelto la cantidad ingresada que fue de: %.2f$",pagado);
         }
     }
     else if(montototal<pagado){
@@ -103,7 +103,7 @@ int main(){
     dinero=dinero-(vuelto5*0.05);
     vueltofinal=pagado-montototal;
 
-    printf("\nSu vuelto es de: %.2f",vueltofinal);
+    printf("\nSu vuelto es de: %.2f$",vueltofinal);
     if(vuelto1>0){
     printf("\nLa cantidad de billetes de 5 dolares es de: %i", vuelto1);
     }
