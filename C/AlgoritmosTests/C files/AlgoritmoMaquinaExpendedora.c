@@ -89,7 +89,6 @@ int main(){
         printf("\nIntroduzca la cantidad de monedas de 0.05: ");
         scanf("%i",&moneda3);
         pagado=(billete5*5)+(billete1*1)+(moneda1*0.25)+(moneda2*0.10)+(moneda3*0.05);
-        //pagado=entradaDinero();
     if(montototal>pagado){
         printf("\nEl dinero ingresado no es suficiente! Intente nuevamente, presione 1 para intentar nuevamente, 0 para salir: ");
         scanf("%i",&x);
