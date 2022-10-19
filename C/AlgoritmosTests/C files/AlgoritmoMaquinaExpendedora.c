@@ -26,7 +26,7 @@ int CalcularVuelto (float dinero, float moneda){
 #include<stdio.h>
 // Declaración de variables
 float montototal, dinero, pagado, vueltofinal;
-int articulo, x, y, vuelto1, vuelto2, vuelto3, vuelto4, vuelto5, sodas, jugos, agua, maltas, cantidadProducto;
+int articulo, x, y, vuelto1, vuelto2, vuelto3, vuelto4, vuelto5, sodas, jugos, agua, maltas, cantidadProducto, billete5, billete1, moneda1, moneda2, moneda3;
 //Bloque de instrucciones
 int main(){
     printf("Los costos de los productos son: \n0.80$ para la soda\n1.00$ para los jugos naturales\n1.25$ para la botella de agua\n0.75$ para la malta");
@@ -77,17 +77,27 @@ int main(){
     }
     x=1;
     while(x==1){
-    printf("\nSu total a pagar es: %.2f$", montototal);
-    printf("\nIngrese el dinero en monedas o en dólares: ");
-    scanf("%f",&pagado);
-      if(montototal>pagado){
+        printf("\nSu total a pagar es: %.2f$", montototal);
+        printf("\nIntroduzca la cantidad de billetes de 5$: ");
+        scanf("%i",&billete5);
+        printf("\nIntroduzca la cantidad de billetes de 1$: ");
+        scanf("%i",&billete1);
+        printf("\nIntroduzca la cantidad de monedas de 0.25: ");
+        scanf("%i",&moneda1);
+        printf("\nIntroduzca la cantidad de monedas de 0.10: ");
+        scanf("%i",&moneda2);
+        printf("\nIntroduzca la cantidad de monedas de 0.05: ");
+        scanf("%i",&moneda3);
+        pagado=(billete5*5)+(billete1*1)+(moneda1*0.25)+(moneda2*0.10)+(moneda3*0.05);
+        //pagado=entradaDinero();
+    if(montototal>pagado){
         printf("\nEl dinero ingresado no es suficiente! Intente nuevamente, presione 1 para intentar nuevamente, 0 para salir: ");
         scanf("%i",&x);
         if(x==0){
             printf("Se le ha devuelto la cantidad ingresada que fue de: %.2f$",pagado);
         }
     }
-    else if(montototal<pagado){
+    else if(pagado>=montototal){
         x=0;
     // Utilizando la función CalcularVuelto para devolver el cambio.
     dinero=pagado-montototal;
