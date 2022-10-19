@@ -75,17 +75,20 @@ int main(){
         printf("Desea comprar otro artículo? \nIntroduzca 1 para si, 0 para no: ");
         scanf("%i",&x);
     }
-    y=1;
-    while(y==1){
+    x=1;
+    while(x==1){
     printf("\nSu total a pagar es: %.2f", montototal);
     printf("\nIngrese el dinero en monedas o en dólares: ");
     scanf("%f",&pagado);
       if(montototal>pagado){
-        printf("\n El dinero ingresado no es suficiente! Intente nuevamente, presione 1 para intentar nuevamente, 0 para salir: ");
-        scanf("%i",&y);
+        printf("\nEl dinero ingresado no es suficiente! Intente nuevamente, presione 1 para intentar nuevamente, 0 para salir: ");
+        scanf("%i",&x);
+        if(x==0){
+            printf("Se le ha devuelto la cantidad ingresada que fue de: %f",pagado);
+        }
     }
     else if(montototal<pagado){
-        y=0;
+        x=0;
     // Utilizando la función CalcularVuelto para devolver el cambio.
     dinero=pagado-montototal;
     vuelto1=CalcularVuelto(dinero, 5);
