@@ -201,6 +201,7 @@ int main()
             }
 
 		case 4:
+			system("clear");
 			for (i = 0;i < 10;i++)
 			{
 				for (j = 0;j < 30;j++)
@@ -211,7 +212,12 @@ int main()
 					}
 				}
 			}
-			break;
+			printf("Introduzca 0 para salir al menú principal: ");
+            scanf("%i",&salida);
+            if(salida==0){
+                system("clear");
+                break;
+            }
 
 		case 5:
 		    system("clear");
@@ -223,7 +229,8 @@ int main()
             z=0;
             resultado=0;
             while(w<15){
-                if(strlen(listaNombresAutorizados[w])<15){
+                if(strlen(listaNombresAutorizados[w])<15)
+				{
                     printf("----------------------------------------------------------\n");
                     printf("| %i)\t|%s\t\t|\t%s\t\t|\n",w,listaNombresAutorizados[z],listaPlacasAutorizadas[z]);
                 }
@@ -236,8 +243,6 @@ int main()
                 listaPlacasAutorizadas[w];
                 z=z+1;
                 w=w+1;
-                i++;
-                
             }
             printf("----------------------------------------------------------\n\n");
             printf("Introduzca 0 para salir al menú principal: ");
