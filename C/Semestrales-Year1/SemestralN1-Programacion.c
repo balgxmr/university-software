@@ -18,13 +18,13 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<stdbool.h>
+#include<string.h>
 
 #define _CRT_SECURE_NO_WARNINGS
 
 //constantes globales
 const char listaPlacasAutorizadas[15][10] = { "PAK798","GKS682","FRG681","KGS563","SGF952","GSG295","CK7193","FT2553","OT6559","LS5463","967AFW","368SFW","PR5467","SG8786","456BNM" };
-const char listaNombresAutorizados[15][30] = { "Richard Herranz","Jose Encalada", "Francisco Asis Perez","Maria Milagros Vinas","Jesus Borras","Francisca Casals","Gustavo Valenzuela","Omar Vallejo","Gaspar Andres","Neus Rus","Veronica Coca","Saul Roman","Anastasio Carballo","Alejandra Otero","Florin Iglesias" };
+const char listaNombresAutorizados[15][30] = { "Richard Herranz","Jose Encalada", "Francisco Asis Perez","Maria Milagros Viñas","Jesus Borras","Francisca Casals","Gustavo Valenzuela","Omar Vallejo","Gaspar Andres","Neus Rus","Veronica Coca","Saul Roman","Anastasio Carballo","Alejandra Otero","Florin Iglesias" };
 
 int verificarPlacas(char placas[])
 {
@@ -37,7 +37,7 @@ int verificarPlacas(char placas[])
 	{
 		if (strcmp(listaPlacasAutorizadas[i], placas) == 0)
 		{
-			resultado = i;
+			resultado = i+1;
 		}
 	}
 	return resultado;
@@ -46,37 +46,29 @@ int verificarPlacas(char placas[])
 int main() 
 {
 	//bloque de variables
-	int operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, w, z, salida, resultado, j;
+	int operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, salida, w, z, k, validacion;
+	int estacionamientos[10] = { 0 };
+	int registro[10][30] = { 0,0 };
 	char nombres[30];
-	int estacionamientos[10];
 	char placas[8];
 	char imprimirNombre[30];
-	int registro[10][30] = { 0,0 };
 
 	//bloque de instrucciones
-    printf("--------------------------------------------------------\n"); 
-    printf("           Bienvenido al Sistema de la UTP.\n"); 
-    printf("--------------------------------------------------------\n"); 
 	menu = 0;
-	estacionamientos[0] = -1;
-	estacionamientos[1] = -1;
-	estacionamientos[2] = -1;
-	estacionamientos[3] = -1;
-	estacionamientos[4] = -1;
-	estacionamientos[5] = -1;
-	estacionamientos[6] = -1;
-	estacionamientos[7] = -1;
-	estacionamientos[8] = -1;
-	estacionamientos[9] = -1;
 	while (menu == 0)
 	{
-        printf("El siguiente listado son las opciones disponibles:\n"); 
-        printf("1) Ver estacionamientos ocupados y disponibles.\n"); 
-        printf("2) Acceder al estacionamiento.\n");
-        printf("3) Salir del estacionamiento.\n");
-        printf("4) Registro de acceso.\n");
-        printf("5) Ver el listado de vehículos autorizados.\n");
-        printf("6) Salir del sistema.\n");
+        printf("o-------------------------------------------------------o\n"); 
+        printf("|              Bienvenido al Sistema de la UTP    - ▢ X |\n"); 
+        printf("o-------------------------------------------------------o\n"); 
+        printf("|\t\tQue operacion desea realizar?\t\t|\n|\t\t\t\t\t\t\t|\n");
+		printf("| El siguiente listado son las opciones disponibles:\t|\n"); 
+        printf("| 1) Ver estacionamientos ocupados y disponibles.\t|\n"); 
+        printf("| 2) Acceder al estacionamiento.\t\t\t|\n");
+        printf("| 3) Salir del estacionamiento.\t\t\t\t|\n");
+        printf("| 4) Registro de acceso.\t\t\t\t|\n");
+        printf("| 5) Ver el listado de vehículos autorizados.\t\t|\n");
+        printf("| 6) Salir del sistema.\t\t\t\t\t|\n");
+        printf("o-------------------------------------------------------o\n"); 
         printf("\n>>> Ingrese su opción: ");
         scanf("%i",&operacion); 
         if(operacion<=0||operacion>6){
@@ -87,17 +79,31 @@ int main()
 		{
 		case 1:
             system("clear");
-			for (i = 0; i < 10; i++)
-			{
-				if (estacionamientos[i] != -1)
+            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			k=0;
+            while (k==0)
 				{
-					printf("El espacio %i esta ocupado\n\n", i+1);
-				}
-				else if (estacionamientos[i] == -1)
-				{
-					printf("El espacio %i esta disponible\n\n", i+1);
-				}
-			}
+					for (i = 0; i < 10; i++)
+					{   
+                        if(i==5){
+                                printf("\n");
+                                printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                        }
+						if (estacionamientos[i] != 0)
+						{
+                            printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+						}
+						else if (estacionamientos[i] == 0)
+						{
+                            				//Example of how to printf with colors: printf("\033[33mThis is yellow\033[0m"); Where 33m is the color code. 
+							printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+						}
+					}
+                    printf("\n");
+                    k=k+1;
+                }
+            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+            printf("\n");
 			printf("Introduzca 0 para salir al menú principal: ");
             scanf("%i",&salida);
             if(salida==0){
@@ -109,46 +115,69 @@ int main()
 			printf("Ingrese la placa de su carro: ");
 			scanf("%s", &placas);
 			indice = verificarPlacas(placas);
-			if (indice >= 0)
+			if (indice > 0)
 			{
-				printf("Bienvenido %s \n", listaNombresAutorizados[indice]);
+				printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+				printf("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice-1]);
 				identificadorEstacionamientos = -1;
-				for (i = 0; i < 11; i++)
+				for (i = 0; i < 10; i++)
 				{
 					if (estacionamientos[i] == indice)
 					{
-						printf("Su carro ya esta estacionado en el espacio numero %i.\n\n",i+1);
-						printf("Puede retirarlo en la opcion numero 3.\n\n");
+						printf("Su carro ya esta estacionado en el espacio numero %i.\n",i+1);
+						printf("Puede retirarlo ingresando a la opción numero 3 del menú.\n");
 						identificadorEstacionamientos = i;
 					}
 				}
 				if (identificadorEstacionamientos == -1)
 				{
-					for (i = 0; i < 10; i++)
-					{
-						if (estacionamientos[i] != -1)
-						{
-							printf("El espacio %i esta ocupado\n", i + 1);
-						}
-						else if (estacionamientos[i] == -1)
-						{
-							printf("El espacio %i esta disponible\n", i + 1);
-						}
-					}
+                printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                k=0;
+                while (k==0)
+                {
+                    for (i = 0; i < 10; i++)
+                    {   
+                        if(i==5)
+                        {
+                            printf("\n");
+                            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                        }
+                        if (estacionamientos[i] != 0)
+                        {
+                            printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+                        }
+                        else if (estacionamientos[i] == 0)
+                        {
+                            //Example of how to printf with colors: printf("\033[33mThis is yellow\033[0m"); Where 33m is the color code. 
+                            printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+                        }
+                    }
+                    printf("\n");
+                    k=k+1;
+                    }
+                    printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+                    printf("\n");
 					x = 0;
 					while (x == 0)
 					{
-						printf("En cual espacio disponible quiere estacionar su vehiculo: ");
+						printf("Seleccione en cual espacio disponible desea estacionar su vehiculo: ");
 						scanf("%i", &numeroEstacionamiento);
-						if (estacionamientos[numeroEstacionamiento - 1] == -1)
+						if (estacionamientos[numeroEstacionamiento - 1] == 0)
 						{
 							estacionamientos[numeroEstacionamiento - 1] = indice;
 							x = 1;
-                            printf("Su carro se ha estacionado en el espacio %i.\n\n",numeroEstacionamiento);
+							for (i = 0;i < 30;i++)
+							{
+								if (registro[numeroEstacionamiento][i] == 0)
+								{
+                                    registro[numeroEstacionamiento][i] = indice;
+									break;
+								}
+							}
 						}
 						else
 						{
-							printf("Ese estacionamiento esta actualmente ocupado, seleccione otro: ");
+							printf("Ese estacionamiento esta actualmente ocupado, seleccione otro. ");
 						}
 					}
 						
@@ -157,34 +186,35 @@ int main()
 			}
 			else
 			{
-				printf("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento.\n\n");
+				printf("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
 			}
 			printf("Introduzca 0 para salir al menú principal: ");
             scanf("%i",&salida);
             if(salida==0){
                 system("clear");
                 break;
-            }
+	    }
+
 		case 3:
             system("clear");
-			printf("Ingrese la placa de su carro\n");
+			printf("Ingrese la placa de su carro: ");
 			scanf("%s", &placas);
 			indice = verificarPlacas(placas);
-			if (indice >= 0)
+			if (indice > 0)
 			{
 				m = -1;
-				for (i = 0;i < 11;i++)
+				for (i = 0;i < 10;i++)
 				{
 					if (estacionamientos[i] == indice)
 					{
-						printf("\nBienvenido %s\n", listaNombresAutorizados[indice]);
-						printf("Su carro se encuentra en el estacionamiento numero %i.\n", i+1);
-						estacionamientos[i] = -1;
-						printf("Tenga buen dia.\n");
+						printf("Bienvenido %s\n", listaNombresAutorizados[indice-1]);
+						printf("Su carro se encuentra en el estacionamiento numero %i\n", i+1);
+						estacionamientos[i] = 0;
+						printf("Tenga buen dia");
 						m = i;
 					}
 				}
-                if (m <= 0)
+				if (m < 0)
 				{
 					printf("Usted aun no ha estacionado su carro, puede ir a la opcion numero 2 para estacionarlo.\n\n");
 				}
@@ -220,16 +250,15 @@ int main()
             }
 
 		case 5:
-		    system("clear");
+			system("clear");
             printf("\n----------------------------------------------------------\n");
             printf("|              Registro de personal autorizado          |\n");
             printf("----------------------------------------------------------\n");
             printf("| n°\t|PROPIETARIO\t\t|\tPLACA\t\t|\n");
-            w=0;
+            w=1;
             z=0;
-            resultado=0;
-            while(w<15){
-                if(strlen(listaNombresAutorizados[w])<15)
+            while(w<16){
+                if(strlen(listaNombresAutorizados[z])<15)
 				{
                     printf("----------------------------------------------------------\n");
                     printf("| %i)\t|%s\t\t|\t%s\t\t|\n",w,listaNombresAutorizados[z],listaPlacasAutorizadas[z]);
@@ -239,20 +268,21 @@ int main()
                     printf("----------------------------------------------------------\n");
                     printf("| %i)\t|%s\t|\t%s\t\t|\n",w,listaNombresAutorizados[z],listaPlacasAutorizadas[z]);
                 }
-                listaNombresAutorizados[w];
-                listaPlacasAutorizadas[w];
+                listaNombresAutorizados[z];
+                listaPlacasAutorizadas[z];
                 z=z+1;
                 w=w+1;
             }
             printf("----------------------------------------------------------\n\n");
-            printf("Introduzca 0 para salir al menú principal: ");
+			printf("Introduzca 0 para salir al menú principal: ");
             scanf("%i",&salida);
             if(salida==0){
                 system("clear");
                 break;
             }
 
-        case 6:
+		case 6:
+            system("clear");
             printf("El programa ha finalizado. Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
 			menu = 1;
 			break;
