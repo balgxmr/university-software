@@ -251,7 +251,6 @@ int main()
                 system("clear");
                 break;
             }
-			break;
 
         case 6:
             printf("El programa ha finalizado. Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
