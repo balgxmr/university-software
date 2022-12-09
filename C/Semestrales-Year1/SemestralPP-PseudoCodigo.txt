@@ -1,0 +1,368 @@
+//
+// Copyright (C) 2022 Richard Herranz & José M. (balgxmr/baalgx)
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+//constantes globales
+constante caracter listaPlacasAutorizadas[15][10] = { "PAK798","GKS682","FRG681","KGS563","SGF952","GSG295","CK7193","FT2553","OT6559","LS5463","967AFW","368SFW","PR5467","SG8786","456BNM" };
+constante caracter listaNombresAutorizados[15][30] = { "Richard Herranz","Jose Encalada", "Francisco Perez","Maria Viñas","Jesus Borras","Francisca Casals","Gustavo Valenzuela","Omar Vallejo","Gaspar Andres","Neus Rus","Veronica Coca","Saul Roman","Ana Carballo","Alejandra Otero","Florin Iglesias" };
+
+entero espacioDisponible(entero registro[])
+{
+	//bloque de variables
+	entero i;
+
+	//bloque de instrucciones
+	para (i = 0;i < 30;i++)
+	{
+		si (registro[i] == 0)
+		{
+			retornar i;
+		}
+	}
+	retornar -1;
+}
+
+entero verificarPlacas(caracter placas[])
+{
+	//bloque de variables
+	entero i, resultado;
+
+	//bloque de instrucciones
+	resultado = -1;
+	para (i = 0;i < 16;i++)
+	{
+		si (strcmp(listaPlacasAutorizadas[i], placas) == 0)
+		{
+			resultado = i + 1;
+		}
+	}
+	retornar resultado;
+}
+
+Algoritmo verificarEstacionamientosLlenos(entero estacionamientos[])
+{
+	//bloque de variables
+	entero i, resultado;
+
+	//bloque de instrucciones
+	resultado = 0;
+	para (i = 0;i < 10;i++)
+	{
+		si (estacionamientos[i] == 0)
+		{
+			resultado = 1;
+		}
+	}
+	retornar resultado;
+}
+
+Algoritmo volverYSalir
+{
+	entero salida;
+	imprimir("Introduzca cualquier tecla para salir al menú principal: ");
+	leer(salida);
+	si(salida != 478) {
+		system("clear");
+	}
+}
+
+Algoritmo SistemaDeEstacionamientos
+{
+	//bloque de variables
+	entero operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, salida, w, z, k, validacion, estacionamientosLLenos, lugar;
+	entero estacionamientos[10] = { 0 };
+	entero registro[10][30] = { 0,0 };
+	cadena nombres[30];
+	cadena placas[8];
+	cadena imprimirNombre[30];
+
+	//bloque de instrucciones
+	menu = 0;
+	mientras (menu == 0)
+	{
+		imprimir("o-------------------------------------------------------o\n");
+		imprimir("|              Bienvenido al Sistema de la UTP    - ▢ X |\n");
+		imprimir("o-------------------------------------------------------o\n");
+		imprimir("|\t\tQue operacion desea realizar?\t\t|\n|\t\t\t\t\t\t\t|\n");
+		imprimir("| El siguiente listado son las opciones disponibles:\t|\n");
+		imprimir("| 1) Ver estacionamientos ocupados y disponibles.\t|\n");
+		imprimir("| 2) Acceder al estacionamiento.\t\t\t|\n");
+		imprimir("| 3) Salir del estacionamiento.\t\t\t\t|\n");
+		imprimir("| 4) Registro de acceso.\t\t\t\t|\n");
+		imprimir("| 5) Ver el listado de vehículos autorizados.\t\t|\n");
+		imprimir("| 6) Salir del sistema.\t\t\t\t\t|\n");
+		imprimir("o-------------------------------------------------------o\n");
+		imprimir("\n>>> Ingrese su opción: ");
+		leer(operacion);
+		si (operacion <= 0 || operacion > 6) {
+			imprimir("\nSu opción no es válida! Ingrese una opción correcta, del 1 al 6 como se muestra en el siguiente menú.\n\n");
+		}
+		según
+		{
+		"1":
+			imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			k = 0;
+			mientras (k == 0)
+			{
+				para (i = 0; i < 10; i++)
+				{
+					si (i == 5) {
+						imprimir("\n");
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+					}
+					si (estacionamientos[i] != 0)
+					{
+						imprimir("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+					}
+					de otro modo si (estacionamientos[i] == 0)
+					{
+						imprimir("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+					}
+				}
+				imprimir("\n");
+				k = k + 1;
+			}
+			imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			imprimir("\n");
+			volverYSalir();
+		"2":
+			imprimir("Ingrese la placa de su carro: ");
+			leer(placas);
+			indice = verificarPlacas(placas);
+			si (indice > 0)
+			{
+				imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+				imprimir("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice - 1]);
+				imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+				identificadorEstacionamientos = -1;
+				para (i = 0; i < 10; i++)
+				{
+					si (estacionamientos[i] == indice)
+					{
+						imprimir("Su carro ya esta estacionado en el espacio numero %i.\n", i + 1);
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						k = 0;
+						mientras (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
+						{
+							para (i = 0; i < 10; i++)
+							{
+								si (i == 5)
+								{
+									imprimir("\n");
+									imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+								}
+								si (estacionamientos[i] == indice)
+								{
+									imprimir("|\t\033[33mEspacio %i\033[0m\t\t|", i + 1);
+									estacionamientos[i] = 0;
+									m = i;
+								}
+								de otro modo
+								{
+									si (estacionamientos[i] != 0)
+									{
+										imprimir("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+									}
+									de otro modo si (estacionamientos[i] == 0)
+									{
+										imprimir("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+									}
+								}
+							}
+							imprimir("\n");
+							k = k + 1;
+						}
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						imprimir("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
+						imprimir("Puede retirarlo ingresando a la opción numero 3 del menú.\n");
+						identificadorEstacionamientos = i;
+					}
+				}
+				si (identificadorEstacionamientos == -1)
+				{
+					k = 0;
+					mientras (k == 0)
+					{
+						para (i = 0; i < 10; i++)
+						{
+							si (i == 5)
+							{
+								imprimir("\n");
+								imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+							}
+							si (estacionamientos[i] != 0)
+							{
+								imprimir("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+							}
+							de otro modo si (estacionamientos[i] == 0)
+							{
+								imprimir("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+							}
+						}
+						imprimir("\n");
+						k = k + 1;
+					}
+					imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+					imprimir("\n");
+					estacionamientosLLenos = verificarEstacionamientosLlenos(estacionamientos);
+					si (estacionamientosLLenos == 1)
+					{
+						x = 0;
+						mientras (x == 0)
+						{
+							imprimir("Seleccione en cual espacio disponible desea estacionar su vehiculo: ");
+							leer(numeroEstacionamiento);
+							si (estacionamientos[numeroEstacionamiento - 1] == 0)
+							{
+								estacionamientos[numeroEstacionamiento - 1] = indice;
+								lugar = espacioDisponible(registro[numeroEstacionamiento - 1]);
+								si (lugar >= 0)
+								{
+									registro[numeroEstacionamiento - 1][lugar] = indice;
+								}
+								x = 1;
+								imprimir("\033[31mSu carro ha sido reservado en el espacio %i.\033[0m\n\n",numeroEstacionamiento);
+							}
+							de otro modo
+							{
+								imprimir("Ese estacionamiento esta actualmente ocupado, seleccione otro. ");
+							}
+						}
+					}
+					de otro modo
+					{
+						imprimir("Todos los estacionamientos estan ocupados actualmente, porfavor regrese mas tarde");
+					}
+				}
+
+			}
+			de otro modo
+			{
+				imprimir("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
+			}
+			volverYSalir();
+		"3":
+			imprimir("Ingrese la placa de su carro\n");
+			leer(placas);
+			indice = verificarPlacas(placas);
+			si (indice > 0)
+			{
+				m = -1;
+				para (i = 0;i < 10;i++)
+				{
+					si (estacionamientos[i] == indice)
+					{
+						imprimir("Bienvenido %s\n", listaNombresAutorizados[indice - 1]);
+						imprimir("Su carro se encuentra en el estacionamiento numero %i\n", i + 1);
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						k = 0;
+						mientras (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
+						{
+							para (i = 0; i < 10; i++)
+							{
+								si (i == 5)
+								{
+									imprimir("\n");
+									imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+								}
+								si (estacionamientos[i] == indice)
+								{
+									imprimir("|\t\033[33mEspacio %i\033[0m\t\t|", i + 1);
+									estacionamientos[i] = 0;
+									m = i;
+								}
+								de otro modo
+								{
+									si (estacionamientos[i] != 0)
+									{
+										imprimir("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+									}
+									de otro modo si (estacionamientos[i] == 0)
+									{
+										imprimir("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+									}
+								}
+							}
+							imprimir("\n");
+							k = k + 1;
+						}
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						imprimir("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
+					}
+				}
+				si (m < 0)
+				{
+					imprimir("Usted aun no ha estacionado su carro, puede ir a la opcion numero 2 para estacionarlo\n");
+				}
+			}
+			de otro modo
+			{
+				imprimir("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
+			}
+			volverYSalir();
+		"4":
+			imprimir("\n----------------------------------------------------------\n");
+            		imprimir("|       Historial de entrada al estacionamiento          |\n");
+            		imprimir("----------------------------------------------------------\n");
+			imprimir("|Estacionamientos|            Entradas\n");
+			imprimir("------------------\n");
+			para (i = 0;i < 10;i++)
+				{
+					imprimir("|        %i)\t|", i+1);
+					para (j = 0;j < 30;j++)
+					{
+						si (registro[i][j] == 0)
+						{
+							imprimir("\t");
+						}
+						de otro modo si(registro[i][j] != 0)
+						{
+							imprimir(" [ %s (%s) ]", listaNombresAutorizados[registro[i][j] - 1], listaPlacasAutorizadas[registro[i][j] - 1]);
+						}
+					}
+					imprimir("------------------\n");
+				}
+        	volverYSalir();
+		"5":
+            imprimir("\n--------------------------------------------------------\n");
+            imprimir("|              Registro de personal autorizado          |\n");
+            imprimir("----------------------------------------------------------\n");
+            imprimir("| n°\t|PROPIETARIO\t\t|\tPLACA\t\t|\n");
+            w=1;
+            z=0;
+            mientras(w<16){
+                si(strlen(listaNombresAutorizados[z])<15)
+				{
+                    imprimir("----------------------------------------------------------\n");
+                    imprimir("| %i)\t|%s\t\t|\t%s\t\t|\n",w,listaNombresAutorizados[z],listaPlacasAutorizadas[z]);
+                }
+                de otro modo
+                {
+                    imprimir("----------------------------------------------------------\n");
+                    imprimir("| %i)\t|%s\t|\t%s\t\t|\n",w,listaNombresAutorizados[z],listaPlacasAutorizadas[z]);
+                }
+                listaNombresAutorizados[z];
+                listaPlacasAutorizadas[z];
+                z=z+1;
+                w=w+1;
+            }
+            imprimir("----------------------------------------------------------\n\n");
+			volverYSalir();
+		"6":
+			imprimir("El programa ha finalizado. ¡Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
+			menu = 1;
+		}
+	}
+	retornar 0;
+}
