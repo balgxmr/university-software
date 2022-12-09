@@ -83,19 +83,17 @@ void volverYSalir()
 	printf("Introduzca cualquier numero para salir al menú principal: ");
 	scanf("%i", &salida);
 	if (salida != 478) {
-		system("clear");
+		system("cls");
 	}
 }
 
 int main()
 {
 	//bloque de variables
-	int operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, salida, jose, richard, k, validacion, estacionamientosLLenos, lugar;
+	int operacion, x, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, jose, richard, k, estacionamientosLLenos, lugar;
 	int estacionamientos[10] = { 0 };
 	int registro[10][30] = { 0,0 };
-	char nombres[30];
 	char placas[8];
-	char imprimirNombre[30];
 
 	//bloque de instrucciones
 	menu = 0;
@@ -116,13 +114,13 @@ int main()
 		printf("\n>>> Ingrese su opción: ");
 		scanf("%i", &operacion);
 		if (operacion <= 0 || operacion > 6) {
-			system("clear");
+			system("cls");
 			printf("\nSu opción no es válida! Ingrese una opción correcta, del 1 al 6 como se muestra en el siguiente menú.\n\n");
 		}
 		switch (operacion)
 		{
 		case 1:
-			system("clear");
+			system("cls");
 			printf("Estacionamientos ocupados y disponibles:\n");
 			printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 			k = 0;
@@ -151,14 +149,14 @@ int main()
 			volverYSalir();
 			break;
 		case 2:
-			system("clear");
+			system("cls");
 			printf("Para acceder al estacionamiento, ingrese la placa de su carro: ");
 			scanf("%s", &placas);
 			indice = verificarPlacas(placas);
 			if (indice > 0)
 			{
 				printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-				if(strlen(listaNombresAutorizados[indice - 1])<15)
+				if (strlen(listaNombresAutorizados[indice - 1]) < 15)
 				{
 					printf("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice - 1]);
 				}
@@ -188,7 +186,6 @@ int main()
 								{
 									printf("|\t\033[33mEspacio %i\033[0m\t\t|", i + 1);
 									estacionamientos[i] = 0;
-									m = i;
 								}
 								else
 								{
@@ -245,9 +242,9 @@ int main()
 						{
 							printf("Seleccione en cual espacio disponible desea estacionar su vehiculo: ");
 							scanf("%i", &numeroEstacionamiento);
-							if(numeroEstacionamiento==0)
+							if ((numeroEstacionamiento < 1) || (numeroEstacionamiento > 10))
 							{
-								printf("El estacionamiento 0 no es válido! Seleccione un estacionamiento de los disponibles.\n");
+								printf("El estacionamiento %i no es valido! Seleccione un estacionamiento de los disponibles.\n", numeroEstacionamiento);
 								x = 0;
 							}
 							else if (estacionamientos[numeroEstacionamiento - 1] == 0)
@@ -259,9 +256,9 @@ int main()
 									registro[numeroEstacionamiento - 1][lugar] = indice;
 								}
 								x = 1;
-                                printf("\033[32mSu carro ha sido reservado en el espacio %i.\033[0m\n",numeroEstacionamiento);
+								printf("\033[32mSu carro ha sido reservado en el espacio %i.\033[0m\n", numeroEstacionamiento);
 							}
-							else
+							else 
 							{
 								printf("Ese estacionamiento esta actualmente ocupado, seleccione otro. \n");
 							}
@@ -281,7 +278,7 @@ int main()
 			volverYSalir();
 			break;
 		case 3:
-			system("clear");
+			system("cls");
 			printf("Para salir del estacionamiento, ingrese la placa de su carro: ");
 			scanf("%s", &placas);
 			indice = verificarPlacas(placas);
@@ -343,57 +340,57 @@ int main()
 			break;
 		case 4:
 			printf("\n----------------------------------------------------------\n");
-            printf("|       Historial de entrada al estacionamiento          |\n");
-            printf("----------------------------------------------------------\n");
+			printf("|       Historial de entrada al estacionamiento          |\n");
+			printf("----------------------------------------------------------\n");
 			printf("|Estacionamientos|            Entradas\n");
 			printf("------------------\n");
 			for (i = 0;i < 10;i++)
+			{
+				printf("|        %i)\t|", i + 1);
+				for (j = 0;j < 30;j++)
 				{
-					printf("|        %i)\t|", i+1);
-					for (j = 0;j < 30;j++)
+					if (registro[i][j] == 0)
 					{
-						if (registro[i][j] == 0)
-						{
-							printf("\t");
-						}
-						else if(registro[i][j] != 0)
-						{
-							printf(" [ %s (%s) ]", listaNombresAutorizados[registro[i][j] - 1], listaPlacasAutorizadas[registro[i][j] - 1]);
-						}
+						printf("\t");
 					}
-					printf("------------------\n");
+					else if (registro[i][j] != 0)
+					{
+						printf(" [ %s (%s) ]", listaNombresAutorizados[registro[i][j] - 1], listaPlacasAutorizadas[registro[i][j] - 1]);
+					}
 				}
-        	volverYSalir();
-     	  	break;
-		case 5:
-			system("clear");
-            printf("\n--------------------------------------------------------\n");
-            printf("|              Registro de personal autorizado          |\n");
-            printf("----------------------------------------------------------\n");
-            printf("| n°\t|PROPIETARIO\t\t|\tPLACA\t\t|\n");
-            richard=1;
-            jose=0;
-            while(richard<16){
-                if(strlen(listaNombresAutorizados[jose])<15)
-				{
-                    printf("----------------------------------------------------------\n");
-                    printf("| %i)\t|%s\t\t|\t%s\t\t|\n",richard,listaNombresAutorizados[jose],listaPlacasAutorizadas[jose]);
-                }
-                else
-                {
-                    printf("----------------------------------------------------------\n");
-                    printf("| %i)\t|%s\t|\t%s\t\t|\n",richard,listaNombresAutorizados[jose],listaPlacasAutorizadas[jose]);
-                }
-                listaNombresAutorizados[jose];
-                listaPlacasAutorizadas[jose];
-                jose = jose + 1;
-                richard = richard + 1;
-            }
-            printf("----------------------------------------------------------\n\n");
+				printf("------------------\n");
+			}
 			volverYSalir();
-            break;
+			break;
+		case 5:
+			system("cls");
+			printf("\n--------------------------------------------------------\n");
+			printf("|              Registro de personal autorizado          |\n");
+			printf("----------------------------------------------------------\n");
+			printf("| n°\t|PROPIETARIO\t\t|\tPLACA\t\t|\n");
+			richard = 1;
+			jose = 0;
+			while (richard < 16) {
+				if (strlen(listaNombresAutorizados[jose]) < 15)
+				{
+					printf("----------------------------------------------------------\n");
+					printf("| %i)\t|%s\t\t|\t%s\t\t|\n", richard, listaNombresAutorizados[jose], listaPlacasAutorizadas[jose]);
+				}
+				else
+				{
+					printf("----------------------------------------------------------\n");
+					printf("| %i)\t|%s\t|\t%s\t\t|\n", richard, listaNombresAutorizados[jose], listaPlacasAutorizadas[jose]);
+				}
+				listaNombresAutorizados[jose];
+				listaPlacasAutorizadas[jose];
+				jose = jose + 1;
+				richard = richard + 1;
+			}
+			printf("----------------------------------------------------------\n\n");
+			volverYSalir();
+			break;
 		case 6:
-			system("clear");
+			system("cls");
 			printf("Usted ha seleccionado la opción 6.\n");
 			printf("El programa ha finalizado. ¡Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
 			menu = 1;
