@@ -24,7 +24,23 @@
 
 //constantes globales
 const char listaPlacasAutorizadas[15][10] = { "PAK798","GKS682","FRG681","KGS563","SGF952","GSG295","CK7193","FT2553","OT6559","LS5463","967AFW","368SFW","PR5467","SG8786","456BNM" };
-const char listaNombresAutorizados[15][30] = { "Richard Herranz","Jose Encalada", "Francisco Asis Perez","Maria Milagros Viñas","Jesus Borras","Francisca Casals","Gustavo Valenzuela","Omar Vallejo","Gaspar Andres","Neus Rus","Veronica Coca","Saul Roman","Anastasio Carballo","Alejandra Otero","Florin Iglesias" };
+const char listaNombresAutorizados[15][30] = { "Richard Herranz","Jose Encalada", "Francisco Perez","Maria Viñas","Jesus Borras","Francisca Casals","Gustavo Valenzuela","Omar Vallejo","Gaspar Andres","Neus Rus","Veronica Coca","Saul Roman","Ana Carballo","Alejandra Otero","Florin Iglesias" };
+
+int espacioDisponible(int registro[])
+{
+	//bloque de variables
+	int i;
+
+	//bloque de instrucciones
+	for (i = 0;i < 30;i++)
+	{
+		if (registro[i] == 0)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
 
 int verificarPlacas(char placas[])
 {
@@ -37,16 +53,44 @@ int verificarPlacas(char placas[])
 	{
 		if (strcmp(listaPlacasAutorizadas[i], placas) == 0)
 		{
-			resultado = i+1;
+			resultado = i + 1;
 		}
 	}
 	return resultado;
 }
 
-int main() 
+int verificarEstacionamientosLlenos(int estacionamientos[])
 {
 	//bloque de variables
-	int operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, salida, w, z, k, validacion;
+	int i, resultado;
+
+	//bloque de instrucciones
+	resultado = 0;
+	for (i = 0;i < 10;i++)
+	{
+		if (estacionamientos[i] == 0)
+		{
+			resultado = 1;
+			break;
+		}
+	}
+	return resultado;
+}
+
+void volverYSalir()
+{
+	int salida;
+	printf("Introduzca cualquier tecla para salir al menú principal: ");
+	scanf("%i", &salida);
+	if (salida != 478) {
+		system("clear");
+	}
+}
+
+int main()
+{
+	//bloque de variables
+	int operacion, x, y, numeroEstacionamiento, menu, indice, m, i, identificadorEstacionamientos, j, salida, w, z, k, validacion, estacionamientosLLenos, lugar;
 	int estacionamientos[10] = { 0 };
 	int registro[10][30] = { 0,0 };
 	char nombres[30];
@@ -57,229 +101,260 @@ int main()
 	menu = 0;
 	while (menu == 0)
 	{
-        printf("o-------------------------------------------------------o\n"); 
-        printf("|              Bienvenido al Sistema de la UTP    - ▢ X |\n"); 
-        printf("o-------------------------------------------------------o\n"); 
-        printf("|\t\tQue operacion desea realizar?\t\t|\n|\t\t\t\t\t\t\t|\n");
-		printf("| El siguiente listado son las opciones disponibles:\t|\n"); 
-        printf("| 1) Ver estacionamientos ocupados y disponibles.\t|\n"); 
-        printf("| 2) Acceder al estacionamiento.\t\t\t|\n");
-        printf("| 3) Salir del estacionamiento.\t\t\t\t|\n");
-        printf("| 4) Registro de acceso.\t\t\t\t|\n");
-        printf("| 5) Ver el listado de vehículos autorizados.\t\t|\n");
-        printf("| 6) Salir del sistema.\t\t\t\t\t|\n");
-        printf("o-------------------------------------------------------o\n"); 
-        printf("\n>>> Ingrese su opción: ");
-        scanf("%i",&operacion); 
-        if(operacion<=0||operacion>6){
-            system("clear");
-            printf("\nSu opción no es válida! Ingrese una opción correcta, del 1 al 6 como se muestra en el siguiente menú.\n\n");
-        }
+		printf("o-------------------------------------------------------o\n");
+		printf("|              Bienvenido al Sistema de la UTP    - ▢ X |\n");
+		printf("o-------------------------------------------------------o\n");
+		printf("|\t\tQue operacion desea realizar?\t\t|\n|\t\t\t\t\t\t\t|\n");
+		printf("| El siguiente listado son las opciones disponibles:\t|\n");
+		printf("| 1) Ver estacionamientos ocupados y disponibles.\t|\n");
+		printf("| 2) Acceder al estacionamiento.\t\t\t|\n");
+		printf("| 3) Salir del estacionamiento.\t\t\t\t|\n");
+		printf("| 4) Registro de acceso.\t\t\t\t|\n");
+		printf("| 5) Ver el listado de vehículos autorizados.\t\t|\n");
+		printf("| 6) Salir del sistema.\t\t\t\t\t|\n");
+		printf("o-------------------------------------------------------o\n");
+		printf("\n>>> Ingrese su opción: ");
+		scanf("%i", &operacion);
+		if (operacion <= 0 || operacion > 6) {
+			system("clear");
+			printf("\nSu opción no es válida! Ingrese una opción correcta, del 1 al 6 como se muestra en el siguiente menú.\n\n");
+		}
 		switch (operacion)
 		{
 		case 1:
-            system("clear");
-            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-			k=0;
-            while (k==0)
+			system("clear");
+			printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			k = 0;
+			while (k == 0)
+			{
+				for (i = 0; i < 10; i++)
 				{
-					for (i = 0; i < 10; i++)
-					{   
-                        if(i==5){
-                                printf("\n");
-                                printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                        }
-						if (estacionamientos[i] != 0)
-						{
-                            printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
-						}
-						else if (estacionamientos[i] == 0)
-						{
-                            // Example of how to print out colors in terminal, where 33m is the color code: printf("\033[33mThis is yellow\033[0m");
-							printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
-						}
+					if (i == 5) {
+						printf("\n");
+						printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 					}
-                    printf("\n");
-                    k=k+1;
-                }
-            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-            printf("\n");
-			printf("Introduzca cualquier numero para salir al menú principal: ");
-            scanf("%i",&salida);
-            if(salida!=458){
-                system("clear");
-                break;
-            }
+					if (estacionamientos[i] != 0)
+					{
+						printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+					}
+					else if (estacionamientos[i] == 0)
+					{
+						printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+					}
+				}
+				printf("\n");
+				k = k + 1;
+			}
+			printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			printf("\n");
+			volverYSalir();
+			break;
 		case 2:
-            system("clear");
+			system("clear");
 			printf("Ingrese la placa de su carro: ");
 			scanf("%s", &placas);
 			indice = verificarPlacas(placas);
 			if (indice > 0)
 			{
 				printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                printf("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice-1]);
+				printf("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice - 1]);
 				printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 				identificadorEstacionamientos = -1;
 				for (i = 0; i < 10; i++)
 				{
 					if (estacionamientos[i] == indice)
 					{
-						printf("Su carro ya esta estacionado en el espacio numero %i.\n",i+1);
+						printf("Su carro ya esta estacionado en el espacio numero %i.\n", i + 1);
+						printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						k = 0;
+						while (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
+						{
+							for (i = 0; i < 10; i++)
+							{
+								if (i == 5)
+								{
+									printf("\n");
+									printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+								}
+								if (estacionamientos[i] == indice)
+								{
+									printf("|\t\033[33mEspacio %i\033[0m\t\t|", i + 1);
+									estacionamientos[i] = 0;
+									m = i;
+								}
+								else
+								{
+									if (estacionamientos[i] != 0)
+									{
+										printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+									}
+									else if (estacionamientos[i] == 0)
+									{
+										printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+									}
+								}
+							}
+							printf("\n");
+							k = k + 1;
+						}
+						printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						printf("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
 						printf("Puede retirarlo ingresando a la opción numero 3 del menú.\n");
 						identificadorEstacionamientos = i;
 					}
 				}
 				if (identificadorEstacionamientos == -1)
 				{
-                k=0;
-                while (k==0)
-                {
-                    for (i = 0; i < 10; i++)
-                    {   
-                        if(i==5)
-                        {
-                            printf("\n");
-                            printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                        }
-                        if (estacionamientos[i] != 0)
-                        {
-                            printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
-                        }
-                        else if (estacionamientos[i] == 0)
-                        {
-                            //printf("\033[33mThis is yellow\033[0m");
-                            printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
-                        }
-                    }
-                    printf("\n");
-                    k=k+1;
-                    }
-                    printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                    printf("\n");
-					x = 0;
-					while (x == 0)
+					k = 0;
+					while (k == 0)
 					{
-						printf("Seleccione en cual espacio disponible desea estacionar su vehiculo: ");
-						scanf("%i", &numeroEstacionamiento);
-						if (estacionamientos[numeroEstacionamiento - 1] == 0)
+						for (i = 0; i < 10; i++)
 						{
-							estacionamientos[numeroEstacionamiento - 1] = indice;
-							x = 1;
-							for (i = 0;i < 30;i++)
+							if (i == 5)
 							{
-								if (registro[numeroEstacionamiento][i] == 0)
-								{
-                                    registro[numeroEstacionamiento][i] = indice;
-									break;
-								}
+								printf("\n");
+								printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+							}
+							if (estacionamientos[i] != 0)
+							{
+								printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+							}
+							else if (estacionamientos[i] == 0)
+							{
+								printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
 							}
 						}
-						else
+						printf("\n");
+						k = k + 1;
+					}
+					printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+					printf("\n");
+					estacionamientosLLenos = verificarEstacionamientosLlenos(estacionamientos);
+					if (estacionamientosLLenos == 1)
+					{
+						x = 0;
+						while (x == 0)
 						{
-							printf("Ese estacionamiento esta actualmente ocupado, seleccione otro. ");
+							printf("Seleccione en cual espacio disponible desea estacionar su vehiculo: ");
+							scanf("%i", &numeroEstacionamiento);
+							if (estacionamientos[numeroEstacionamiento - 1] == 0)
+							{
+								estacionamientos[numeroEstacionamiento - 1] = indice;
+								lugar = espacioDisponible(registro[numeroEstacionamiento - 1]);
+								if (lugar >= 0)
+								{
+									registro[numeroEstacionamiento - 1][lugar] = indice;
+								}
+								x = 1;
+                                printf("\033[32mSu carro ha sido reservado en el espacio %i.\033[0m\n",numeroEstacionamiento);
+							}
+							else
+							{
+								printf("Ese estacionamiento esta actualmente ocupado, seleccione otro. ");
+							}
 						}
 					}
-						
+					else
+					{
+						printf("Todos los estacionamientos estan ocupados actualmente, porfavor regrese mas tarde");
+					}
 				}
-				
+
 			}
 			else
 			{
 				printf("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
 			}
-			printf("Introduzca cualquier numero para salir al menú principal: ");
-            scanf("%i",&salida);
-            if(salida!=458){
-                system("clear");
-                break;
-            }
+			volverYSalir();
+			break;
 		case 3:
-            system("clear");
+			system("clear");
 			printf("Ingrese la placa de su carro\n");
-            scanf("%s", &placas);
-            indice = verificarPlacas(placas);
-            if (indice > 0)
-            {
-                m = -1;
-                for (i = 0;i < 10;i++)
-                {
-                    if (estacionamientos[i] == indice)
-                    {
-                        printf("Bienvenido %s\n", listaNombresAutorizados[indice-1]);
-                        printf("Su carro se encuentra en el estacionamiento numero %i\n", i+1);
-                        printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                        k=0;
-                        while (k==0) // Inicio de la tabla para mostrar el espacio actual del propietario.
-                        {
-                            for (i = 0; i < 10; i++)
-                            {   
-                                if(i==5)
-                                {
-                                    printf("\n");
-                                    printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                                }
-                                    if (estacionamientos[i]==indice)
-                                    {
-                                        printf("|\t\033[31mSu espacio %i actual.\033[0m\t|", i + 1);
-                                        estacionamientos[i] = 0;
-                                        m=i;
-                                    }
-                                    else
-                                    {
-                                        // Example of how to print out colors in terminal, where 33m is the color code: printf("\033[33mThis is yellow\033[0m");
-                                        printf("|\t\033[32mEspacio %i\033[0m\t\t|", i + 1);
-                                    }
-                            }
-                        printf("\n");
-                        k=k+1;
-                        }
-                        printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                        printf("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
-                    }
-                }
-                if (m < 0)
-                {
-                    printf("Usted aun no ha estacionado su carro, puede ir a la opcion numero 2 para estacionarlo\n");
-                }
-            }
-            else
-            {
-                printf("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
-            }
-            printf("Introduzca cualquier numero para salir al menú principal o introduzca 1 para salir del sistema : ");
-            scanf("%i",&salida);
-            if(salida!=458){
-                system("clear");
-                break;
-            }
-            else if(salida==1)
-            {
-                system("clear");
-                printf("El programa ha finalizado. ¡Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
-			    menu = 1;
-			    break;
-            }
-		case 4:
-			for (i = 0;i < 10;i++)
+			scanf("%s", &placas);
+			indice = verificarPlacas(placas);
+			if (indice > 0)
 			{
-				for (j = 0;j < 30;j++)
+				m = -1;
+				for (i = 0;i < 10;i++)
 				{
-					if (registro[i][j] != 0)
+					if (estacionamientos[i] == indice)
 					{
-						printf("Estacionamiento numero %s", listaNombresAutorizados[registro[i][j] - 1]); //aqui es donde hay q imprimir un registro con la placa y el nombre de quienes entraron a cada estacionamiento
+						printf("Bienvenido %s\n", listaNombresAutorizados[indice - 1]);
+						printf("Su carro se encuentra en el estacionamiento numero %i\n", i + 1);
+						printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						k = 0;
+						while (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
+						{
+							for (i = 0; i < 10; i++)
+							{
+								if (i == 5)
+								{
+									printf("\n");
+									printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+								}
+								if (estacionamientos[i] == indice)
+								{
+									printf("|\t\033[33mEspacio %i\033[0m\t\t|", i + 1);
+									estacionamientos[i] = 0;
+									m = i;
+								}
+								else
+								{
+									if (estacionamientos[i] != 0)
+									{
+										printf("|\t\033[31mEspacio %i ocupado.\033[0m\t|", i + 1);
+									}
+									else if (estacionamientos[i] == 0)
+									{
+										printf("|\t\033[32mEspacio %i disponible.\033[0m\t|", i + 1);
+									}
+								}
+							}
+							printf("\n");
+							k = k + 1;
+						}
+						printf("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						printf("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
 					}
 				}
+				if (m < 0)
+				{
+					printf("Usted aun no ha estacionado su carro, puede ir a la opcion numero 2 para estacionarlo\n");
+				}
 			}
-			printf("Introduzca cualquier numero para salir al menú principal: ");
-            scanf("%i",&salida);
-            if(salida!=458){
-                system("clear");
-                break;
-            }
+			else
+			{
+				printf("Su placa no esta registrada en nuestro sistema, por lo tanto no tiene acceso al estacionamiento");
+			}
+			volverYSalir();
+			break;
+		case 4:
+			printf("\n----------------------------------------------------------\n");
+            printf("|       Historial de entrada al estacionamiento          |\n");
+            printf("----------------------------------------------------------\n");
+			printf("|Estacionamientos|            Entradas\n");
+			printf("------------------\n");
+			for (i = 0;i < 10;i++)
+				{
+					printf("|        %i)\t|", i+1);
+					for (j = 0;j < 30;j++)
+					{
+						if (registro[i][j] == 0)
+						{
+							printf("\t");
+						}
+						else if(registro[i][j] != 0)
+						{
+							printf(" [ %s (%s) ]", listaNombresAutorizados[registro[i][j] - 1], listaPlacasAutorizadas[registro[i][j] - 1]);
+						}
+					}
+					printf("------------------\n");
+				}
+        	volverYSalir();
+     	  	break;
 		case 5:
 			system("clear");
-            printf("\n----------------------------------------------------------\n");
+            printf("\n--------------------------------------------------------\n");
             printf("|              Registro de personal autorizado          |\n");
             printf("----------------------------------------------------------\n");
             printf("| n°\t|PROPIETARIO\t\t|\tPLACA\t\t|\n");
@@ -302,15 +377,11 @@ int main()
                 w=w+1;
             }
             printf("----------------------------------------------------------\n\n");
-			printf("Introduzca cualquier numero para salir al menú principal: ");
-            scanf("%i",&salida);
-            if(salida!=458){
-                system("clear");
-                break;
-            }
+			volverYSalir();
+            break;
 		case 6:
-            system("clear");
-            printf("El programa ha finalizado. ¡Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
+			system("clear");
+			printf("El programa ha finalizado. ¡Hasta pronto! La UTP le desea que tenga un buen día.\n\n");
 			menu = 1;
 			break;
 		}
