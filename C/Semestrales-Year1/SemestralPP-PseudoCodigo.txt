@@ -94,7 +94,7 @@ Algoritmo SistemaDeEstacionamientos
 		imprimir("o-------------------------------------------------------oLN");
 		imprimir("|              Bienvenido al Sistema de la UTP    - ▢ X |LN");
 		imprimir("o-------------------------------------------------------oLN");
-		imprimir("|\t\tQue operacion desea realizar?\t\t|\n|\t\t\t\t\t\t\t|LN");
+		imprimir("|\t\tQue operacion desea realizar?\t\t|LN|\t\t\t\t\t\t\t|LN");
 		imprimir("| El siguiente listado son las opciones disponibles:\t|LN");
 		imprimir("| 1) Ver estacionamientos ocupados y disponibles.\t|LN");
 		imprimir("| 2) Acceder al estacionamiento.\t\t\t|LN");
@@ -134,7 +134,7 @@ Algoritmo SistemaDeEstacionamientos
 				k = k + 1;
 			}
 			imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
-			imprimir("\n");
+			imprimir("LN");
 			volverYSalir();
 		"2":
 			imprimir("Ingrese la placa de su carro: ");
@@ -143,14 +143,14 @@ Algoritmo SistemaDeEstacionamientos
 			si (indice > 0)
 			{
 				imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
-				imprimir("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|\n", listaNombresAutorizados[indice - 1]);
+				imprimir("|\t\t\t\t\t\t\t\tBienvenido %s\t\t\t\t\t\t\t\t\t|LN", listaNombresAutorizados[indice - 1]);
 				imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 				identificadorEstacionamientos = -1;
 				para (i = 0; i < 10; i++)
 				{
 					si (estacionamientos[i] == indice)
 					{
-						imprimir("Su carro ya esta estacionado en el espacio numero %i.\n", i + 1);
+						imprimir("Su carro ya esta estacionado en el espacio numero %i.LN", i + 1);
 						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 						k = 0;
 						mientras (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
@@ -159,7 +159,7 @@ Algoritmo SistemaDeEstacionamientos
 							{
 								si (i == 5)
 								{
-									imprimir("\n");
+									imprimir("LN");
 									imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 								}
 								si (estacionamientos[i] == indice)
@@ -184,8 +184,8 @@ Algoritmo SistemaDeEstacionamientos
 							k = k + 1;
 						}
 						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
-						imprimir("\n"); // Fin de la tabla que muestra el espacio actual del propietario.
-						imprimir("Puede retirarlo ingresando a la opción numero 3 del menú.\n");
+						imprimir("LN"); // Fin de la tabla que muestra el espacio actual del propietario.
+						imprimir("Puede retirarlo ingresando a la opción numero 3 del menú.LN");
 						identificadorEstacionamientos = i;
 					}
 				}
@@ -198,7 +198,7 @@ Algoritmo SistemaDeEstacionamientos
 						{
 							si (i == 5)
 							{
-								imprimir("\n");
+								imprimir("LN");
 								imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 							}
 							si (estacionamientos[i] != 0)
@@ -264,7 +264,7 @@ Algoritmo SistemaDeEstacionamientos
 					si (estacionamientos[i] == indice)
 					{
 						imprimir("Bienvenido %sLN", listaNombresAutorizados[indice - 1]);
-						imprimir("Su carro se encuentra en el estacionamiento numero %i\n", i + 1);
+						imprimir("Su carro se encuentra en el estacionamiento numero %iLN", i + 1);
 						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 						k = 0;
 						mientras (k == 0) // Inicio de la tabla para mostrar el espacio actual del propietario.
@@ -297,7 +297,7 @@ Algoritmo SistemaDeEstacionamientos
 							imprimir("LN");
 							k = k + 1;
 						}
-						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+						imprimir("-----------------------------------------------------------------------------------------------------------------------------------------------------------------LN");
 						imprimir("LN"); // Fin de la tabla que muestra el espacio actual del propietario.
 					}
 				}
@@ -315,8 +315,8 @@ Algoritmo SistemaDeEstacionamientos
 			imprimir("LN----------------------------------------------------------LN");
             		imprimir("|       Historial de entrada al estacionamiento          |LN");
             		imprimir("----------------------------------------------------------LN");
-			imprimir("|Estacionamientos|            Entradas\n");
-			imprimir("------------------\n");
+			imprimir("|Estacionamientos|            EntradasLN");
+			imprimir("------------------LN");
 			para (i = 0;i < 10;i++)
 				{
 					imprimir("|        %i)\t|", i+1);
