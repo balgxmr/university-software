@@ -99,9 +99,9 @@ Algoritmo SistemaDeEstacionamientos
 		imprimir("| 1) Ver estacionamientos ocupados y disponibles.\t|LN");
 		imprimir("| 2) Acceder al estacionamiento.\t\t\t|LN");
 		imprimir("| 3) Salir del estacionamiento.\t\t\t\t|LN");
-		imprimir("| 4) Registro de acceso.\t\t\t\t|\n");
+		imprimir("| 4) Registro de acceso.\t\t\t\t|LN");
 		imprimir("| 5) Ver el listado de vehículos autorizados.\t\t|LN");
-		imprimir("| 6) Salir del sistema.\t\t\t\t\t|\n");
+		imprimir("| 6) Salir del sistema.\t\t\t\t\t|LN");
 		imprimir("o-------------------------------------------------------oLN");
 		imprimir("LN>>> Ingrese su opción: ");
 		leer(operacion);
