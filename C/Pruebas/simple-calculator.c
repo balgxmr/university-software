@@ -6,6 +6,7 @@
 
 // Constantes globales
 char eleccion;
+int loop = 1;
 
 // Funcion para funciones aritméticas de + - * / raiz y potencia
 double operaciones(double valor1, double valor2, int selector)
@@ -47,10 +48,18 @@ double operaciones(double valor1, double valor2, int selector)
 // Función que le pregunta al usuario si desea introducir otro valor en caso de que lo quiera.
 double valorExtra()
 {
-    printf("\n\nDesea introducir otro valor? (y/n): ");
-    scanf("\n%c", &eleccion);
-    eleccion = toupper(eleccion);
-    return eleccion;
+    while(loop == 1){
+        printf("\n\nDesea introducir otro valor? (y/n): ");
+        scanf("\n%c", &eleccion);
+        eleccion = toupper(eleccion);
+        if(eleccion == 'Y' || eleccion == 'N'){
+            return eleccion;
+            loop = 0;
+        } else {
+            printf("Valor ingresado incorrecto! Use 'y' o 'n'.");
+            loop = 1;
+        }
+    }
 }
 
 int main (){
@@ -59,7 +68,6 @@ int main (){
     double valor1;
     double valor2;
     double resultado;
-    int loop = 1;
 
     printf("1) Suma\n2) Resta\n3) Multiplicacion\n4) Division\n5) Raiz de un valor\n6) Potencia\n");
     printf("Introduce la operación que desea realizar: ");
