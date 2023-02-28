@@ -1,8 +1,8 @@
-#include<stdio.h>
-#include<math.h>
-#include<ctype.h>
-#include<stdbool.h>
-#include<string.h>
+#include <stdio.h>
+#include <math.h>
+#include <ctype.h>
+#include <stdbool.h>
+#include <string.h>
 
 // Constantes globales
 char eleccion;
@@ -52,9 +52,12 @@ double valorExtra()
         printf("\n\nDesea introducir otro valor? (y/n): ");
         scanf("\n%c", &eleccion);
         eleccion = toupper(eleccion);
-        if(eleccion == 'Y' || eleccion == 'N'){
+        if(eleccion == 'Y'){
             return eleccion;
             loop = 0;
+        } else if (eleccion == 'N'){
+            printf("Programa finalizado...");
+            exit(0);
         } else {
             printf("Valor ingresado incorrecto! Use 'y' o 'n'.");
             loop = 1;
@@ -86,24 +89,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce tu siguiente valor a sumar: ");
-                scanf("%lf", &valor1);
-                resultado = resultado + valor1;
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce tu siguiente valor a sumar: ");
+            scanf("%lf", &valor1);
+            resultado = resultado + valor1;
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
 
@@ -118,24 +108,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce tu siguiente valor a restar: ");
-                scanf("%lf", &valor1);
-                resultado = resultado - valor1;
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce tu siguiente valor a restar: ");
+            scanf("%lf", &valor1);
+            resultado = resultado - valor1;
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
 
@@ -150,24 +127,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce tu siguiente valor a multiplicar: ");
-                scanf("%lf", &valor1);
-                resultado = resultado * valor1;
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce tu siguiente valor a multiplicar: ");
+            scanf("%lf", &valor1);
+            resultado = resultado * valor1;
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
     
@@ -182,24 +146,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce tu siguiente valor a dividir: ");
-                scanf("%lf", &valor1);
-                resultado = resultado / valor1;
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce tu siguiente valor a dividir: ");
+            scanf("%lf", &valor1);
+            resultado = resultado / valor1;
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
 
@@ -211,24 +162,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce el valor a sacar la raiz: ");
-                scanf("%lf", &valor1);
-                resultado = operaciones(valor1, valor2, operacion);
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce el valor a sacar la raiz: ");
+            scanf("%lf", &valor1);
+            resultado = operaciones(valor1, valor2, operacion);
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
 
@@ -243,24 +181,11 @@ int main (){
 
         while(loop == 1){
             eleccion = valorExtra();
-
-            if(eleccion == 'Y'){
-                printf("Introduce tu siguiente valor a potenciar: ");
-                scanf("%lf", &valor2);
-                resultado = operaciones(resultado, valor2, operacion);
-                printf("\n%g", resultado);
-                loop = 1;
-
-            } else if (eleccion == 'N'){
-                printf("Programa finalizado...");
-                loop = 0;
-                break;
-
-            } else {
-                loop = 1;
-                printf("Invalid input!\n");
-                break;
-            }
+            printf("Introduce tu siguiente valor a potenciar: ");
+            scanf("%lf", &valor2);
+            resultado = operaciones(resultado, valor2, operacion);
+            printf("\n%g", resultado);
+            loop = 1;
         }
         break;
 
