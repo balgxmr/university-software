@@ -48,10 +48,6 @@ int main (){
 	} // for end
     
 
-	// Mensaje en caso de no encontrar a
-	if (n != 1) {   
-		printf("No se ha encontrado A dentro de la cadena %s", s);
-	} else {  
-		printf("Nueva cadena: %s", s);
-	}
+	// Imprimir mensaje en caso de no encontrar "A", o imprimir la nueva cadena
+	printf((n != 1) ? "No se ha encontrado A dentro de la cadena" : "Nueva cadena: %s", s);  
 }
