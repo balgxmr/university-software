@@ -20,6 +20,9 @@
 #define CANT_EMPLEADOS 5
 #define CANT_CLIENTES 5
 
+/* Variables */
+/* REMINDER: USE STRUCTS */
+
 int i, n = 0, usuario = 2, id_usuario, seleccion;
 char nombre[100];
 char empleados[10][100] = {
@@ -35,7 +38,7 @@ char clientes[10][100] = {
     "David Martinez",
     "Ampeter Casillas",
     "Haaland Pieter",
-    "Lionel Messi"
+    "Goatnel Messi"
 };
 
 char cedula[15];
@@ -53,25 +56,25 @@ char cedulasClientes[10][15] = {
     "8-599-1592", // david martinez
     "6-992-5949", // ampeter casillas
     "3-100-991",  // haaland pieter
-    "8-2587-120"  // lionel messi
+    "8-2587-120"  // goatnel messi
 };
 
 char pin[5];
 
 char pinEmpleados[10][5] = {
-    "1420",
-    "2503",
-    "2506",
-    "1407",
-    "2207"
+    "1420", // jose manuel
+    "2503", // antonio carmona
+    "2506", // nicole guerra
+    "1407", // belkis arauz
+    "2207"  // josema escalante
 };
 
 char pinClientes[10][5] = {
-    "0105",
-    "0153",
-    "9893",
-    "3564",
-    "8824"
+    "0105", // richard martinez
+    "0153", // david martinez
+    "9893", // ampeter casillas
+    "3564", // haaland pieter
+    "8824"  // goatnel messi
 };
 
 float saldoEmpleados[10] = {
@@ -91,11 +94,13 @@ float saldoClientes[10] = {
 };
 
 int main(){
-    
+
+    /* Ask the user's name */
     printf("Bienvenido al cajero, primero, introduzca su nombre: ");
     fgets(nombre, 100, stdin);
     nombre[strlen(nombre) - 1] = '\0';
 
+    /* Check if the user is an employer or a client */
     for(i = 0; i < CANT_EMPLEADOS; i++){
         if(strcmp(nombre, empleados[i]) == 0){
             printf("Usted es el empleado %s, bienvenido\n\n", empleados[i]);
@@ -113,6 +118,7 @@ int main(){
         exit(0);
     }
 
+    /* Ask user the ID (cédula) */
     switch (usuario)
     {
     case 0:
@@ -138,7 +144,7 @@ int main(){
     
     default:
         break;
-    }
+    } // end switch - cédula
     
     if(n == 1)
         printf("Cédula correcta!\n\n");
@@ -147,8 +153,10 @@ int main(){
         exit(0);
     }
     
+    /* reset n (used to check if user's values are correct) */
     n = 0;
     
+    /* Ask the user the PIN */
     switch (usuario)
     {
     case 0:
@@ -170,25 +178,28 @@ int main(){
     
     default:
         break;
-    
-    }
+
+    } // end switch - PIN
         
-    if(n == 1)
+    if (n == 1)
         printf("PIN correcto!\n\n");
-    else{
+    else {
         printf("Cédula incorrecta!");
         exit(0);
     }
 
+
+    /* MENU */
     printf("Qué desea hacer?\n");
     printf("1. Visualizar saldo actual\n");
     printf("2. xd\n");
     printf("> ");
     scanf("%i", &seleccion);
 
+    // Start switch - Menu
     switch (seleccion)
     {
-    case 1:
+    case 1: // Ver saldo
         printf("Saldo actual: %.2f", saldoEmpleados[id_usuario]);
         break;
     
