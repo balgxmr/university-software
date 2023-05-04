@@ -44,6 +44,8 @@
 /* REMINDER: USE STRUCTS */
 
 int i, n = 0, usuario = 2, id_usuario, seleccion;
+float retiro;
+
 char nombre[100];
 char empleados[10][100] = {
     "Jose Manuel",
@@ -214,7 +216,11 @@ int main(){
     /* MENU */
     printf("Qué desea hacer?\n");
     printf("1. Visualizar saldo actual\n");
-    printf("2. xd\n");
+    printf("2. Retirar dinero\n");
+    printf("3. Cambiar mi PIN actual\n");
+    printf("4. Ver últimos movimientos\n");
+    if(usuario == 0) // if user == 0 (employer) = show another option
+        printf("5. Reponer billetes del cajero\n");
     printf("> ");
     scanf("%i", &seleccion);
 
@@ -224,10 +230,26 @@ int main(){
     case 1: // Ver saldo
         verSaldo(usuario, id_usuario);
         break;
+
+    case 2: // Retirar dinero
+        printf("\nIngrese el dinero a retirar: ");
+        scanf("%f", &retiro);
+        break;
+
+    case 3: // Cambiar PIN actual
+        break;
+
+    case 4: // Ver ultimos movimientos
+        break;
+
+    if(usuario == 0){
+        case 5: // Reponer billetes
+        break;
+    } 
     
     default:
         break;
-    }
+    } // end switch - Menu
     
     return 0;
 }
