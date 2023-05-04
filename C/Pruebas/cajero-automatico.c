@@ -13,6 +13,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* 
+   Any info found in this code is not based on real people. All the data here
+   is generated randomly
+*/
+
 /*
 
 3. Cajero automático
