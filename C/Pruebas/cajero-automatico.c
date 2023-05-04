@@ -76,23 +76,22 @@ int main(){
         "8824"
     };
 
-    char saldoEmpleados[10][99999] = {
-        "1920.20",
-        "1204.20",
-        "630.00",
-        "2603.34",
-        "3578.07"
+    float saldoEmpleados[10] = {
+        1920.20,
+        1204.20,
+        630.00,
+        2603.34,
+        3578.07
     };
 
-    char saldoClientes[10][99999] = {
-        "2582.00",
-        "4623.10",
-        "693.90",
-        "1005.35",
-        "540.05"
+    float saldoClientes[10] = {
+        2582.00,
+        4623.10,
+        693.90,
+        1005.35,
+        540.05
     };
-
-
+    
     printf("Bienvenido al cajero, primero, introduzca su nombre: ");
     fgets(nombre, 100, stdin);
     nombre[strlen(nombre) - 1] = '\0';
@@ -184,12 +183,13 @@ int main(){
     printf("Qué desea hacer?\n");
     printf("1. Visualizar saldo actual\n");
     printf("2. xd\n");
+    printf("> ");
     scanf("%i", &seleccion);
 
     switch (seleccion)
     {
     case 1:
-        printf("Saldo actual: %s", saldoEmpleados[i]);
+        printf("Saldo actual: %.2f", saldoEmpleados[id_usuario]);
         break;
     
     default:
