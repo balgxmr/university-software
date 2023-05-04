@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define CANT_EMPLEADOS 5
 #define CANT_CLIENTES 5
