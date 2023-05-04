@@ -256,9 +256,8 @@ int main(){
 
 void verSaldo (int usuario, int id_usuario){
     int resultado;
-    if(usuario == 0){
+    if(usuario == 0)
         printf("\nSu saldo actual es de: %.2f", saldoEmpleados[id_usuario]);
-    } else {
+    else
         printf("\nSu saldo actual es de: %.2f", saldoClientes[id_usuario]);
-    }
 }
