@@ -257,7 +257,7 @@ int main(){
         default:
             break;
         } // end switch - Menu
-    }
+    } // end while
 
 
     return 0;
