@@ -270,10 +270,10 @@ void retirarDinero (int usuario, int id_usuario, float retiro){
         if(retiro >= saldoEmpleados[id_usuario])
             printf("Fondos insuficientes!");
         else
-            saldoEmpleados[id_usuario] = saldoEmpleados[id_usuario] - retiro;
+            saldoEmpleados[id_usuario] -= retiro;
     else
         if(retiro >= saldoClientes[id_usuario])
             printf("Fondos insuficientes!");
         else
-            saldoClientes[id_usuario] = saldoClientes[id_usuario] - retiro;
+            saldoClientes[id_usuario] -= retiro;
 }
