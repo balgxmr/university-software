@@ -116,6 +116,7 @@ float saldoClientes[10] = {
 };
 
 void verSaldo (int usuario, int id_usuario);
+void retirarDinero (int usuario, int id_usuario, float retiro);
 
 int main(){
 
@@ -234,6 +235,9 @@ int main(){
     case 2: // Retirar dinero
         printf("\nIngrese el dinero a retirar: ");
         scanf("%f", &retiro);
+
+        retirarDinero(usuario, id_usuario, retiro);
+        verSaldo(usuario, id_usuario);
         break;
 
     case 3: // Cambiar PIN actual
@@ -259,4 +263,11 @@ void verSaldo (int usuario, int id_usuario){
         printf("\nSu saldo actual es de: %.2f", saldoEmpleados[id_usuario]);
     else
         printf("\nSu saldo actual es de: %.2f", saldoClientes[id_usuario]);
+}
+
+void retirarDinero (int usuario, int id_usuario, float retiro){
+    if(usuario == 0)
+        saldoEmpleados[id_usuario] = saldoEmpleados[id_usuario] - retiro;
+    else
+        saldoClientes[id_usuario] = saldoClientes[id_usuario] - retiro;
 }
