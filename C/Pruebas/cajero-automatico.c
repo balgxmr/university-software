@@ -76,7 +76,7 @@ int main(){
         "8824"
     };
 
-    char saldoEmpleados[10][999999999] = {
+    char saldoEmpleados[10][99999] = {
         "1920.20",
         "1204.20",
         "630.00",
@@ -84,7 +84,7 @@ int main(){
         "3578.07"
     };
 
-    char saldoClientes[10][999999999] = {
+    char saldoClientes[10][99999] = {
         "2582.00",
         "4623.10",
         "693.90",
