@@ -36,6 +36,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define CANT_EMPLEADOS 5
 #define CANT_CLIENTES 5
@@ -45,6 +46,7 @@
 
 int i, n = 0, usuario = 2, id_usuario, seleccion;
 float retiro;
+bool looper = true;
 
 char nombre[100];
 char empleados[10][100] = {
@@ -119,9 +121,11 @@ void verSaldo (int usuario, int id_usuario);
 void retirarDinero (int usuario, int id_usuario, float retiro);
 
 int main(){
+    
+    printf("Bienvenido al cajero automático.\n");
 
     /* Ask the user's name */
-    printf("Bienvenido al cajero, primero, introduzca su nombre: ");
+    printf("Introduzca su nombre: ");
     fgets(nombre, 100, stdin);
     nombre[strlen(nombre) - 1] = '\0';
 
@@ -213,56 +217,57 @@ int main(){
         exit(0);
     }
 
-
-    /* MENU */
-    printf("Qué desea hacer?\n");
-    printf("1. Visualizar saldo actual\n");
-    printf("2. Retirar dinero\n");
-    printf("3. Cambiar mi PIN actual\n");
-    printf("4. Ver últimos movimientos\n");
-    if(usuario == 0) // if user == 0 (employer) = show another option
-        printf("5. Reponer billetes del cajero\n");
-    printf("> ");
-    scanf("%i", &seleccion);
-
-    // Start switch - Menu
-    switch (seleccion)
-    {
-    case 1: // Ver saldo
-        verSaldo(usuario, id_usuario);
-        break;
-
-    case 2: // Retirar dinero
-        printf("\nIngrese el dinero a retirar: ");
-        scanf("%f", &retiro);
-
-        retirarDinero(usuario, id_usuario, retiro);
-        verSaldo(usuario, id_usuario);
-        break;
-
-    case 3: // Cambiar PIN actual
-        break;
-
-    case 4: // Ver ultimos movimientos
-        break;
-
-    if(usuario == 0){
-        case 5: // Reponer billetes
-        break;
-    } 
+    while(looper == true){
+        /* MENU */
+        printf("-----------MENU-----------\n");
+        printf("1. Visualizar saldo actual\n");
+        printf("2. Retirar dinero\n");
+        printf("3. Cambiar mi PIN actual\n");
+        printf("4. Ver últimos movimientos\n");
+        printf("5. Salir\n");
+        printf("> ");
+        scanf("%i", &seleccion);
     
-    default:
-        break;
-    } // end switch - Menu
-    
+        // Start switch - Menu
+        switch (seleccion)
+        {
+        case 1: // Ver saldo
+            verSaldo(usuario, id_usuario);
+            break;
+
+        case 2: // Retirar dinero
+            printf("\nIngrese el dinero a retirar: ");
+            scanf("%f", &retiro);
+
+            retirarDinero(usuario, id_usuario, retiro);
+            verSaldo(usuario, id_usuario);
+            break;
+
+        case 3: // Cambiar PIN actual
+            break;
+
+        case 4: // Ver ultimos movimientos
+            break;
+
+        case 5:
+            printf("\nGracias por utilizar nuestro cajero automatico, que tengas buen día!");
+            looper = false;
+            break;
+        
+        default:
+            break;
+        } // end switch - Menu
+    }
+
+
     return 0;
 }
 
 void verSaldo (int usuario, int id_usuario){
     if(usuario == 0)
-        printf("\nSu saldo actual es de: %.2f", saldoEmpleados[id_usuario]);
+        printf("\nSu saldo actual es de: %.2f\n\n", saldoEmpleados[id_usuario]);
     else
-        printf("\nSu saldo actual es de: %.2f", saldoClientes[id_usuario]);
+        printf("\nSu saldo actual es de: %.2f\n\n", saldoClientes[id_usuario]);
 }
 
 void retirarDinero (int usuario, int id_usuario, float retiro){
