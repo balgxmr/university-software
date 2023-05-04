@@ -20,77 +20,77 @@
 #define CANT_EMPLEADOS 5
 #define CANT_CLIENTES 5
 
+int i, n = 0, usuario = 2, id_usuario, seleccion;
+char nombre[100];
+char empleados[10][100] = {
+    "Jose Manuel",
+    "Antonio Carmona",
+    "Nicole Guerra",
+    "Belkis Araúz",
+    "Josema Escalante"
+};
+
+char clientes[10][100] = {
+    "Richard Martinez",
+    "David Martinez",
+    "Ampeter Casillas",
+    "Haaland Pieter",
+    "Lionel Messi"
+};
+
+char cedula[15];
+
+char cedulasEmpleados[10][15] = {
+    "8-999-1002", // jose manuel
+    "4-812-1249", // antonio carmona
+    "6-35-351",   // nicole guerra
+    "E-8-29526",  // belkis arauz
+    "8-1002-120"  // josema escalante
+};
+
+char cedulasClientes[10][15] = {
+    "E-50-29526", // richard martinez
+    "8-599-1592", // david martinez
+    "6-992-5949", // ampeter casillas
+    "3-100-991",  // haaland pieter
+    "8-2587-120"  // lionel messi
+};
+
+char pin[5];
+
+char pinEmpleados[10][5] = {
+    "1420",
+    "2503",
+    "2506",
+    "1407",
+    "2207"
+};
+
+char pinClientes[10][5] = {
+    "0105",
+    "0153",
+    "9893",
+    "3564",
+    "8824"
+};
+
+float saldoEmpleados[10] = {
+    1920.20, // jose manuel
+    1204.20, // antonio carmona
+    630.00,  // nicole guerra
+    2603.34, // belkis arauz
+    3578.07 // josema escalante
+};
+
+float saldoClientes[10] = {
+    2582.00, // richard martinez
+    4623.10, // david martinez
+    693.90,  // ampeter casillas
+    1005.35, // haaland pieter
+    540.05   // goatnel messi
+};
+
 int main(){
-
-    int i, n = 0, usuario = 2, id_usuario, seleccion;
-    char nombre[100];
-    char empleados[10][100] = {
-        "Jose Manuel",
-        "Antonio Carmona",
-        "Nicole Guerra",
-        "Belkis Araúz",
-        "Josema Escalante"
-    };
-
-    char clientes[10][100] = {
-        "Richard Martinez",
-        "David Martinez",
-        "Ampeter Casillas",
-        "Haaland Pieter",
-        "Lionel Messi"
-    };
-
-    char cedula[15];
-
-    char cedulasEmpleados[10][15] = {
-        "8-999-1002", // jose manuel
-        "4-812-1249", // antonio carmona
-        "6-35-351",   // nicole guerra
-        "E-8-29526",  // belkis arauz
-        "8-1002-120"  // josema escalante
-    };
-
-    char cedulasClientes[10][15] = {
-        "E-50-29526", // richard martinez
-        "8-599-1592", // david martinez
-        "6-992-5949", // ampeter casillas
-        "3-100-991",  // haaland pieter
-        "8-2587-120"  // lionel messi
-    };
-    
-    char pin[5];
-    
-    char pinEmpleados[10][5] = {
-        "1420",
-        "2503",
-        "2506",
-        "1407",
-        "2207"
-    };
-    
-    char pinClientes[10][5] = {
-        "0105",
-        "0153",
-        "9893",
-        "3564",
-        "8824"
-    };
-
-    float saldoEmpleados[10] = {
-        1920.20,
-        1204.20,
-        630.00,
-        2603.34,
-        3578.07
-    };
-
-    float saldoClientes[10] = {
-        2582.00,
-        4623.10,
-        693.90,
-        1005.35,
-        540.05
-    };
     
     printf("Bienvenido al cajero, primero, introduzca su nombre: ");
     fgets(nombre, 100, stdin);
