@@ -113,6 +113,8 @@ float saldoClientes[10] = {
     540.05   // goatnel messi
 };
 
+void verSaldo (int usuario, int id_usuario);
+
 int main(){
 
     /* Ask the user's name */
@@ -220,7 +222,7 @@ int main(){
     switch (seleccion)
     {
     case 1: // Ver saldo
-        printf("Saldo actual: %.2f", saldoEmpleados[id_usuario]);
+        verSaldo(usuario, id_usuario);
         break;
     
     default:
@@ -228,4 +230,13 @@ int main(){
     }
     
     return 0;
+}
+
+void verSaldo (int usuario, int id_usuario){
+    int resultado;
+    if(usuario == 0){
+        printf("\nSu saldo actual es de: %.2f", saldoEmpleados[id_usuario]);
+    } else {
+        printf("\nSu saldo actual es de: %.2f", saldoClientes[id_usuario]);
+    }
 }
