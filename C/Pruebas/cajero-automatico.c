@@ -38,89 +38,91 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define CANT_EMPLEADOS 5
-#define CANT_CLIENTES 5
+#define CANT_EMPLEADOS 3
+#define CANT_CLIENTES 3
 
 /* Variables */
 /* REMINDER: USE STRUCTS */
 
 int i, n = 0, usuario = 2, id_usuario, seleccion;
 float retiro;
+char nombre[100], cedula[15], pin[5];
 bool looper = true;
 
-char nombre[100];
-char empleados[10][100] = {
+
+
+/* EMPLEADOS */
+struct Empleado {
+    char nombre[100];
+    char cedula[30];
+    char pin[10];
+    float saldo;
+};
+
+struct Empleado empleado1 = {
     "Jose Manuel",
+    "8-999-1002",
+    "1420",
+    1259.30
+};
+
+struct Empleado empleado2 = {
     "Antonio Carmona",
+    "4-812-1249",
+    "2503",
+    3259.35
+};
+
+struct Empleado empleado3 = {
     "Nicole Guerra",
-    "Belkis Araúz",
-    "Josema Escalante"
+    "6-35-351",
+    "2506",
+    1003.35
 };
 
-char clientes[10][100] = {
+/* FIN EMPLEADOS */
+
+
+/* CLIENTES */
+struct Cliente {
+    char nombre[100];
+    char cedula[30];
+    char pin[10];
+    float saldo;
+};
+
+struct Cliente cliente1 = {
     "Richard Martinez",
+    "E-50-29526",
+    "0105",
+    2582.00
+};
+
+struct Cliente cliente2 = {
     "David Martinez",
-    "Ampeter Casillas",
-    "Haaland Pieter",
-    "Goatnel Messi"
+    "8-599-1592",
+    "0153",
+    3593.02
 };
 
-char cedula[15];
-
-char cedulasEmpleados[10][15] = {
-    "8-999-1002", // jose manuel
-    "4-812-1249", // antonio carmona
-    "6-35-351",   // nicole guerra
-    "E-8-29526",  // belkis arauz
-    "8-1002-120"  // josema escalante
+struct Cliente cliente3 = {
+    "Goatnel Messi",
+    "6-395-2592",
+    "3993",
+    6043.15
 };
 
-char cedulasClientes[10][15] = {
-    "E-50-29526", // richard martinez
-    "8-599-1592", // david martinez
-    "6-992-5949", // ampeter casillas
-    "3-100-991",  // haaland pieter
-    "8-2587-120"  // goatnel messi
-};
+/* FIN CLIENTES */
 
-char pin[5];
 
-char pinEmpleados[10][5] = {
-    "1420", // jose manuel
-    "2503", // antonio carmona
-    "2506", // nicole guerra
-    "1407", // belkis arauz
-    "2207"  // josema escalante
-};
-
-char pinClientes[10][5] = {
-    "0105", // richard martinez
-    "0153", // david martinez
-    "9893", // ampeter casillas
-    "3564", // haaland pieter
-    "8824"  // goatnel messi
-};
-
-float saldoEmpleados[10] = {
-    1920.20, // jose manuel
-    1204.20, // antonio carmona
-    630.00,  // nicole guerra
-    2603.34, // belkis arauz
-    3578.07 // josema escalante
-};
-
-float saldoClientes[10] = {
-    2582.00, // richard martinez
-    4623.10, // david martinez
-    693.90,  // ampeter casillas
-    1005.35, // haaland pieter
-    540.05   // goatnel messi
-};
 
 void verSaldo (int usuario, int id_usuario);
 void retirarDinero (int usuario, int id_usuario, float retiro);
 
 int main(){
+
+    struct Empleado empleados[] = {empleado1, empleado2, empleado3};  
+    struct Cliente clientes[] = {cliente1, cliente2, cliente3};  
     
     printf("Bienvenido al cajero automático.\n");
 
@@ -131,12 +133,12 @@ int main(){
 
     /* Check if the user is an employer or a client */
     for(i = 0; i < CANT_EMPLEADOS; i++){
-        if(strcmp(nombre, empleados[i]) == 0){
-            printf("Usted es el empleado %s, bienvenido\n\n", empleados[i]);
+        if(strcmp(nombre, empleados[i].nombre) == 0){
+            printf("Usted es el empleado %s, bienvenido\n\n", empleados[i].nombre);
             id_usuario = i;
             usuario = 0;
-        } else if (strcmp(nombre, clientes[i]) == 0){
-            printf("Usted es el cliente %s, bienvenido!\n\n", empleados[i]);
+        } else if (strcmp(nombre, clientes[i].nombre) == 0){
+            printf("Usted es el cliente %s, bienvenido!\n\n", clientes[i].nombre);
             id_usuario = i;
             usuario = 1;
         }
@@ -156,7 +158,7 @@ int main(){
             cedula[strlen(cedula) - 1] = '\0';
 
             for(int y = 0; y < CANT_EMPLEADOS; y++){
-                if(strcmp(cedula, cedulasEmpleados[id_usuario]) == 0)
+                if(strcmp(cedula, empleados[id_usuario].cedula) == 0)
                     n = 1;
             }
         break;
@@ -166,8 +168,8 @@ int main(){
             fgets(cedula, 15, stdin);
             cedula[strlen(cedula) - 1] = '\0';
 
-            for(int y = 0; y < CANT_EMPLEADOS; y++){
-                if(strcmp(cedula, cedulasClientes[id_usuario]) == 0)
+            for(int y = 0; y < CANT_CLIENTES; y++){
+                if(strcmp(cedula, clientes[id_usuario].cedula) == 0)
                     n = 1;
             }
     
@@ -193,7 +195,7 @@ int main(){
             fgets(pin, 5, stdin);
 
             for(int y = 0; y < CANT_EMPLEADOS; y++)
-                if(strcmp(pin, pinEmpleados[id_usuario]) == 0)
+                if(strcmp(pin, empleados[id_usuario].pin) == 0)
                     n = 1;
         break;
 
@@ -202,7 +204,7 @@ int main(){
             fgets(pin, 5, stdin);
 
             for(int y = 0; y < CANT_CLIENTES; y++)
-                if(strcmp(pin, pinClientes[id_usuario]) == 0)
+                if(strcmp(pin, clientes[id_usuario].pin) == 0)
                     n = 1;
     
     default:
@@ -265,20 +267,20 @@ int main(){
 
 void verSaldo (int usuario, int id_usuario){
     if(usuario == 0)
-        printf("\nSu saldo actual es de: %.2f\n\n", saldoEmpleados[id_usuario]);
+        printf("\nSu saldo actual es de: %.2f\n\n", empleados[id_usuario].saldo);
     else
-        printf("\nSu saldo actual es de: %.2f\n\n", saldoClientes[id_usuario]);
+        printf("\nSu saldo actual es de: %.2f\n\n", clientes[id_usuario].saldo);
 }
 
-void retirarDinero (int usuario, int id_usuario, float retiro){
+void retirarDinero (int usuario, int id_usuario, float retiro) {
     if(usuario == 0)
-        if(retiro >= saldoEmpleados[id_usuario])
+        if(retiro >= empleados[id_usuario].saldo) // fix to empleados!!
             printf("Fondos insuficientes!");
         else
-            saldoEmpleados[id_usuario] -= retiro;
+            empleados[id_usuario].saldo -= retiro;
     else
-        if(retiro >= saldoClientes[id_usuario])
+        if(retiro >= clientes[id_usuario].saldo)
             printf("Fondos insuficientes!");
         else
-            saldoClientes[id_usuario] -= retiro;
+            clientes[id_usuario].saldo -= retiro;
 }
