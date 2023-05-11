@@ -3,7 +3,7 @@ import java.io.*;
 public class CelsiusToFahrenheit {
     public static void main(String[] args) throws IOException {
         
-        BufferedReader libro = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
         
         boolean loop = true;
         
@@ -11,8 +11,7 @@ public class CelsiusToFahrenheit {
         try{
             // Ingresar valor en C
             System.out.println("Ingrese el primer numero en grados Celsius: ");
-            String value1 = libro.readLine();
-            double celsius = Double.parseDouble(value1);
+            double celsius = Double.parseDouble(lectura.readLine());
 
             // conversion
             double fahrenheit = celsius * 9/5 + 32;

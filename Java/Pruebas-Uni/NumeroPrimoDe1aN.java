@@ -3,7 +3,7 @@
 
 import java.io.*;
 
-public class Primos {
+public class NumeroPrimoDe1aN {
     public static void main(String[] args) throws IOException {
         
         BufferedReader libro = new BufferedReader(new InputStreamReader(System.in));
@@ -16,8 +16,7 @@ public class Primos {
             while(loop){
                 // Ingresar valor en C
                 System.out.println("Ingresa un numero mayor a 0: ");
-                String N = libro.readLine();
-                numero = Integer.parseInt(N);
+                numero = Integer.parseInt(libro.readLine());
                 
                 if (numero <= 0)
                     System.out.println("Numero invalido! Ingresa nuevamente.");

@@ -24,5 +24,5 @@ public class LeerXHastaSalir {
                 loop = false;
             } // if end
         } // while end
-    }
-}
+    } // main end
+} // class end

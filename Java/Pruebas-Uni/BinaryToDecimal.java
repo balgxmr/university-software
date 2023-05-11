@@ -6,7 +6,7 @@ import java.io.*;
 public class BinaryToDecimal {
     public static void main(String[] args) throws IOException {
         
-        BufferedReader libro = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
         
         // Declaracion de variables
         boolean loop = true;
@@ -15,7 +15,7 @@ public class BinaryToDecimal {
         while(loop) {
             // Ingresar valor en C
             System.out.println("Ingresa un numero binario de 5 digitos: ");
-            String x = libro.readLine();
+            String x = lectura.readLine();
             numeroBinarioLength = x.length();
             
             // Evaluar si es un numero binario, y si es de 5 digitos.

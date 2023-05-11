@@ -3,7 +3,7 @@
 
 import java.io.*;
 
-public class App {
+public class suma {
 
     public static void main(String[] args) throws IOException {
 
