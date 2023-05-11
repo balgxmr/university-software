@@ -10,7 +10,7 @@ public class BinaryToDecimal {
         
         // Declaracion de variables
         boolean loop = true;
-        int numeroBinario = 0, numeroBinarioLength, decimal, valorDecimal = 0, base = 1;
+        int numeroBinario = 0, numeroBinarioLength, valorDecimal = 0, base = 1;
         
         while(loop) {
             // Ingresar valor en C
@@ -26,18 +26,19 @@ public class BinaryToDecimal {
             else {
                 numeroBinario = Integer.parseInt(x);
                 loop = false;
-            }
+            } // if end
         } // while end
         
         // Convertir a decimal
         int temp = numeroBinario;
         while (temp > 0) {
-            int ultimo_digito = temp % 10; 
+            int ultimo_digito = temp % 10;
             temp = temp / 10;
             valorDecimal += ultimo_digito * base;
             base = base * 2;
-        }
-        
+        } // while end
+
         System.out.println("El numero " + numeroBinario + " en decimal es: " + valorDecimal);
-    }
-}
+
+    } // main end
+} // class end
