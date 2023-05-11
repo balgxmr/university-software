@@ -8,8 +8,8 @@ public class NumeroPrimoDe1aN {
         
         BufferedReader libro = new BufferedReader(new InputStreamReader(System.in));
         
+        // Declaracion de variables
         boolean loop = true;
-        int i, j;
         int numero = 0;
         
         try{
@@ -26,21 +26,22 @@ public class NumeroPrimoDe1aN {
             
             System.out.println("Numeros primos entre el 1 y " + numero + ":\n");
             
-            for(i = 2; i <= numero; i++) {
-                boolean validarNumPrimo = true;
-                for(j = 2; j <= i/2; j++) {
-                    if(i % j == 0) {
-                        validarNumPrimo = false;
-                        break;
+            for(int i = 2; i <= numero; i++) {     // Este bucle itera sobre todos los números enteros desde 2 hasta el número dado.
+                boolean validarNumPrimo = true;    // Usado para saber si el numero es primo o no. Se inicializa al comienzo del 1er for.
+                for(int j = 2; j <= i/2; j++) {    // Ejecuta desde 2 hasta la mitad de N, comprueba si "i" es divisible entre 2 o su mitad
+                    if(i % j == 0) {               // Si es divisible, "i" no es primo, procede a:
+                        validarNumPrimo = false;   // validarNumPrimo = verdadero (rompe ciclo)
+                        break;                      
                     }
-                }
-                if(validarNumPrimo) {
+                } // j for end
+
+                if(validarNumPrimo) {  // Si validarNumPrimo = true, imprime el numero primo
                     System.out.print(i + ", ");
-                }
-            }
+                } // if end
+            } // i for end
             
         } catch (Exception e) {
                 System.out.println("\n\n*Error*\nIngrese un valor en numeros no en letras \n");
         }
-    }
-}
+    } // main end
+} // class end
