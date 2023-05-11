@@ -3,7 +3,7 @@
 
 import java.io.*;
 
-public class Primos {
+public class BinaryToDecimal {
     public static void main(String[] args) throws IOException {
         
         BufferedReader libro = new BufferedReader(new InputStreamReader(System.in));
