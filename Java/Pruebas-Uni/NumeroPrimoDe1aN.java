@@ -31,7 +31,7 @@ public class NumeroPrimoDe1aN {
                 for(int j = 2; j <= i/2; j++) {    // Ejecuta desde 2 hasta la mitad de N, comprueba si "i" es divisible entre 2 o su mitad
                     if(i % j == 0) {               // Si es divisible, "i" no es primo, procede a:
                         validarNumPrimo = false;   // validarNumPrimo = verdadero (rompe ciclo)
-                        break;                      
+                        break;
                     }
                 } // j for end
 
