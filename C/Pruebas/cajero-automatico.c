@@ -116,8 +116,8 @@ struct Cliente cliente3 = {
 
 
 
-void verSaldo (int usuario, int id_usuario);
-void retirarDinero (int usuario, int id_usuario, float retiro);
+void verSaldo (int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente);
+void retirarDinero (int usuario, int id_usuario, float retiro, struct Empleado* empleado, struct Cliente* cliente);
 
 int main(){
 
@@ -234,15 +234,15 @@ int main(){
         switch (seleccion)
         {
         case 1: // Ver saldo
-            verSaldo(usuario, id_usuario);
+            verSaldo(usuario, id_usuario, &empleados[id_usuario], &clientes[id_usuario]);
             break;
 
         case 2: // Retirar dinero
             printf("\nIngrese el dinero a retirar: ");
             scanf("%f", &retiro);
 
-            retirarDinero(usuario, id_usuario, retiro);
-            verSaldo(usuario, id_usuario);
+            retirarDinero(usuario, id_usuario, retiro, &empleados[id_usuario], &clientes[id_usuario]);
+            verSaldo(usuario, id_usuario, &empleados[id_usuario], &clientes[id_usuario]);
             break;
 
         case 3: // Cambiar PIN actual
@@ -265,22 +265,22 @@ int main(){
     return 0;
 }
 
-void verSaldo (int usuario, int id_usuario){
+void verSaldo (int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente){
     if(usuario == 0)
-        printf("\nSu saldo actual es de: %.2f\n\n", empleados[id_usuario].saldo);
+        printf("\nSu saldo actual es de: %.2f\n\n", empleado[id_usuario].saldo);
     else
-        printf("\nSu saldo actual es de: %.2f\n\n", clientes[id_usuario].saldo);
+        printf("\nSu saldo actual es de: %.2f\n\n", cliente[id_usuario].saldo);
 }
 
-void retirarDinero (int usuario, int id_usuario, float retiro) {
+void retirarDinero (int usuario, int id_usuario, float retiro, struct Empleado* empleado, struct Cliente* cliente) {
     if(usuario == 0)
-        if(retiro >= empleados[id_usuario].saldo) // fix to empleados!!
+        if(retiro >= empleado[id_usuario].saldo) // fix to empleados!!
             printf("Fondos insuficientes!");
         else
-            empleados[id_usuario].saldo -= retiro;
+            empleado[id_usuario].saldo -= retiro;
     else
-        if(retiro >= clientes[id_usuario].saldo)
+        if(retiro >= cliente[id_usuario].saldo)
             printf("Fondos insuficientes!");
         else
-            clientes[id_usuario].saldo -= retiro;
+            cliente[id_usuario].saldo -= retiro;
 }
