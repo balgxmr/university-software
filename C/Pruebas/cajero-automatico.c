@@ -220,8 +220,8 @@ int main(){
         exit(0);
     }
 
+    /* MENU */
     while(looper){
-        /* MENU */
         printf("-----------MENU-----------\n");
         printf("1. Visualizar saldo actual\n");
         printf("2. Retirar dinero\n");
@@ -261,8 +261,7 @@ int main(){
         default:
             break;
         } // end switch - Menu
-    } // end while
-
+    } // end while & MENU
 
     return 0;
 } // main end
@@ -307,28 +306,29 @@ void cambiarPin(int usuario, int id_usuario, struct Empleado* empleado, struct C
     } // while end
 
 
-    /* Introducir nuevo PIN */
+    /* Ask the user to introduce the new PIN */
     loop = true;
     while(loop){
         printf("Introduce tu nuevo PIN: ");
         scanf("%i", &newPin);
         getchar();
 
+        /* Verify that is a 4 digit PIN */
         char newPinString[5];
         sprintf(newPinString, "%d", newPin);
 
         if(strlen(newPinString) == 4)
             loop = false;
         else
-            printf("Introduce un PIN de 4 dígitos!\n");
-
+            printf("Introduce un PIN de 4 dígitos!");
     } // while end
 
+    /* Finally assign the pin */
     if (usuario == 0) {
             empleado[id_usuario].pin = newPin;
             printf("Tu nuevo PIN es: %i!\n", empleado[id_usuario].pin);
     } else {
             cliente[id_usuario].pin = newPin;
-            printf("Tu nuevo PIN es: %i\n", cliente[id_usuario].pin);
+            printf("Tu nuevo PIN es: %i!\n", cliente[id_usuario].pin);
     } // if (usuario) end
 } // while end
