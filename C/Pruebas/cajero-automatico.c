@@ -44,9 +44,9 @@
 /* Variables */
 /* REMINDER: USE STRUCTS */
 
-int i, n = 0, usuario = 2, id_usuario, seleccion;
+int i, n = 0, usuario = 2, pin, id_usuario, seleccion;
 float retiro;
-char nombre[100], cedula[15], pin[5];
+char nombre[100], cedula[15];
 bool looper = true;
 
 
@@ -55,28 +55,28 @@ bool looper = true;
 struct Empleado {
     char nombre[100];
     char cedula[30];
-    char pin[10];
+    int pin;
     float saldo;
 };
 
 struct Empleado empleado1 = {
     "Jose Manuel",
     "8-999-1002",
-    "1420",
+    1420,
     1259.30
 };
 
 struct Empleado empleado2 = {
     "Antonio Carmona",
     "4-812-1249",
-    "2503",
+    2503,
     3259.35
 };
 
 struct Empleado empleado3 = {
     "Nicole Guerra",
     "6-35-351",
-    "2506",
+    2506,
     1003.35
 };
 
@@ -87,28 +87,28 @@ struct Empleado empleado3 = {
 struct Cliente {
     char nombre[100];
     char cedula[30];
-    char pin[10];
+    int pin;
     float saldo;
 };
 
 struct Cliente cliente1 = {
     "Richard Martinez",
     "E-50-29526",
-    "0105",
+    0105,
     2582.00
 };
 
 struct Cliente cliente2 = {
     "David Martinez",
     "8-599-1592",
-    "0153",
+    0153,
     3593.02
 };
 
 struct Cliente cliente3 = {
     "Goatnel Messi",
     "6-395-2592",
-    "3993",
+    3993,
     6043.15
 };
 
@@ -118,6 +118,7 @@ struct Cliente cliente3 = {
 
 void verSaldo (int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente);
 void retirarDinero (int usuario, int id_usuario, float retiro, struct Empleado* empleado, struct Cliente* cliente);
+void cambiarPin(int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente);
 
 int main(){
 
@@ -192,19 +193,19 @@ int main(){
     {
     case 0:
             printf("Introduzca su PIN: ");
-            fgets(pin, 5, stdin);
+            scanf("%i", &pin);
 
             for(int y = 0; y < CANT_EMPLEADOS; y++)
-                if(strcmp(pin, empleados[id_usuario].pin) == 0)
+                if(pin == empleados[id_usuario].pin)
                     n = 1;
         break;
 
     case 1:
             printf("Introduzca su PIN: ");
-            fgets(pin, 5, stdin);
+            scanf("%i", &pin);
 
             for(int y = 0; y < CANT_CLIENTES; y++)
-                if(strcmp(pin, clientes[id_usuario].pin) == 0)
+                if(pin == clientes[id_usuario].pin)
                     n = 1;
     
     default:
@@ -219,7 +220,7 @@ int main(){
         exit(0);
     }
 
-    while(looper == true){
+    while(looper){
         /* MENU */
         printf("-----------MENU-----------\n");
         printf("1. Visualizar saldo actual\n");
@@ -246,6 +247,7 @@ int main(){
             break;
 
         case 3: // Cambiar PIN actual
+            cambiarPin(usuario, id_usuario, &empleados[id_usuario], &clientes[id_usuario]);
             break;
 
         case 4: // Ver ultimos movimientos
@@ -263,7 +265,7 @@ int main(){
 
 
     return 0;
-}
+} // main end
 
 void verSaldo (int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente){
     if(usuario == 0)
@@ -284,3 +286,49 @@ void retirarDinero (int usuario, int id_usuario, float retiro, struct Empleado* 
         else
             cliente[id_usuario].saldo -= retiro;
 }
+
+void cambiarPin(int usuario, int id_usuario, struct Empleado* empleado, struct Cliente* cliente){
+    bool loop = true;
+    int pinVerifier, newPin;
+
+    /* Ask the user to re-introduce their pin to verify */
+    while(loop){
+        printf("Introduzca su PIN nuevamente: ");
+        scanf("%i", &pinVerifier);
+
+        /* Verification */
+        if (usuario == 0){
+            if(pinVerifier == empleado[id_usuario].pin)
+                loop = false;
+        } else {
+            if(pinVerifier == cliente[id_usuario].pin)
+                loop = false;
+        }
+    } // while end
+
+
+    /* Introducir nuevo PIN */
+    loop = true;
+    while(loop){
+        printf("Introduce tu nuevo PIN: ");
+        scanf("%i", &newPin);
+        getchar();
+
+        char newPinString[5];
+        sprintf(newPinString, "%d", newPin);
+
+        if(strlen(newPinString) == 4)
+            loop = false;
+        else
+            printf("Introduce un PIN de 4 dígitos!\n");
+
+    } // while end
+
+    if (usuario == 0) {
+            empleado[id_usuario].pin = newPin;
+            printf("Tu nuevo PIN es: %i!\n", empleado[id_usuario].pin);
+    } else {
+            cliente[id_usuario].pin = newPin;
+            printf("Tu nuevo PIN es: %i\n", cliente[id_usuario].pin);
+    } // if (usuario) end
+} // while end
