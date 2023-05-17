@@ -59,34 +59,43 @@ public class RETO {
                                 System.out.printf("> Ingresa el valor del lado 3: ");
                                 double lado3 = Double.parseDouble(lector.readLine());
                                 Elado3 = true;
-                    
-                                double perimetro = (lado1 + lado2 + lado3);
-                                System.out.println(green + "El perimetro del triangulo es "+ perimetro);
                                 
-                                double valor = (perimetro / 2);
-                    
-                                // Formula de Heron
-                                double area = Math.sqrt(valor*((valor-lado1)*(valor-lado2)*(valor-lado3)));
-                    
-                                // System.out.println("El area del triangulo es " + area);
-                                // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
-                                System.out.printf(green + "El area del triangulo es %.2f", area);
-                                System.out.println();
-                                
-                                // Salir
-                                System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
-                                entrada = lector.readLine();
-                                
-                                // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
-                                if (entrada.equals("EXIT")){
-                                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
-                                    loop2 = false;
-                                    loop1 = false;
+                                /* 
+                                 * Verificar que los lados del triangulo cumplan con la desigualdad triangular
+                                 * Que dice que la suma de las longitudes de cualquier par de los lados debe ser
+                                 * mayor que la longitud del tercer lado.
+                                 * En caso de que no sean válidos, imprimimos por pantalla que los valores no son válidos.
+                                */
+                                if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
+                                    double perimetro = (lado1 + lado2 + lado3);
+                                    System.out.println(green + "El perimetro del triangulo es "+ perimetro);
+                                    
+                                    double valor = (perimetro / 2);
+                        
+                                    // Formula de Heron
+                                    double area = Math.sqrt(valor*((valor-lado1)*(valor-lado2)*(valor-lado3)));
+                        
+                                    // System.out.println("El area del triangulo es " + area);
+                                    // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
+                                    System.out.printf(green + "El area del triangulo es %.2f", area);
+                                    System.out.println();
+
+                                    // Salir
+                                    System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
+                                    entrada = lector.readLine();
+                                    
+                                    // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
+                                    if (entrada.equals("EXIT")){
+                                        System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
+                                        loop2 = false;
+                                        loop1 = false;
+                                    } else {
+                                        System.out.println("\nVolviendo al menu principal!\n");
+                                        loop2 = false;
+                                    } // elif fin
                                 } else {
-                                    System.out.println("\nVolviendo al menu principal!\n");
-                                    loop2 = false;
-                                } // elif fin
-                                
+                                    System.out.println(red + "Los lados ingresados no forman un triángulo válido." + reset);
+                                }
                             } // FIN TRY
                             catch(Exception e){ //INICIO CATCH
                                 if(Elado1 == false && Elado2 == false && Elado3 == false)
