@@ -40,61 +40,60 @@ public class RETO {
             boolean loop2 = true;
             switch(menu){ // INICIO MENU
                 case 1:
-                while(loop2) { //INICIO LOOP 2 
-                        try{ //INICIO TRY 
-                            System.out.println(" Ingresa el valor del lado 1 ");
-                            double lado1 = Double.parseDouble(lector.readLine());
-                            Elado1 = true;
-                        
-                            System.out.println(" Ingresa el valor del lado 2 ");
-                            double lado2 = Double.parseDouble(lector.readLine());
-                            Elado2 = true;
-                
-                            System.out.println(" Ingresa el valor del lado 3 ");
-                            double lado3 = Double.parseDouble(lector.readLine());
-                            Elado3 = true;
-                
-                            double perimetro = (lado1 + lado2 + lado3);
-                            System.out.println("El perimetro del triangulo es "+ perimetro);
+                    while(loop2) { //INICIO LOOP 2 
+                            try{ //INICIO TRY 
+                                System.out.println(" Ingresa el valor del lado 1 ");
+                                double lado1 = Double.parseDouble(lector.readLine());
+                                Elado1 = true;
                             
-                            double valor = (perimetro / 2);
-                
-                            // Formula de Heron
-                            double area = Math.sqrt(valor*((valor-lado1)*(valor-lado2)*(valor-lado3)));
-                
-                            // System.out.println("El area del triangulo es " + area);
-                            // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
-                            System.out.printf("El area del triangulo es %.2f" + area);
-                            System.out.println();
-                            
-                            // Salir
-                            System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
-                            entrada = lector.readLine(); // convertir a mayusculas
-                            
-                            // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
-                            if (entrada.equals("EXIT")){
-                                System.out.println("El programa ha finalizado! Que tengas buen dia c:");
-                                loop2 = false;
-                                loop1 = false;
-                            } else {
-                                loop2 = false;
-                            }
-                            
-                        } // FIN TRY
-                        catch(Exception e){ //INICIO CATCH
-                            if(Elado1 == false && Elado2 == false && Elado3 == false){
-                                System.out.println("El lado 1 no es valido, ingreselo nuevamente");
-                            }
-                            if(Elado2 == false && Elado1 == true && Elado3 == false){
-                                System.out.println("El lado 2 no es valido, ingreselo nuevamente");
-                            }
-                            if(Elado1 == true && Elado2 == true && Elado3 == false){
-                                System.out.println("El lado 3 no es valido, ingreselo nuevamente");
-                            }
-                        } // FIN CATCH
-                } //FIN LOOP 2
-                
-                break;
+                                System.out.println(" Ingresa el valor del lado 2 ");
+                                double lado2 = Double.parseDouble(lector.readLine());
+                                Elado2 = true;
+                    
+                                System.out.println(" Ingresa el valor del lado 3 ");
+                                double lado3 = Double.parseDouble(lector.readLine());
+                                Elado3 = true;
+                    
+                                double perimetro = (lado1 + lado2 + lado3);
+                                System.out.println("El perimetro del triangulo es "+ perimetro);
+                                
+                                double valor = (perimetro / 2);
+                    
+                                // Formula de Heron
+                                double area = Math.sqrt(valor*((valor-lado1)*(valor-lado2)*(valor-lado3)));
+                    
+                                // System.out.println("El area del triangulo es " + area);
+                                // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
+                                System.out.printf("El area del triangulo es %.2f" + area);
+                                System.out.println();
+                                
+                                // Salir
+                                System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
+                                entrada = lector.readLine();
+                                
+                                // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
+                                if (entrada.equals("EXIT")){
+                                    System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                                    loop2 = false;
+                                    loop1 = false;
+                                } else {
+                                    loop2 = false;
+                                } // elif end
+                                
+                            } // FIN TRY
+                            catch(Exception e){ //INICIO CATCH
+                                if(Elado1 == false && Elado2 == false && Elado3 == false){
+                                    System.out.println("El lado 1 no es valido, ingreselo nuevamente");
+                                }
+                                if(Elado2 == false && Elado1 == true && Elado3 == false){
+                                    System.out.println("El lado 2 no es valido, ingreselo nuevamente");
+                                }
+                                if(Elado1 == true && Elado2 == true && Elado3 == false){
+                                    System.out.println("El lado 3 no es valido, ingreselo nuevamente");
+                                }
+                            } // FIN CATCH
+                    }   //FIN LOOP 2
+                break; // CASE 1 END
                 
                 case 2:
                     while(loop2) { //INICIO LOOP 2 
@@ -113,7 +112,7 @@ public class RETO {
                             
                             // salir
                             System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
-                            entrada = lector.readLine(); // convertir a mayusculas
+                            entrada = lector.readLine();
                             
                             // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
                             if (entrada.equals("EXIT")){
@@ -121,10 +120,9 @@ public class RETO {
                                 loop2 = false;
                                 loop1 = false;
                                 
-                            } // if end
-                            else {
+                            } else {
                                 loop2 = false;
-                            }
+                            } // elif end
                             
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
@@ -133,16 +131,48 @@ public class RETO {
                             }
                             
                         } // FIN CATCH
-                } //FIN LOOP 2
+                    } //FIN LOOP 2
 
-                break;
+                break; // CASE 2 END
 
                 case 3:
-                    
-                    System.out.println("PRUEBA CASE 3");
-                break;
-            } // FIN MENU
+                    while(loop2) { //INICIO LOOP 2 
+                        try{ //INICIO TRY 
+                            System.out.println("Ingresa el valor de un lado: ");
+                            double lado = Double.parseDouble(lector.readLine());
+                            Elado1 = true;
 
+                            double area = lado * lado;
+                            double perimetro = lado + lado + lado + lado; 
+                            
+                            System.out.println("El area del cuadrado es " + area); // Este valor va al cuadrado, ej: cm^2
+                            System.out.println("El perimetro del circulo es " + perimetro);
+
+                            
+                            // salir
+                            System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar: ");
+                            entrada = lector.readLine();
+                            
+                            // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
+                            if (entrada.equals("EXIT")){
+                                System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                                loop2 = false;
+                                loop1 = false;
+                                
+                            } else {
+                                loop2 = false;
+                            } // elif end
+                            
+                        } // FIN TRY
+                        catch(Exception e){ //INICIO CATCH
+                            if(Elado1 == false){
+                                System.out.println("El radio no es valido, ingreselo nuevamente");
+                            }
+                            
+                        }  // FIN CATCH
+                    }    //FIN LOOP 2
+                break; // CASE 3 END
+            } // FIN MENU
         } //FIN LOOP 1
     } // FIN MAIN
 }
