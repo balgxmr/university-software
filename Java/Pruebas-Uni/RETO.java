@@ -114,30 +114,33 @@ public class RETO {
                             System.out.printf("> Ingresa el valor del radio del circulo: ");
                             double radio = Double.parseDouble(lector.readLine());
                             Eradio = true;
-            
-                            double areacirculo = 3.1416*(radio*radio);
-                            double diametro = 2*(radio);
-                            double perimetro = 3.1416*diametro;
-                            
-                            System.out.printf(green + "El area del circulo es %.2f\n", areacirculo);
-                            System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
 
-                            
-                            // salir
-                            System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
-                            entrada = lector.readLine();
-                            
-                            // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
-                            if (entrada.equals("EXIT")){
-                                System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
-                                loop2 = false;
-                                loop1 = false;
+                            if(radio > 0){
+                                double areacirculo = 3.1416*(radio*radio);
+                                double diametro = 2*(radio);
+                                double perimetro = 3.1416*diametro;
                                 
+                                System.out.printf(green + "El area del circulo es %.2f\n", areacirculo);
+                                System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
+
+                                
+                                // salir
+                                System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
+                                entrada = lector.readLine();
+                                
+                                // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
+                                if (entrada.equals("EXIT")){
+                                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
+                                    loop2 = false;
+                                    loop1 = false;
+                                    
+                                } else {
+                                    System.out.println("\nVolviendo al menu principal!\n");
+                                    loop2 = false;
+                                } // elif fin
                             } else {
-                                System.out.println("\nVolviendo al menu principal!\n");
-                                loop2 = false;
-                            } // elif fin
-                            
+                                System.out.println(red + "El radio ingresado no es válido." + reset);
+                            }
                         } catch (Exception e){ //INICIO CATCH
                             if(Eradio == false)
                                 System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
@@ -152,27 +155,30 @@ public class RETO {
                             System.out.printf("> Ingresa el valor de un lado: ");
                             double lado = Double.parseDouble(lector.readLine());
                             Elado1 = true;
+                            
+                            if (lado > 0){
+                                double area = lado * lado;
+                                double perimetro = lado + lado + lado + lado; 
+                                
+                                System.out.printf(green + "El area del cuadrado es %.2f\n", area); // Este valor va al cuadrado, ej: cm^2
+                                System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
 
-                            double area = lado * lado;
-                            double perimetro = lado + lado + lado + lado; 
-                            
-                            System.out.printf(green + "El area del cuadrado es %.2f\n", area); // Este valor va al cuadrado, ej: cm^2
-                            System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
-
-                            
-                            // salir
-                            System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
-                            entrada = lector.readLine();
-                            
-                            // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
-                            if (entrada.equals("EXIT")){
-                                System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
-                                loop2 = false;
-                                loop1 = false;
+                                // salir
+                                System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
+                                entrada = lector.readLine();
+                                
+                                // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
+                                if (entrada.equals("EXIT")){
+                                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
+                                    loop2 = false;
+                                    loop1 = false;
+                                } else {
+                                    System.out.println("\nVolviendo al menu principal!\n");
+                                    loop2 = false;
+                                } // elif fin
                             } else {
-                                System.out.println("\nVolviendo al menu principal!\n");
-                                loop2 = false;
-                            } // elif fin
+                                System.out.println(red + "El radio ingresado no es válido." + reset);
+                            }
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
                             if(Elado1 == false)
