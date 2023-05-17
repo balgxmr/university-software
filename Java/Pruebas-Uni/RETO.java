@@ -42,15 +42,15 @@ public class RETO {
                 case 1:
                     while(loop2) { //INICIO LOOP 2 
                             try{ //INICIO TRY 
-                                System.out.println(" Ingresa el valor del lado 1 ");
+                                System.out.printf("> Ingresa el valor del lado 1: ");
                                 double lado1 = Double.parseDouble(lector.readLine());
                                 Elado1 = true;
                             
-                                System.out.println(" Ingresa el valor del lado 2 ");
+                                System.out.printf("> Ingresa el valor del lado 2: ");
                                 double lado2 = Double.parseDouble(lector.readLine());
                                 Elado2 = true;
                     
-                                System.out.println(" Ingresa el valor del lado 3 ");
+                                System.out.printf("> Ingresa el valor del lado 3: ");
                                 double lado3 = Double.parseDouble(lector.readLine());
                                 Elado3 = true;
                     
@@ -64,11 +64,11 @@ public class RETO {
                     
                                 // System.out.println("El area del triangulo es " + area);
                                 // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
-                                System.out.printf("El area del triangulo es %.2f" + area);
+                                System.out.println("El area del triangulo es %.2f" + area);
                                 System.out.println();
                                 
                                 // Salir
-                                System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
+                                System.out.printf("> Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
                                 entrada = lector.readLine();
                                 
                                 // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
@@ -77,6 +77,7 @@ public class RETO {
                                     loop2 = false;
                                     loop1 = false;
                                 } else {
+                                    System.out.println("\nVolviendo al menu principal!\n");
                                     loop2 = false;
                                 } // elif end
                                 
@@ -98,7 +99,7 @@ public class RETO {
                 case 2:
                     while(loop2) { //INICIO LOOP 2 
                         try{ //INICIO TRY 
-                            System.out.println(" Ingresa el valor del radio del circulo ");
+                            System.out.printf("> Ingresa el valor del radio del circulo: ");
                             double radio = Double.parseDouble(lector.readLine());
                             Eradio = true;
             
@@ -111,7 +112,7 @@ public class RETO {
 
                             
                             // salir
-                            System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
+                            System.out.printf("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
                             entrada = lector.readLine();
                             
                             // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
@@ -121,6 +122,7 @@ public class RETO {
                                 loop1 = false;
                                 
                             } else {
+                                System.out.println("\nVolviendo al menu principal!\n");
                                 loop2 = false;
                             } // elif end
                             
@@ -138,7 +140,7 @@ public class RETO {
                 case 3:
                     while(loop2) { //INICIO LOOP 2 
                         try{ //INICIO TRY 
-                            System.out.println("Ingresa el valor de un lado: ");
+                            System.out.printf("> Ingresa el valor de un lado: ");
                             double lado = Double.parseDouble(lector.readLine());
                             Elado1 = true;
 
@@ -150,7 +152,7 @@ public class RETO {
 
                             
                             // salir
-                            System.out.println("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar: ");
+                            System.out.printf("> Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar: ");
                             entrada = lector.readLine();
                             
                             // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
@@ -160,15 +162,14 @@ public class RETO {
                                 loop1 = false;
                                 
                             } else {
+                                System.out.println("\nVolviendo al menu principal!\n");
                                 loop2 = false;
                             } // elif end
-                            
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
                             if(Elado1 == false){
                                 System.out.println("El radio no es valido, ingreselo nuevamente");
                             }
-                            
                         }  // FIN CATCH
                     }    //FIN LOOP 2
                 break; // CASE 3 END
