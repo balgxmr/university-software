@@ -216,7 +216,7 @@ int main(){
     if (n == 1)
         printf("PIN correcto!\n\n");
     else {
-        printf("Cédula incorrecta!");
+        printf("PIN incorrecto!");
         exit(0);
     }
 
