@@ -177,12 +177,12 @@ public class RETO {
                                     loop2 = false;
                                 } // elif fin
                             } else {
-                                System.out.println(red + "El radio ingresado no es válido." + reset);
+                                System.out.println(red + "El lado ingresado no es válido." + reset);
                             }
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
                             if(Elado1 == false)
-                                System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
+                                System.out.println(red + "El lado ingresado no es valido, intente nuevamente" + reset);
                         }  // FIN CATCH
                     }    //FIN LOOP 2
                 break; // CASE 3 FIN
