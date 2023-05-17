@@ -20,14 +20,7 @@ public class RETO {
                 System.out.println("Ingrese (1) para calcular el area y perimetro del triangulo");
                 System.out.println("Ingrese (2) para calcular el area y perimetro del circulo");
                 System.out.println("Ingrese (3) para calcular el area y perimetro del cuadrado");
-                String menuExit = lector.readLine();
-
-                if (menuExit.equals("EXIT")) {
-                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
-                    loop1 = false;
-                    break;
-                }
-                menu = Integer.parseInt(menuExit);
+                menu = Integer.parseInt(lector.readLine());
                 MenuExc = true;
             } catch (Exception E){
                 if(MenuExc == false){
