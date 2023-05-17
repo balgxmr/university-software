@@ -7,6 +7,12 @@ public class RETO {
         BufferedReader lector = new BufferedReader(new InputStreamReader(System.in));
         boolean loop1 = true;
 
+        /* Variables para pintar la consola con colores */
+        String red="\033[31m"; 
+        String green="\033[32m"; 
+        String yellow="\033[33m"; 
+        String reset="\u001B[0m";
+
         while(loop1){ // INICIO LOOP 1
             boolean MenuExc = false;
             Integer menu=0;
@@ -17,7 +23,7 @@ public class RETO {
                 String menuExit = lector.readLine();
 
                 if (menuExit.equals("EXIT")) {
-                    System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
                     loop1 = false;
                     break;
                 }
@@ -25,8 +31,8 @@ public class RETO {
                 MenuExc = true;
             } catch (Exception E){
                 if(MenuExc == false){
-                    System.out.println("*OPCION NO VALIDA*");
-                    System.out.println("Ingrese una opcion valida");
+                    System.out.println(red + "*OPCION NO VALIDA*");
+                    System.out.println(red + "Ingrese una opcion valida");
                     loop1 = true;
                 }
             } // END TRY-CATCH
@@ -55,7 +61,7 @@ public class RETO {
                                 Elado3 = true;
                     
                                 double perimetro = (lado1 + lado2 + lado3);
-                                System.out.println("El perimetro del triangulo es "+ perimetro);
+                                System.out.println(green + "El perimetro del triangulo es "+ perimetro);
                                 
                                 double valor = (perimetro / 2);
                     
@@ -64,16 +70,16 @@ public class RETO {
                     
                                 // System.out.println("El area del triangulo es " + area);
                                 // ESTE FORMATO PARA LAS IMPRESIONES CON SOLO 2 DECIMALES
-                                System.out.println("El area del triangulo es %.2f" + area);
+                                System.out.printf(green + "El area del triangulo es %.2f", area);
                                 System.out.println();
                                 
                                 // Salir
-                                System.out.printf("> Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
+                                System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
                                 entrada = lector.readLine();
                                 
                                 // Evaluar que entrada sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
                                 if (entrada.equals("EXIT")){
-                                    System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                                    System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
                                     loop2 = false;
                                     loop1 = false;
                                 } else {
@@ -84,13 +90,13 @@ public class RETO {
                             } // FIN TRY
                             catch(Exception e){ //INICIO CATCH
                                 if(Elado1 == false && Elado2 == false && Elado3 == false){
-                                    System.out.println("El lado 1 no es valido, ingreselo nuevamente");
+                                    System.out.println(red + "El lado 1 no es valido, ingreselo nuevamente" + reset);
                                 }
                                 if(Elado2 == false && Elado1 == true && Elado3 == false){
-                                    System.out.println("El lado 2 no es valido, ingreselo nuevamente");
+                                    System.out.println(red + "El lado 2 no es valido, ingreselo nuevamente" + reset);
                                 }
                                 if(Elado1 == true && Elado2 == true && Elado3 == false){
-                                    System.out.println("El lado 3 no es valido, ingreselo nuevamente");
+                                    System.out.println(red + "El lado 3 no es valido, ingreselo nuevamente" + reset);
                                 }
                             } // FIN CATCH
                     }   //FIN LOOP 2
@@ -107,17 +113,17 @@ public class RETO {
                             double diametro = 2*(radio);
                             double perimetro = 3.1416*diametro;
                             
-                            System.out.println("El area del circulo es " + areacirculo);
-                            System.out.println("El perimetro del circulo es " + perimetro);
+                            System.out.printf(green + "El area del circulo es %.2f\n", areacirculo);
+                            System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
 
                             
                             // salir
-                            System.out.printf("Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar");
+                            System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
                             entrada = lector.readLine();
                             
                             // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
                             if (entrada.equals("EXIT")){
-                                System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                                System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
                                 loop2 = false;
                                 loop1 = false;
                                 
@@ -129,7 +135,7 @@ public class RETO {
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
                             if(Eradio == false){
-                                System.out.println("El radio no es valido, ingreselo nuevamente");
+                                System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
                             }
                             
                         } // FIN CATCH
@@ -147,17 +153,17 @@ public class RETO {
                             double area = lado * lado;
                             double perimetro = lado + lado + lado + lado; 
                             
-                            System.out.println("El area del cuadrado es " + area); // Este valor va al cuadrado, ej: cm^2
-                            System.out.println("El perimetro del circulo es " + perimetro);
+                            System.out.printf(green + "El area del cuadrado es %.2f\n", area); // Este valor va al cuadrado, ej: cm^2
+                            System.out.printf(green + "El perimetro del circulo es %.2f\n", perimetro);
 
                             
                             // salir
-                            System.out.printf("> Escribe 'EXIT' para finalizar el programa o ingrese 1 para continuar: ");
+                            System.out.printf(reset + "> Escribe 'EXIT' para finalizar el programa o 1 para continuar: ");
                             entrada = lector.readLine();
                             
                             // Evaluar que valor sea igual a "EXIT" usando equals(), y si es asi, finalizar el programa.
                             if (entrada.equals("EXIT")){
-                                System.out.println("El programa ha finalizado! Que tengas buen dia c:");
+                                System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
                                 loop2 = false;
                                 loop1 = false;
                                 
@@ -168,7 +174,7 @@ public class RETO {
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
                             if(Elado1 == false){
-                                System.out.println("El radio no es valido, ingreselo nuevamente");
+                                System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
                             }
                         }  // FIN CATCH
                     }    //FIN LOOP 2
