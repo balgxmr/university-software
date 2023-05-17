@@ -35,7 +35,7 @@ public class RETO {
                     System.out.println(red + "Ingrese una opcion valida");
                     loop1 = true;
                 }
-            } // END TRY-CATCH
+            } // FIN TRY-CATCH
 
             boolean Elado1 = false;
             boolean Elado2 = false;
@@ -85,22 +85,19 @@ public class RETO {
                                 } else {
                                     System.out.println("\nVolviendo al menu principal!\n");
                                     loop2 = false;
-                                } // elif end
+                                } // elif fin
                                 
                             } // FIN TRY
                             catch(Exception e){ //INICIO CATCH
-                                if(Elado1 == false && Elado2 == false && Elado3 == false){
+                                if(Elado1 == false && Elado2 == false && Elado3 == false)
                                     System.out.println(red + "El lado 1 no es valido, ingreselo nuevamente" + reset);
-                                }
-                                if(Elado2 == false && Elado1 == true && Elado3 == false){
+                                if(Elado2 == false && Elado1 == true && Elado3 == false)
                                     System.out.println(red + "El lado 2 no es valido, ingreselo nuevamente" + reset);
-                                }
-                                if(Elado1 == true && Elado2 == true && Elado3 == false){
+                                if(Elado1 == true && Elado2 == true && Elado3 == false)
                                     System.out.println(red + "El lado 3 no es valido, ingreselo nuevamente" + reset);
-                                }
                             } // FIN CATCH
                     }   //FIN LOOP 2
-                break; // CASE 1 END
+                break; // CASE 1 FIN
                 
                 case 2:
                     while(loop2) { //INICIO LOOP 2 
@@ -130,18 +127,15 @@ public class RETO {
                             } else {
                                 System.out.println("\nVolviendo al menu principal!\n");
                                 loop2 = false;
-                            } // elif end
+                            } // elif fin
                             
-                        } // FIN TRY
-                        catch(Exception e){ //INICIO CATCH
-                            if(Eradio == false){
+                        } catch (Exception e){ //INICIO CATCH
+                            if(Eradio == false)
                                 System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
-                            }
-                            
-                        } // FIN CATCH
+                        } // FIN TRY-CATCH
                     } //FIN LOOP 2
 
-                break; // CASE 2 END
+                break; // CASE 2 FIN
 
                 case 3:
                     while(loop2) { //INICIO LOOP 2 
@@ -166,19 +160,17 @@ public class RETO {
                                 System.out.println(yellow + "El programa ha finalizado! Que tengas buen dia c:");
                                 loop2 = false;
                                 loop1 = false;
-                                
                             } else {
                                 System.out.println("\nVolviendo al menu principal!\n");
                                 loop2 = false;
-                            } // elif end
+                            } // elif fin
                         } // FIN TRY
                         catch(Exception e){ //INICIO CATCH
-                            if(Elado1 == false){
+                            if(Elado1 == false)
                                 System.out.println(red + "El radio no es valido, ingreselo nuevamente" + reset);
-                            }
                         }  // FIN CATCH
                     }    //FIN LOOP 2
-                break; // CASE 3 END
+                break; // CASE 3 FIN
             } // FIN MENU
         } //FIN LOOP 1
     } // FIN MAIN
