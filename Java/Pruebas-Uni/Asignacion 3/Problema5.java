@@ -61,10 +61,9 @@ public class Problema5 {
                         if ((lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado3 + lado1 > lado2)) {
                             // Calcular el perimetro y el area del triangulo
                             perimetro = lado1 + lado2 + lado3;
-
                             area = Math.sqrt((perimetro / 2) * ((perimetro / 2) - lado1) * ((perimetro / 2) - lado2)
                                     * ((perimetro / 2) - lado3));
-            
+
                             System.out.println(
                                     "El perimetro es: " + format1.format(perimetro) + "\nEl area es: "
                                             + format1.format(area));
@@ -92,7 +91,6 @@ public class Problema5 {
 
                     // Calcular el perimetro y area del Trapecio
                     perimetro = lado1 + lado2 + lado3 + lado4;
-
                     area = ((lado1 + lado2) / 2) * lado5;
 
                     System.out.println(
