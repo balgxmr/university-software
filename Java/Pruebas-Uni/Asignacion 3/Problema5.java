@@ -72,7 +72,7 @@ public class Problema5 {
                         } else {
                             System.out.println("Sus lados del triangulo no son correctos ingreselos nuevamente\n");
                         }
-                    } // while en opcion 2 end
+                    } // while en opcion 2 fin
 
                 } else if (option == 3) { // TRAPECIO
                     System.out.println("Introduzca la base inferior");
@@ -108,7 +108,7 @@ public class Problema5 {
 
                     System.out.println(
                             "El perimetro es: " + format1.format(perimetro) + "\nEl area es: " + format1.format(area));
-                } // else if end
+                } // else if fin
 
                 // SEGUIR O SALIR DEL PROGRAMA
                 System.out.println(
@@ -122,6 +122,6 @@ public class Problema5 {
             } catch (Exception e) {
                 System.out.println("Valor incorrecto");
             }
-        } // while end
-    } // main end
+        } // while fin
+    } // main fin
 }

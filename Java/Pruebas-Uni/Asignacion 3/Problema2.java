@@ -32,7 +32,7 @@ public class Problema2 {
                         min = capturaNumeros;
                     if (capturaNumeros >= max)
                         max = capturaNumeros;
-                } // for end
+                } // for fin
 
                 /* Calcular el promedio */
                 promedio = cantidadTotal / 2;
@@ -46,6 +46,6 @@ public class Problema2 {
             } catch (Exception e) {
                 System.out.println("Valor invalido!");
             }
-        } // loop end
-    } // main end
+        } // loop fin
+    } // main fin
 }
