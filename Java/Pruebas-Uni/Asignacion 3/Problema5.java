@@ -3,7 +3,7 @@ import java.io.*;
 import java.text.DecimalFormat;
 
 // en repositorio de github
-public class problema5 {
+public class Problema5 {
     public static void main(String[] args) throws Exception {
         boolean ciclo = true;
         boolean ciclo2 = true;
@@ -22,7 +22,7 @@ public class problema5 {
             try {
 
                 System.out.println(
-                        "que figura va a calcular?\n1.rectangulo\n2.triangulo\n3.trapecio\n4.circulo\n5.Salir del programa");
+                        "que figura va a calcular?\n1.rectangulo\n2.triangulo\n3.trapecio\n4.circulo");
                 int option = Integer.parseInt(leer.readLine());
                 if (option == 1) {
                     System.out.println("Introduzca la base");
@@ -91,13 +91,16 @@ public class problema5 {
 
                     System.out.println(
                             "El perimetro es: " + format1.format(perimetro) + "\nEl area es: " + format1.format(area));
-                } else if (option == 5) {
+                }
+                System.out.println(
+                        "Desea calcular otra figura? presione cualquier tecla\nDe lo contrario presione X para salir del programa");
+                String option2 = (leer.readLine());
+                if (option2.equals("X") || option2.equals("x")) {
                     ciclo = false;
                     System.out.println("Usted ha salido del programa exitosamente");
                 }
             } catch (Exception e) {
                 System.out.println("Valor incorrecto");
-                
             }
         }
     }
