@@ -42,6 +42,7 @@ public class Problema5 {
                             "El perimetro es: " + format1.format(perimetro) + "\nEl area es: " + format1.format(area));
                         
                 } else if (option == 2) { // TRIANGULO
+                    ciclo2 = true;
                     while (ciclo2) {
                         System.out.println("Introduzca el lado 1");
                         lado1 = Float.parseFloat(leer.readLine());
