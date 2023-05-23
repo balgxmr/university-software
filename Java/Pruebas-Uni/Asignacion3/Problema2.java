@@ -1,7 +1,7 @@
 // Richard Herranz E-8-192057, Jose Encalada 8-999-1420, Jonathan Nunez 4-23-1010
 import java.io.*;
 
-public class Problema2Asignacion3 {
+public class Problema2 {
     public static void main(String[] args) throws IOException {
 
         int capturaNumeros = 0;
