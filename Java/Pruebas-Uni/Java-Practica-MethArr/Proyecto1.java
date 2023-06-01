@@ -14,7 +14,7 @@ public class Proyecto1 {
         /* BufferedReader usado para leer el input */
         BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
 
-        /* ? */
+        // Constructor
         metodo1 objMethod1 = new metodo1();
         metodo2 objMethod2 = new metodo2();
         metodo3 objMethod3 = new metodo3();
