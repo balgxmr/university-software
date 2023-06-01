@@ -4,7 +4,7 @@ dimensiones de 6 x 6, y se debe auto-cargar solo con números pares. Imprimir el
 */
 
 public class metodo1 {
-    public static int[][] cargarArreglo() {
+    public int[][] cargarArreglo() {
         int[][] arreglo = new int[6][6];
         
         int num = 2;
@@ -21,7 +21,7 @@ public class metodo1 {
      * Se crea un arreglo de 6*6, y va cargadndo este mismo
      * con valores pares, comenzando desde el 2.
      */
-    public static void imprimirArreglo(int[][] arreglo) {
+    public void imprimirArreglo(int[][] arreglo) {
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 6; j++) {
                 System.out.print(arreglo[i][j] + " ");

@@ -19,6 +19,7 @@ public class Proyecto1 {
         int opcionMenu = Integer.parseInt(lectura.readLine());
 
         /* ? */
+        metodo1 objMethod1 = new metodo1();
         metodo2 objMethod2 = new metodo2();
         metodo3 objMethod3 = new metodo3();
         metodo4 objMethod4 = new metodo4();
@@ -26,8 +27,8 @@ public class Proyecto1 {
         switch (opcionMenu) {
             case 1:
                 System.out.println("---- Opcion 1 ----");
-                int[][] arreglo = metodo1.cargarArreglo();
-                metodo1.imprimirArreglo(arreglo);
+                int[][] arreglo = objMethod1.cargarArreglo();
+                objMethod1.imprimirArreglo(arreglo);
                 break;
             
             case 2: /* PROMEDIO DE 5 NUMEROS */

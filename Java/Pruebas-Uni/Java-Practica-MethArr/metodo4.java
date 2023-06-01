@@ -18,6 +18,7 @@ public class metodo4 {
             }
         } // fin for
 
+        /* Realizar todo lo siguiente desde aqui ya que este metodo crearMatriz es el unico llamado */
         // Imprimir la matriz A
         System.out.println("Matriz A:");
         imprimirMatrizA(matrizA);
@@ -42,15 +43,21 @@ public class metodo4 {
     /* Traspuesta de A */
     public int[][] transpuestaDeMatrizA(int[][] matriz) {
         int filas = matriz.length;
-        int columnas = matriz[0].length;
+        int columnas = matriz[0].length; // Se obtiene la longitud de la fila, y representa el número de columnas en la matriz
         
+        /* Se cambian las dimensiones de la matriz, ya que es transpuesta */
         int[][] matrizTranspuesta = new int[columnas][filas];
         
         for (int i = 0; i < columnas; i++){
             for (int j = 0; j < filas; j++){
+                /* 
+                Intercambiando los indices, se asignan 
+                los valores como de una matriz transpuesta/invertidos 
+                */
                 matrizTranspuesta[i][j] = matriz[j][i];
             }
         }
-        return matrizTranspuesta;
-    }
-}
+        // se devuelve la matriz transpuesta hacia matrizA1, que se usa en imprimirMatrizA
+        return matrizTranspuesta; 
+    } // fin transpuesta de matriz A
+} // fin class metodo 4
