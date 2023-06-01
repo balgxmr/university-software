@@ -4,6 +4,7 @@ public class Proyecto1 {
     public static void main(String[] args ) throws IOException{
         /* Declaracion de variables */
         int opcionMenu = 0;
+        boolean loop = true;
 
         // Para el metodo 2
         int[] valores = new int[5]; 
@@ -19,8 +20,7 @@ public class Proyecto1 {
         metodo2 objMethod2 = new metodo2();
         metodo3 objMethod3 = new metodo3();
         metodo4 objMethod4 = new metodo4();
-
-        boolean loop = true;
+
         while(loop){
             /* Menu */
             System.out.println("\n---------- MENU ----------");
