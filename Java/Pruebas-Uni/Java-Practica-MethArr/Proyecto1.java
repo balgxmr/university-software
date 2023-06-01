@@ -25,8 +25,8 @@ public class Proyecto1 {
             /* Menu */
             System.out.println("\n---------- MENU ----------");
             System.out.println("1. Arreglo\n2. Promedio de 5 numeros\n3. 5 estudiantes\n4. Matriz y su transpuesta");
+            System.out.printf("> ");
             try{
-                System.out.printf("> ");
                 opcionMenu = Integer.parseInt(lectura.readLine());
             } catch(Exception e) {
                 System.out.println("no.");
