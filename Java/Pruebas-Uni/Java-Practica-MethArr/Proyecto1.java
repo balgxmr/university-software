@@ -3,6 +3,7 @@ import java.io.*;
 public class Proyecto1 {
     public static void main(String[] args ) throws IOException{
         /* Declaracion de variables */
+        int opcionMenu = 0;
 
         // Para el metodo 2
         int[] valores = new int[5]; 
@@ -13,73 +14,81 @@ public class Proyecto1 {
         /* BufferedReader usado para leer el input */
         BufferedReader lectura = new BufferedReader(new InputStreamReader(System.in));
 
-        /* Menu */
-        System.out.println("1.\n2.\n3.\n4.\n");
-        System.out.printf("> ");
-        int opcionMenu = Integer.parseInt(lectura.readLine());
-
         /* ? */
         metodo1 objMethod1 = new metodo1();
         metodo2 objMethod2 = new metodo2();
         metodo3 objMethod3 = new metodo3();
         metodo4 objMethod4 = new metodo4();
 
-        switch (opcionMenu) {
-            case 1:
-                System.out.println("---- Opcion 1 ----");
-                int[][] arreglo = objMethod1.cargarArreglo();
-                objMethod1.imprimirArreglo(arreglo);
-                break;
-            
-            case 2: /* PROMEDIO DE 5 NUMEROS */
-                System.out.println("---- Opcion 2 ----");
-                for(int i = 0; i<5; i++){
-                    boolean loop = true;
-                    while(loop){
-                        try{
-                            System.out.print("Ingrese el numero #" + (i+1) + ": ");
-                            valores[i] = Integer.parseInt(lectura.readLine());
-                            loop = false;
-                        } catch (Exception e) {
-                            System.out.println("Valor invalido! Intente nuevamente");
-                        }
-                    } // fin while
-                } // fin for
+        boolean loop = true;
+        while(loop){
+            /* Menu */
+            System.out.println("\n---------- MENU ----------");
+            System.out.println("1. Arreglo\n2. Promedio de 5 numeros\n3. 5 estudiantes\n4. Matriz y su transpuesta");
+            try{
+                System.out.printf("> ");
+                opcionMenu = Integer.parseInt(lectura.readLine());
+            } catch(Exception e) {
+                System.out.println("no.");
+            }
 
-                System.out.println("Su promedio es: "+ objMethod2.Promedio(valores));
-                break;
+            switch (opcionMenu) {
+                case 1: // Arreglo
+                    System.out.println("---- Opcion 1 ----");
+                    int[][] arreglo = objMethod1.cargarArreglo();
+                    objMethod1.imprimirArreglo(arreglo);
+                    break;
+                
+                case 2: /* PROMEDIO DE 5 NUMEROS */
+                    System.out.println("---- Opcion 2 ----");
+                    for(int i = 0; i<5; i++){
+                        loop = true;
+                        while(loop){
+                            try{
+                                System.out.print("Ingrese el numero #" + (i+1) + ": ");
+                                valores[i] = Integer.parseInt(lectura.readLine());
+                                loop = false;
+                            } catch (Exception e) {
+                                System.out.println("Valor invalido! Intente nuevamente");
+                            }
+                        } // fin while
+                    } // fin for
 
-            case 3: /* GUARDAR E IMPRIMIR 5 ESTUDIANTES, SEGUN INDICE */
-                System.out.println("---- Opcion 3 ----");
-                objMethod3.Estudiante();
-                try{
-                    System.out.println("Hay 5 estudiantes, cual desea ver? (1-5): ");
-                    seleccionEst = Integer.parseInt(lectura.readLine());
-                    objMethod3.imprimirEstudiante(seleccionEst);
-                } catch (Exception e){
-                    System.out.println("BRO ITS A NUMBER WHAT ARE YOU ON?!");
-                }
-                break;
+                    System.out.println("Su promedio es: "+ objMethod2.Promedio(valores));
+                    break;
 
-            case 4: /* MATRIZ */
-                System.out.println("---- Opcion 4 ----");
-                boolean loop = true;
-                while (loop){
+                case 3: /* GUARDAR E IMPRIMIR 5 ESTUDIANTES, SEGUN INDICE */
+                    System.out.println("---- Opcion 3 ----");
+                    objMethod3.Estudiante();
                     try{
-                    System.out.printf("Ingrese el primer tamaño de la matriz: ");
-                    int x = Integer.parseInt(lectura.readLine());
-                    System.out.printf("Ingrese el segundo tamaño de la matriz: ");
-                    int y = Integer.parseInt(lectura.readLine());
-                    objMethod4.crearMatrizA(x, y);
-                    loop = false;
+                        System.out.println("Hay 5 estudiantes, cual desea ver? (1-5): ");
+                        seleccionEst = Integer.parseInt(lectura.readLine());
+                        objMethod3.imprimirEstudiante(seleccionEst);
                     } catch (Exception e){
-                        System.out.println("one piece");
+                        System.out.println("BRO ITS A NUMBER WHAT ARE YOU ON?!");
                     }
-                }
-                break;
-        
-            default:
-                break;
-        } // fin switch
+                    break;
+
+                case 4: /* MATRIZ */
+                    System.out.println("---- Opcion 4 ----");
+                    loop = true;
+                    while (loop){
+                        try{
+                        System.out.printf("Ingrese el primer tamaño de la matriz: ");
+                        int x = Integer.parseInt(lectura.readLine());
+                        System.out.printf("Ingrese el segundo tamaño de la matriz: ");
+                        int y = Integer.parseInt(lectura.readLine());
+                        objMethod4.crearMatrizA(x, y);
+                        loop = false;
+                        } catch (Exception e){
+                            System.out.println("one piece");
+                        }
+                    }
+                    break;
+            
+                default:
+                    break;
+            } // fin switch
+        } // fin while
     } // fin main
 } // fin class
