@@ -70,6 +70,7 @@ public class Proyecto1 {
                     System.out.printf("Ingrese el segundo tamaño de la matriz: ");
                     int y = Integer.parseInt(lectura.readLine());
                     objMethod4.crearMatrizA(x, y);
+                    loop = false;
                     } catch (Exception e){
                         System.out.println("one piece");
                     }

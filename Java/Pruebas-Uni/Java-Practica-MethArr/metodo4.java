@@ -21,6 +21,11 @@ public class metodo4 {
         // Imprimir la matriz A
         System.out.println("Matriz A:");
         imprimirMatrizA(matrizA);
+
+        // Transpuesta de A
+        int[][] matrizA1 = transpuestaDeMatrizA(matrizA);
+        System.out.println("Transpuesta de A (matriz A1):");
+        imprimirMatrizA(matrizA1);
     } // fin crearMatriz
 
     /* Imprimir la matriz */
@@ -35,4 +40,17 @@ public class metodo4 {
     } // fin imprimirMatrizA
 
     /* Traspuesta de A */
+    public int[][] transpuestaDeMatrizA(int[][] matriz) {
+        int filas = matriz.length;
+        int columnas = matriz[0].length;
+        
+        int[][] matrizTranspuesta = new int[columnas][filas];
+        
+        for (int i = 0; i < columnas; i++){
+            for (int j = 0; j < filas; j++){
+                matrizTranspuesta[i][j] = matriz[j][i];
+            }
+        }
+        return matrizTranspuesta;
+    }
 }
