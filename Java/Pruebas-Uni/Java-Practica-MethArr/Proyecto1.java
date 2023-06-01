@@ -26,8 +26,8 @@ public class Proyecto1 {
         switch (opcionMenu) {
             case 1:
                 System.out.println("---- Opcion 1 ----");
-                int[][] matriz = metodo1.cargarArreglo();
-                metodo1.imprimirArreglo(matriz);
+                int[][] arreglo = metodo1.cargarArreglo();
+                metodo1.imprimirArreglo(arreglo);
                 break;
             
             case 2: /* PROMEDIO DE 5 NUMEROS */
