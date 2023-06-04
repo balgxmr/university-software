@@ -1,14 +1,14 @@
 import java.io.*; //Se importan las librerias necesarias
 
-class Estudiante { // se crea el registro
-    private String nombre; // declaramos todos sus atributos
+class Estudiante { // Se crea el registro
+    private String nombre; // Declaramos todos sus atributos
     private String cedula;
     private int mes;
     private int año;
     private String carrera;
     private float indice;
 
-    // con el constructor enviamos los datos
+    // Con el constructor enviamos los datos
     // como parametros y los almacenamos en los
     // atributos del registro
     public Estudiante(String n, String c, int m, int a, String ca, float i) {
@@ -20,7 +20,7 @@ class Estudiante { // se crea el registro
         this.indice = i;
     }
 
-    // funciones para obtener y utilizar los valores almacenados en el registro
+    // Funciones para obtener y utilizar los valores almacenados en el registro
     public String getNombre() {
         return this.nombre;
     }
@@ -36,12 +36,12 @@ class Estudiante { // se crea el registro
     public String getCarrera() {
         return this.carrera;
     }
-}
+} // fin class Estudiante
 
 public class ProyectoERD {
     public static void main(String[] args) throws Exception {
 
-        String nombre;// declaramos variables donde el usuario ingresara los datos
+        String nombre;// Declaramos variables donde el usuario ingresara los datos
         String cedula;
         int mes;
         int año;
@@ -57,7 +57,7 @@ public class ProyectoERD {
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));// para leer los valores e imprimir
                                                                                    // en pantalla
 
-        // ciclo for para recolectar los datos ingresados en las variables
+        // Ciclo for para recolectar los datos ingresados en las variables
         for (int i = 0; i < estudiantes.length; i++) {
             System.out.println("Ingrese el nombre del estudiante");
             nombre = leer.readLine();
@@ -74,12 +74,11 @@ public class ProyectoERD {
                           // dentro del rango 0 a 3
                 System.out.println("Ingrese el indice del estudiante");
                 indice = Float.parseFloat(leer.readLine());
-                if (indice > 3.00 || indice < 0) {
+                if (indice > 3.00 || indice < 0)
                     System.out.println("El indice tiene que estar en el rango de 0 a 3");
-                } else {
+                else
                     loop = false;
-                }
-            }
+            } // fin while
 
             estudiantes[i] = new Estudiante(nombre, cedula, mes, año, carrera, indice);// se envian los datos como
                                                                                        // parametros al constructor de
@@ -87,7 +86,7 @@ public class ProyectoERD {
                                                                                        // posicion i dentro del ciclo
                                                                                        // for
 
-        }
+        } // fin for
 
         // algoritmo burbuja para ordenar en funcion del indice y la carrera
         Estudiante aux;
@@ -101,7 +100,6 @@ public class ProyectoERD {
                     aux = estudiantes[j + 1];
                     estudiantes[j + 1] = estudiantes[j];
                     estudiantes[j] = aux;
-
                 }
             }
         }
@@ -117,7 +115,7 @@ public class ProyectoERD {
                 carreraciclo = estudiantes[i].getCarrera();
 
             }
-            // se imprimen en pantalla la salida con los datos del
+            // Se imprimen en pantalla la salida con los datos del
             // nombre, mes de nacimiento, carrera y el indice de cada
             // estudiante entre los mejores 5 de su carrera y con un
             // promedio de mas de 2.5
@@ -126,9 +124,8 @@ public class ProyectoERD {
                         "Nombre: " + estudiantes[i].getNombre() + " | Mes de nacimiento: "
                                 + mesesDelAnio[estudiantes[i].getMes() - 1] + " | Carrera: "
                                 + estudiantes[i].getCarrera() + " | Indice: " + estudiantes[i].getIndice());
-                n = n + 1;
+                n += 1;
             }
-        }
-
-    }
-}
+        } // fin for
+    } // fin main
+} // fin class ProyectoERD
