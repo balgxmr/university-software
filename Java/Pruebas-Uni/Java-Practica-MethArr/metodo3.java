@@ -31,6 +31,9 @@ import java.io.*;
                     nombreEstudiante[i] = lectura.readLine();
                     System.out.printf("Ingrese la edad del estudiante #" + h + ": ");
                     edadEstudiante[i] = Integer.parseInt(lectura.readLine());
+                    if (edadEstudiante[i] <= 0)
+                        throw new IllegalArgumentException(); // Lanzado para indicar que a un método se le ha pasado un argumento ilegal o inapropiado.
+                                                              // En este caso, la edad debe ser > 0
                     loop = false;
                     h++;
                 } catch (Exception e) {
