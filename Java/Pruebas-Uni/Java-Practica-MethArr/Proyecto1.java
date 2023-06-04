@@ -16,7 +16,7 @@ public class Proyecto1 {
     BufferedReader lectura =
         new BufferedReader(new InputStreamReader(System.in));
 
-    // Constructor
+    // Se crean los objetos
     metodo1 objMethod1 = new metodo1();
     metodo2 objMethod2 = new metodo2();
     metodo3 objMethod3 = new metodo3();
@@ -26,7 +26,7 @@ public class Proyecto1 {
       /* Menu */
       System.out.println("\n---------- MENU ----------");
       System.out.println(
-          "1. Arreglo\n2. Promedio de 5 numeros\n3. 5 estudiantes\n4. Matriz y su transpuesta");
+          "1. Arreglo\n2. Promedio de 5 numeros\n3. 5 estudiantes\n4. Matriz y su transpuesta\n5. Salir");
       System.out.printf("> ");
       try {
         opcionMenu = Integer.parseInt(lectura.readLine());
@@ -86,6 +86,10 @@ public class Proyecto1 {
             System.out.println("one piece");
           }
         }
+        break;
+      
+      case 5:
+        loop = false;
         break;
 
       default:
