@@ -1,3 +1,11 @@
+/*
+ * Escribir un programa para leer una matriz A de tamaño M x N. 
+ * Los valores M y N se ingresan por el usuario y se envían al método 
+ * como parámetro de entrada y capturar los valores de la matriz A. 
+ * El método debe formar la matriz A y su transpuesta de A1; el programa 
+ * debe imprimir a pantalla ambas matrices.  
+ */
+
 import java.io.*;
 
 public class metodo4 {

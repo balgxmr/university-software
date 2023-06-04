@@ -15,7 +15,7 @@ public class metodo1 {
             }
         }
         return arreglo;
-    }
+    } // fin cargarArreglo
     
     /* 
      * Se crea un arreglo de 6*6, y va cargadndo este mismo
@@ -28,5 +28,5 @@ public class metodo1 {
             }
             System.out.println();
         }
-    }
-}
+    } // fin imprimirArreglo
+} // fin class metodo1
