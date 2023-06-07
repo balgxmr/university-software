@@ -30,7 +30,7 @@ class Estudiante {       // Se crea el registro
   public String getCarrera() { return this.carrera; }
 } // fin class Estudiante
 
-public class ProyectoERD {
+public class Proyecto1_Registros {
   public static void main(String[] args) throws Exception {
 
     String nombre; // Declaramos variables donde el usuario ingresara los datos

@@ -2,7 +2,7 @@
 import java.io.*;
 import java.util.Stack;
 
-public class laboratorio3 {
+public class Laboratorio3 {
     public static void main(String[] args) throws IOException {
 
         /* Declaracion de variables */
