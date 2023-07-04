@@ -40,23 +40,25 @@ public class HoraEnTiempoReal {
         while (true){
             /* Si la hora/min/seg es 
             < 10, imprimir 0 */
-            
+
+            System.out.print("\r");
+
             if (horas < 10)
-                System.out.print(":");
-            
+                System.out.print("0");
+
             System.out.print(horas + ":");
 
             if (minutos < 10)
-                System.out.print(":");
+                System.out.print("0");
 
             System.out.print(minutos + ":");
 
             if (segundos < 10)
-                System.out.print(":");
+                System.out.print("0");
 
-            System.out.println(segundos);
+            System.out.print(segundos);
 
-            /* FIN IMPRESION DEL TIEMPO */
+            /* FIN IMPRESIÓN DEL TIEMPO */
 
             // Aumentar tiempo
             segundos++;
@@ -78,7 +80,7 @@ public class HoraEnTiempoReal {
                 }
             } // fin Reseteo
 
-            // Dormir el programa XD por 1 segundo
+            // Dormir el programa por 1 segundo
             Thread.sleep(1000);
 
         } // fin while
