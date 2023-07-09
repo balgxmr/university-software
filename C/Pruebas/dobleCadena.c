@@ -20,7 +20,7 @@
 #define STRING_LENGTH 100
 
 /* Funcion para obtener que nombre es mayor ascendentemente en el abecedario */
-int obtenerMayorAlfabeto (char primerNombre[], char segundoNombre[]) {
+bool obtenerMayorAlfabeto (char primerNombre[], char segundoNombre[]) {
     return (primerNombre[0] > segundoNombre[0]) ? true : false;
 }
 
