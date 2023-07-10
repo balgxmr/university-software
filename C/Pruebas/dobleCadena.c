@@ -34,10 +34,10 @@ void imprimirNombreMayor(bool alfaVsLong, int mayor, char primerNombre[],
       printf("El nombre mayor alfabeticamente es: %s\n", segundoNombre);
   } else {
     if (mayor == 0)
-      printf("La cadena con mayor longitud es: %s con una longitud de: %i\n",
+      printf("La cadena con mayor longitud es: %s con una longitud de: %ld\n",
              primerNombre, strlen(primerNombre));
     else if (mayor == 1)
-      printf("La cadena con mayor longitud es: %s con una longitud de: %i\n",
+      printf("La cadena con mayor longitud es: %s con una longitud de: %ld\n",
              segundoNombre, strlen(segundoNombre));
     else if (mayor == 2)
       printf("Los nombres son iguales en longitud.\n");
@@ -65,7 +65,6 @@ int main() {
     /* Declaracion de variables */
     char primerNombre[STRING_LENGTH];
     char segundoNombre[STRING_LENGTH];
-    char nombreConcatenado[STRING_LENGTH * 2];
     bool alfaVsLong; // Gets passed into imprimirPantalla, to validate when to
                      // print the type of search we're doing
 
@@ -88,6 +87,8 @@ int main() {
     int valorCadenaLarga = obtenerCadenaLarga(primerNombre, segundoNombre);
     imprimirNombreMayor(alfaVsLong, valorCadenaLarga, primerNombre,
                         segundoNombre);
+
+    printf("Sus nombres combinados son: %s %s\n", primerNombre, segundoNombre);
 
     while (true) {
       int inv = 0;
