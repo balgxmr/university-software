@@ -20,31 +20,34 @@
 #define STRING_LENGTH 100
 
 /* Funcion para obtener que nombre es mayor ascendentemente en el abecedario */
-bool obtenerMayorAlfabeto (char primerNombre[], char segundoNombre[]) {
-    return (primerNombre[0] > segundoNombre[0]) ? true : false;
+int obtenerMayorAlfabeto (char primerNombre[], char segundoNombre[]) {
+    return (primerNombre[0] > segundoNombre[0]) ? 1 : 0;
 }
 
 /* Imprime el nombre mayor alfabeticamente por pantalla */
-void imprimirNombreMayor (bool alfaVsLong, bool mayor, char primerNombre[], char segundoNombre[]) {
+void imprimirNombreMayor (bool alfaVsLong, int mayor, char primerNombre[], char segundoNombre[]) {
     if(alfaVsLong == true){
-        if(mayor == false)
+        if(mayor == 0)
             printf("El nombre mayor alfabeticamente es: %s\n", primerNombre);
         else
             printf("El nombre mayor alfabeticamente es: %s\n", segundoNombre);
     } else {
-        if(mayor == false)
+        if (mayor == 0)
             printf("La cadena con mayor longitud es: %s con una longitud de: %i\n", primerNombre, strlen(primerNombre));
-        else
+        else if (mayor == 1)
             printf("La cadena con mayor longitud es: %s con una longitud de: %i\n", segundoNombre, strlen(segundoNombre));
+        else if (mayor == 2)
+            printf("Los nombres son iguales en longitud.\n");
     }
 }
 
 /* Funcion para obtener cual es la cadena más larga */
-bool obtenerCadenaLarga (char primerNombre[], char segundoNombre[]){
-    if(strlen(primerNombre) > strlen(segundoNombre))
-        return false;
-    else
-        return true;
+int obtenerCadenaLarga (char primerNombre[], char segundoNombre[]){
+    int n = strlen(primerNombre);
+    int m = strlen(segundoNombre);
+    if(n == m)
+        return 2;
+    return (n > m) ? 0 : 1;
 }
 
 int main(){
@@ -68,11 +71,11 @@ int main(){
         printf("Nombre #2: %s\n\n", segundoNombre);
 
         alfaVsLong = true;
-        bool mayor = obtenerMayorAlfabeto(primerNombre, segundoNombre);
+        int mayor = obtenerMayorAlfabeto(primerNombre, segundoNombre);
         imprimirNombreMayor(alfaVsLong, mayor, primerNombre, segundoNombre);
 
         alfaVsLong = false;
-        bool valorCadenaLarga = obtenerCadenaLarga(primerNombre, segundoNombre);
+        int valorCadenaLarga = obtenerCadenaLarga(primerNombre, segundoNombre);
         imprimirNombreMayor(alfaVsLong, valorCadenaLarga, primerNombre, segundoNombre);
 
         while(true){
