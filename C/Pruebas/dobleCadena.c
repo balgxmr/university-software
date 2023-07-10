@@ -53,6 +53,13 @@ int obtenerCadenaLarga(char primerNombre[], char segundoNombre[]) {
   return (n > m) ? 0 : 1;
 }
 
+/* Funcion para invertir cualquier cadena */
+void invertirCadena(char nombre[]) {
+  printf("Su cadena invertida es: ");
+  for (int i = strlen(nombre); i >= 0; i--)
+    printf("%c", nombre[i]);
+}
+
 int main() {
   while (true) {
     /* Declaracion de variables */
@@ -81,6 +88,8 @@ int main() {
     int valorCadenaLarga = obtenerCadenaLarga(primerNombre, segundoNombre);
     imprimirNombreMayor(alfaVsLong, valorCadenaLarga, primerNombre,
                         segundoNombre);
+
+    invertirCadena(primerNombre);
 
     while (true) {
       // Ask if the user wants to continue
