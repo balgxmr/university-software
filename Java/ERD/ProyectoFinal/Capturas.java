@@ -37,21 +37,19 @@ public class Capturas {
     }
 
     public Float validarIndice(String message) {
-        float indice;
+        float indice = 0;
         try {
             System.out.print(message);
             indice = Float.parseFloat(read.readLine());
-            if (indice > 0.0 && indice < 3.0) {
+            if (indice > 0.0 && indice <= 3.0) {
                 return indice;
             } else {
                 throw new Exception();
             }
         } catch (Exception e) {
             System.out.println("Ingrese un valor valido");
-            capturarDatos(message);
+            return validarIndice(message); // Recursividad
         }
-        indice = 0;
-        return indice;
     }
 
     public String capturarCarrera(String x) {
