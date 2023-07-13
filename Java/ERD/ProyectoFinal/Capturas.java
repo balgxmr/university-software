@@ -98,5 +98,5 @@ public class Capturas {
             System.out.println("Ingresa un valor válido!");
             return capturarCarrera(x);
         }
-    }
+    } // fin capturarCarrera
 }
