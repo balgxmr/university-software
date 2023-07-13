@@ -46,7 +46,7 @@ public class ProyectoFinal {
         String carrera;
         Float indice;
 
-        Capturas datos = new Capturas(); // Utilizado para capturar los datos ingresados manualmente.
+        Capturas datos = new Capturas(); // Se crea el objeto datos para capturar los datos ingresados manualmente.
                                          // No se utiliza actualmente ya que los valores son generados
                                          // aleatoriamente
 
@@ -133,7 +133,7 @@ public class ProyectoFinal {
     }
 
     private static float generateRandomIndice() {
-        float indice = random.nextFloat() * 2 + 2; // Generar un índice entre 2.0 y 4.0
+        float indice = random.nextFloat() * 2 + 1; // Generar un índice entre 1.0 y 3.0
         return Math.round(indice * 100) / 100.0f; // Redondear a dos decimales usando Math
     }
     /* FIN VALORES DE PRUEBA */
