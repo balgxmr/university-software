@@ -1,4 +1,4 @@
-/* CREDITS TO: Keneth Benavidez (2023) UTP */
+/* Créditos para: Keneth Benavidez (2023) UTP */
 
 public class Clean {
     public static void clean() {

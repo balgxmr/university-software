@@ -3,6 +3,7 @@ import java.io.*;
 public class Capturas {
     BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 
+    // Captura el mensaje del usuario, y verifica que sea un valor válido.
     public String capturarDatos(String message) {
         try {
             System.out.print(message);
@@ -11,8 +12,11 @@ public class Capturas {
             System.out.println("Ingrese un valor valido");
             return capturarDatos(message);
         }
-    }
+    } // capturarDatos end
 
+
+    //  Se valida que el valor fecha (mes o año) sea válido
+    //  el booleano value indicará si hay que validar mes (true) o año (false)
     public int validarFechas(String message, boolean value) {
         int fecha;
         try {
@@ -27,6 +31,8 @@ public class Capturas {
                 if (fecha > 1900 && fecha < 2023)
                     return fecha;
                 else
+                    // Tirar nueva excepción para entrar al catch() que imprimirá
+                    // El mensaje y ejecutará nuevamente esta función (recursividad)
                     throw new Exception();
             }
         } catch (Exception e) {
@@ -34,24 +40,29 @@ public class Capturas {
             validarFechas(message, value);
         }
         return 0;
-    }
+    } // validarFechas end
+
 
     public Float validarIndice(String message) {
         float indice = 0;
         try {
             System.out.print(message);
             indice = Float.parseFloat(read.readLine());
+            // Validar que el indice sea únicamente de 0 a 3.0
             if (indice > 0.0 && indice <= 3.0) {
                 return indice;
             } else {
+                // Tirar nueva excepción para entrar al catch() que imprimirá
+                // El mensaje y ejecutará nuevamente esta función (recursividad)
                 throw new Exception();
             }
         } catch (Exception e) {
             System.out.println("Ingrese un valor valido");
             return validarIndice(message); // Recursividad
         }
-    }
+    } // validarIndice end
 
+    
     public String capturarCarrera(String x) {
         String ISC = "Ingenieria en Sistemas Computacionales";
         String IDS = "Ingenieria en Desarrollo de Software";
@@ -98,5 +109,5 @@ public class Capturas {
             System.out.println("Ingresa un valor válido!");
             return capturarCarrera(x);
         }
-    } // fin capturarCarrera
-}
+    } // capturarCarrera end
+} // Capturas end

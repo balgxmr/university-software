@@ -30,13 +30,15 @@ import java.io.*;
 import java.util.Random;
 
 public class ProyectoFinal {
-    private static Random random = new Random(); // Variable de instancia de la clase (PRUEBA)
+    private static Random random = new Random(); // Variable de instancia de la clase (Para generar datos aleatorios)
     public static void main(String[] args) throws IOException {
+        // Limpiar pantalla
         Clean.clean();
 
-        // PRUEBA
+        /* Declarar un objeto de la clase random para posteriormente usarse para generar datos aleatorios */
         Random random = new Random();
 
+        /* Declaración de variables */
         String name;
         String cedula;
         int mesNac;
@@ -44,14 +46,24 @@ public class ProyectoFinal {
         String carrera;
         Float indice;
 
-        Capturas datos = new Capturas();
+        Capturas datos = new Capturas(); // Utilizado para capturar los datos ingresados manualmente.
+                                         // No se utiliza actualmente ya que los valores son generados
+                                         // aleatoriamente
 
+
+        /* Inicializar el arreglo estudiantes con cantidad de 100
+         * Usando el constructor dentro de la clase Estudiante
+         * para inicializar las variables
+         */
         Estudiante[] estudiantes = new Estudiante[100];
 
-        // DATOS DE PRUEBA
 
+        /* for que iterará 100 veces y dentro se generarán los 100 estudiantes */
         for (int i = 0; i < 100; i++) {
-            /* ESTA PARTE ES EN LA QUE EL USUARIO AÑADE LOS DATOS MANUALMENTE
+            /* 
+            ESTA PARTE ES EN LA QUE EL USUARIO AÑADE LOS DATOS MANUALMENTE.
+            Fue reemplazada por los datos generados de manera aleatoria.
+
             System.out.println("Estudiante #" + (i + 1));
             name = datos.capturarDatos("Ingresa el nombre: ");
             cedula = datos.capturarDatos("Ingrese la cedula: ");
@@ -62,8 +74,8 @@ public class ProyectoFinal {
             estudiantes[i] = new Estudiante(name, cedula, mesNac, anioNac, carrera, indice);
             */
 
-            /* VALORES DE PRUEBA */
-            System.out.println("Estudiante #" + (i + 1));
+            /* Valores generados de manera aletoria */
+            // System.out.println("Estudiante #" + (i + 1));
             
             // Generar nombre aleatorio
             name = generateRandomName();
@@ -75,9 +87,9 @@ public class ProyectoFinal {
             mesNac = random.nextInt(12) + 1;
             
             // Generar año de nacimiento aleatorio
-            anioNac = random.nextInt(20) + 2000; // Asumiendo que los estudiantes tienen entre 20 y 40 años
+            anioNac = random.nextInt(20) + 2000; // Se asume que los estudiantes tienen entre 20 y 40 años
             
-            // Generar carrera aleatoria
+            // Generar una carrera aleatoria
             carrera = generateRandomCarrera();
             
             // Generar índice aleatorio
@@ -89,20 +101,21 @@ public class ProyectoFinal {
             Clean.clean();
         }
 
-        /*  DEBUG CODE
+        /*  DEBUG CODE (Descomentar para imprimir a los 100 estudiantes por pantalla)
         Impresiones impresion = new Impresiones();
         impresion.imprimirEstudiantes(estudiantes, 100);
             DEBUG CODE END
         */ 
 
-        /* Llamar a mejores estudiantes */
+        /* Llamar a calcularSobresalientes para calcular los mejores estudiantes con el indice */
         Calculos.calcularSobresalientes(estudiantes);
     } // main end
 
 
-    /* VALORES DE PRUEBA */
+    /* VALORES DE PRUEBA UTILIZADOS Y GENERADOS ALEATORIAMENTE */
     private static String generateRandomName() {
-        String[] names = {"John", "Emily", "Michael", "Sophia", "William", "Olivia", "Daniel", "Emma", "David", "Ava"};
+        String[] names = {"Jose", "Richard", "Alex", "Miguel", "Jonathan", "Nicole", "Kidian", "Luis", "Octavio", "Juan", 
+                          "Josema", "Alexis", "Leo Messi", "Neymar", "Crispina", "Ikair"};
         return names[random.nextInt(names.length)];
     }
 
@@ -115,13 +128,13 @@ public class ProyectoFinal {
     }
 
     private static String generateRandomCarrera() {
-        String[] carreras = {"Ingeniería Informática", "Medicina", "Derecho", "Administración de Empresas", "Arquitectura"};
+        String[] carreras = {"Desarrollo de Software", "Medicina", "Aeronautica", "Administración de Negocios", "Licenciatura en ciberseguridad"};
         return carreras[random.nextInt(carreras.length)];
     }
 
     private static float generateRandomIndice() {
         float indice = random.nextFloat() * 2 + 2; // Generar un índice entre 2.0 y 4.0
-        return Math.round(indice * 100) / 100.0f; // Redondear a dos decimales
+        return Math.round(indice * 100) / 100.0f; // Redondear a dos decimales usando Math
     }
     /* FIN VALORES DE PRUEBA */
 } // ProyectoFinal end
