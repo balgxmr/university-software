@@ -81,7 +81,6 @@ public class Principal {
                     lista.imprimirRegistros();
                 }
             } else if (option == 5) { // SALIR DEL PROGRAMA
-                Limpieza.Clean();
                 System.out.println("Ha salido del programa con exito");
                 loop = false;
             }
