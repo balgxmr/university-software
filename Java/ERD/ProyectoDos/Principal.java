@@ -1,3 +1,12 @@
+/* 
+ * Grupo 1SF121
+ * 
+ * Jonathan Núñez (4-823-1010)
+ * José Encalada (8-999-1420)
+ * Richard Herranz (E-8-192057)
+ */
+
+
 // Importar librerias
 import java.io.*;
 

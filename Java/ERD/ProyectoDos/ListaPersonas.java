@@ -1,3 +1,11 @@
+/* 
+ * Grupo 1SF121
+ * 
+ * Jonathan Núñez (4-823-1010)
+ * José Encalada (8-999-1420)
+ * Richard Herranz (E-8-192057)
+ */
+
 public class ListaPersonas {
     Persona primero;
 
@@ -59,7 +67,7 @@ public class ListaPersonas {
             }
 
             control = control.getSiguiente();
-            contador = contador + 1;
+            contador =+ 1;
         }
 
         // Se retorna 0 en caso de no encontrar el nombre en la lista
