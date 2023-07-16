@@ -1,3 +1,4 @@
+package ProyectoUno;
 import java.io.*;
 
 public class Capturas {

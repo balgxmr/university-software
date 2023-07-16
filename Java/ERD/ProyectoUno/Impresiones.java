@@ -1,3 +1,4 @@
+package ProyectoUno;
 public class Impresiones {
     /*
      * Funcion que imprime a todos los estudiantes

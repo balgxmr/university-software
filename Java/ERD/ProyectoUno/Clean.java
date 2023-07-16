@@ -1,3 +1,4 @@
+package ProyectoUno;
 /* Créditos para: Keneth Benavidez (2023) UTP */
 
 public class Clean {

@@ -1,3 +1,4 @@
+package ProyectoUno;
 /* Codigo de colores en codigo ANSI */
 
 public class Colors {

@@ -1,3 +1,4 @@
+package ProyectoUno;
 public class Estudiante {
     private String name;
     private String cedula;

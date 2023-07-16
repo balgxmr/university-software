@@ -1,3 +1,4 @@
+package ProyectoUno;
 public class Calculos {
     /* Almacenar estudiantes sobresalientes */
     public static void calcularSobresalientes(Estudiante[] estudiantes){
