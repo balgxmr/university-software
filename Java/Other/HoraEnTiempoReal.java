@@ -1,4 +1,3 @@
-package HoraEnTiempoReal;
 import java.io.*;
 
 public class HoraEnTiempoReal {
