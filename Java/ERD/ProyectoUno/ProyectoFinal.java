@@ -46,11 +46,12 @@ public class ProyectoFinal {
         int anioNac;
         String carrera;
         Float indice;
-
+        
+ /*
         Capturas datos = new Capturas(); // Se crea el objeto datos para capturar los datos ingresados manualmente.
                                          // No se utiliza actualmente ya que los valores son generados
                                          // aleatoriamente
-
+*/
 
         /* Inicializar el arreglo estudiantes con cantidad de 100
          * Usando el constructor dentro de la clase Estudiante

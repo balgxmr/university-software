@@ -23,6 +23,10 @@ class Estudiante {       // Se crea el registro
   // Funciones para obtener y utilizar los valores almacenados en el registro
   public String getNombre() { return this.nombre; }
 
+  public String getCedula() { return this.cedula; }
+
+  public int getAnio() { return this.año; }
+
   public int getMes() { return this.mes; }
 
   public float getIndice() { return this.indice; }
