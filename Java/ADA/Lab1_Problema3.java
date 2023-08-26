@@ -5,12 +5,13 @@ public class Lab1_Problema3 {
     public static void main(String[] args) throws IOException{
 
         // BufferedReader utilizado para leer el input del usuario
-        // BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = 5;
+        System.out.print("Ingresa un numero entero: ");
+        int n = Integer.parseInt(read.readLine());
 
-        if(n < 5){
-            System.out.println("Error! El valor actual de n (" + n + ") es incorrecto, ha de ser igual o mayor a 5.");
+        if(n < 5 && n > -5 || n < -10){
+            System.out.println("Error! El valor actual de n (" + n + ") es incorrecto, los numeros de -4 a 4 no son validos, ni los menores a -10. ");
             System.exit(n);
         }
 
