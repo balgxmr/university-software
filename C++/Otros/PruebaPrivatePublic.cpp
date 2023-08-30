@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
-struct Estudiantes {
+struct Students {
     private:
         string username;
         string password;
@@ -33,20 +34,57 @@ struct Estudiantes {
 string capturarDatos(string msg){
     string dato;
     cout << "Introduce tu " << msg << ": ";
+    getline(cin, dato);
+    return dato;
+}
+
+int capturarDatos(int msg){
+    int dato;
+
+    if (msg == 1){
+        cout << "Enter your age: ";
+    } else if (msg == 2) {
+        cout << "Enter your ID: ";
+    }
+
     cin >> dato;
     return dato;
 }
 
 int main(){
-    Estudiantes estudiante1;
+    static int NUM_ESTUDIANTES = 100;
+    vector<Students> studentsList;
 
-    string newPassword, newUsername;
+    for(int i = 0; i < NUM_ESTUDIANTES; i++){
+        Students student;
 
-    estudiante1.SetUsername(capturarDatos("username"));
-    estudiante1.SetPassword(capturarDatos("password"));
+        cout << "STUDENT #" << i + 1 << endl;
 
-    cout << "Username: " << estudiante1.GetUsername() << endl;
-    cout << "Password: " << estudiante1.GetPassword() << endl;
+        int newAge;
+        student.age = (capturarDatos(1));
+
+        string newName;
+        student.name = capturarDatos("name");
+
+        string newUsername;
+        student.SetUsername(capturarDatos("username"));
+
+        string newPassword;
+        student.SetPassword(capturarDatos("password"));
+
+        studentsList.push_back(student);
+    }
+
+    for (int i = 0; i < NUM_ESTUDIANTES; i++) {
+        cout << "Student " << i + 1 << ":\n";
+        cout << "Username: " << studentsList[i].GetUsername() << endl;
+        cout << "Password: " << studentsList[i].GetPassword() << endl;
+        cout << "Age: " << studentsList[i].age << endl;
+        cout << "Name: " << studentsList[i].name << endl;
+        cout << "Phone Number: " << studentsList[i].phoneNumber << endl;
+        cout << "--------------------------\n";
+    }
+
 
     return 0;
 }
