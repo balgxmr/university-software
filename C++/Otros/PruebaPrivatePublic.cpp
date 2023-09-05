@@ -31,28 +31,8 @@ struct Students {
         }
 };
 
-string capturarDatos(string msg){
-    string dato;
-    cout << "Introduce tu " << msg << ": ";
-    getline(cin, dato);
-    return dato;
-}
-
-int capturarDatos(int msg){
-    int dato;
-
-    if (msg == 1){
-        cout << "Enter your age: ";
-    } else if (msg == 2) {
-        cout << "Enter your ID: ";
-    }
-
-    cin >> dato;
-    return dato;
-}
-
 int main(){
-    static int NUM_ESTUDIANTES = 100;
+    static int NUM_ESTUDIANTES = 2;
     vector<Students> studentsList;
 
     for(int i = 0; i < NUM_ESTUDIANTES; i++){
@@ -61,20 +41,37 @@ int main(){
         cout << "STUDENT #" << i + 1 << endl;
 
         int newAge;
-        student.age = (capturarDatos(1));
+        cout << "Enter your age: ";
+        cin >> newAge;
+        cin.ignore();  // Limpia el carácter de nueva línea del búfer
+
+        student.age = newAge;
 
         string newName;
-        student.name = capturarDatos("name");
+        cout << "Enter your name: ";
+        cin.ignore();
+        getline(cin, newName);
+        student.name = newName;
 
         string newUsername;
-        student.SetUsername(capturarDatos("username"));
+        cout << "Enter your username: ";
+        getline(cin, newUsername);
+        student.SetUsername(newUsername);
 
         string newPassword;
-        student.SetPassword(capturarDatos("password"));
+        cout << "Enter your password: ";
+        getline(cin, newPassword);
+        student.SetPassword(newPassword);
+
+        string newPhoneNumber;
+        cout << "Enter your phone number: ";
+        getline(cin, newPhoneNumber);
+        student.phoneNumber = newPhoneNumber;
 
         studentsList.push_back(student);
     }
 
+    cout << "--------------------------\n";
     for (int i = 0; i < NUM_ESTUDIANTES; i++) {
         cout << "Student " << i + 1 << ":\n";
         cout << "Username: " << studentsList[i].GetUsername() << endl;
@@ -84,7 +81,6 @@ int main(){
         cout << "Phone Number: " << studentsList[i].phoneNumber << endl;
         cout << "--------------------------\n";
     }
-
 
     return 0;
 }
