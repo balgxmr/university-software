@@ -5,6 +5,7 @@
 
 *.class
 *.exe
+*.jar
 
 .vscode/*
 !.vscode/settings.json
