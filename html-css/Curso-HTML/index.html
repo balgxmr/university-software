@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Diseño Freelance</title>
+    <link rel="preload" href="css/style.css" as="style" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
-  <body style="color: #1f2a36">
+
+  <body>
     <header>
-      <h1>José Encalada Freelancer</h1>
+      <h1>José Encalada <span>Freelancer</span></h1>
     </header>
 
     <!--Se utiliza nav porque el menu es de un solo nivel, pero si el menu fuera de múltiples niveles, se usa <ul> y dentro <li> -->
@@ -80,6 +83,48 @@
 
     <section>
       <h2>Contacto</h2>
+
+      <form>
+        <fieldset>
+          <legend>Contactame llenando los campos!</legend>
+
+          <div>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+            <!--placeholder = texto cuando no se ha escrito nada-->
+            <!--PD: no es necesario el cierre />, pero algunas tecnologias como React lo necesitan   -->
+          </div>
+
+          <div>
+            <label>Teléfono</label>
+            <input type="tel" placeholder="Tu teléfono" />
+          </div>
+
+          <div>
+            <label>Correo</label>
+            <input type="email" placeholder="Tu correo electrónico" />
+          </div>
+
+          <div>
+            <label>Mensaje (Opcional)</label>
+            <textarea></textarea>
+          </div>
+
+          <div>
+            <input type="submit" value="Enviar" />
+            <!--button hace lo mismo que input solo que el texto está fuera de eso y tiene cierre
+          <button type="submit">Enviar</button> -->
+          </div>
+
+          <!--
+          <input type="checkbox" /> ---- para checkbox
+          <input type="radio" />    ---- para seleccion única
+          <input type="tel" />      ---- para que en móvil salga el teclado en "modo telefono"
+          <input type="email" />    ---- para que aparezca el arroba (@) en el teclado móvil
+          <input type="number" />   ---- solo permite entrada de numeros
+          -->
+        </fieldset>
+      </form>
     </section>
 
     <footer>

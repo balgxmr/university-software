@@ -1,0 +1,28 @@
+/*   Con em si tenemos por ejemplo, un <h1> y dentro <span>texto<span/>, lo que hace em es que
+     es que agarra el valor del h1 y lo multiplica al span, si el h1 tiene un valor de 2 em, y al span le 
+     ponemos un valor de 2em igualmente, serían 4em en total, por ello es mejor usar rem. 
+     Además px no es tan recomendado... 
+     
+     Rem es relativo al documento, por lo }1tanto no tiene el comportamiento extraño de em, ya que toma como referencia el tamaño del documento en vez de h1 
+  
+
+     **** Also, usamos los valores de HTML y BODY abajo para que 1 rem = 10px!
+*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  color: #1f2a36;
+  font-size: 3.8rem;
+}
+
+span {
+  font-size: 2rem;
+}
