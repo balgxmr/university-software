@@ -11,48 +11,51 @@
     </header>
 
     <main>
-      <section name="Seccion general" style="display: flex; justify-content: center">
-        <form name="Formulario" style="width: 60%">
-          <fieldset style="border-color: rgb(164, 151, 121); border-width: 6px; padding: 20px">
+      <section name="Seccion general">
+        <form name="Formulario" style="width: 100%; display: grid; justify-content: center">
+          <fieldset style="border-color: rgb(164, 151, 121); border-width: 6px; padding: 20px; flex-direction: column">
             <legend style="font-size: 30px; font-weight: bold">Llena todos los campos!</legend>
 
-            <h2>Tu información personal</h2>
+            <img src="img/logo_utp-rgb_2022.png" width="200px" height="200px" style="margin-left: 20%" />
+            <section title="Seccion Info personal">
+              <h2>Tu información personal</h2>
 
-            <div style="margin-bottom: 1%">
-              <label>Nombre</label> <br />
-              <input type="text" placeholder="Tu nombre" />
-            </div>
+              <div style="margin-bottom: 1%">
+                <label>Nombre</label> <br />
+                <input type="text" placeholder="Tu nombre" />
+              </div>
 
-            <div style="margin-bottom: 1%">
-              <label>Apellido</label> <br />
-              <input type="text" placeholder="Tu Apellido" />
-            </div>
+              <div style="margin-bottom: 1%">
+                <label>Apellido</label> <br />
+                <input type="text" placeholder="Tu Apellido" />
+              </div>
 
-            <div style="margin-bottom: 1%">
-              <label>Cédula</label> <br />
-              <input type="text" placeholder="Tu Cédula" />
-            </div>
+              <div style="margin-bottom: 1%">
+                <label>Cédula</label> <br />
+                <input type="text" placeholder="Tu Cédula" />
+              </div>
 
-            <div style="margin-bottom: 1%">
-              <label>Fecha de Nacimiento</label> <br />
-              <input type="date" placeholder="Fecha" />
-            </div>
+              <div style="margin-bottom: 1%">
+                <label>Fecha de Nacimiento</label> <br />
+                <input type="date" placeholder="Fecha" />
+              </div>
 
-            <label>Provincia donde reside</label> <br />
-            <select name="opciones" id="1">
-              <option value="Panama" selected>Panamá</option>
-              <option value="Herrera">Herrera</option>
-              <option value="Chiriqui">Chiriqui</option>
-              <option value="Veraguas">Veraguas</option>
-              <option value="Panama_Oeste">Panama Oeste</option>
-              <option value="Boc_Toro">Bocas del Toro</option>
-              <option value="Darien">Darién</option>
-              <option value="Cocle">Coclé</option>
-              <option value="Colon">Colón</option>
-              <option value="LosSantos">Los Santos</option>
-            </select>
+              <label>Provincia donde reside</label> <br />
+              <select name="opciones" id="1">
+                <option value="Panama" selected>Panamá</option>
+                <option value="Herrera">Herrera</option>
+                <option value="Chiriqui">Chiriqui</option>
+                <option value="Veraguas">Veraguas</option>
+                <option value="Panama_Oeste">Panama Oeste</option>
+                <option value="Boc_Toro">Bocas del Toro</option>
+                <option value="Darien">Darién</option>
+                <option value="Cocle">Coclé</option>
+                <option value="Colon">Colón</option>
+                <option value="LosSantos">Los Santos</option>
+              </select>
+            </section>
 
-            <section>
+            <section title="Seccion Info Curso">
               <h2>Información del curso</h2>
               <div title="Informacion del titulo">
                 <h3 style="margin-top: 2%; font-weight: 500">Facultad a la que pertenece</h3>
@@ -69,7 +72,43 @@
                 <input type="radio" id="fie" name="rb1" value="FIE" />
                 <label for="FISC"> FIE </label> <br />
               </div>
-              <div></div>
+
+              <div title="Tema de Interes">
+                <h3 style="margin-top: 2%; font-weight: 500">Temas de interés</h3>
+                <input type="checkbox" name="1" id="prog" value="Programación" />
+                <label for="prog">Programación</label> <br />
+
+                <input type="checkbox" name="2" id="arte" value="Diseno_Arte" />
+                <label for="arte">Diseño y Arte</label> <br />
+
+                <input type="checkbox" name="3" id="tcr" value="Tecnologia_Red" />
+                <label for="tcr">Tecnologia para coneectividad en la red</label> <br />
+
+                <input type="checkbox" name="4" id="ii" value="Inv_Innovacion" />
+                <label for="ii">Investigación e Innovación</label> <br />
+              </div>
+
+              <div title="Experiencia">
+                <h3 style="margin-top: 2%; font-weight: 500">Experiencia en programación</h3>
+                <textarea name="Área de texto" cols="30" rows="10" placeholder="Cuéntanos aquí"></textarea>
+              </div>
+            </section>
+
+            <section title="Seccion de Salud">
+              <h2>Salud</h2>
+              <div style="margin-top: 2%">
+                <h3 style="font-weight: 500">Peso</h3>
+                <span>40kg</span>
+                <input type="range" name="peso" id="rango1" min="40" max="120" style="opacity: 0.7; height: 10px; width: 50%" />
+                <span>120kg</span>
+              </div>
+
+              <div style="margin-top: 2%">
+                <h3 style="font-weight: 500">Altura</h3>
+                <span>1.00m</span>
+                <input type="range" name="peso" id="rango1" min="100" max="200" style="opacity: 0.7; height: 10px; width: 50%" />
+                <span>2.00m+</span>
+              </div>
             </section>
 
             <div style="margin-top: 1%">
