@@ -17,12 +17,18 @@ body {
   font-size: 16px;
 }
 
-h1 {
+.titulo {
   text-align: center;
   color: #1f2a36;
   font-size: 3.8rem;
 }
 
-span {
+.subtitulo {
+  text-align: center;
+  color: #1f2a36;
+  font-size: 3rem;
+}
+
+.titulo span {
   font-size: 2rem;
 }
