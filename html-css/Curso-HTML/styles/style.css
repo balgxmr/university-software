@@ -9,26 +9,55 @@
      **** Also, usamos los valores de HTML y BODY abajo para que 1 rem = 10px!
 */
 
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: rgb(253, 230, 148);
+  --secundario: rgb(31, 28, 21);
+  --gris: #757575;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-size: 16px;
+  font-family: "Inter", sans-serif;
 }
 
 .titulo {
   text-align: center;
-  color: #1f2a36;
   font-size: 3.8rem;
 }
 
-.subtitulo {
+.titulo span {
   text-align: center;
-  color: #1f2a36;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
-.titulo span {
-  font-size: 2rem;
+.contenedor {
+  width: 120rem;
+  /*
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  
+  margin equivale a los 4 valores de arriba, en ese mismo orden.
+  ej: margin: valor_top valor_right valor_bottom valor_left;
+  
+  cuando tenemos repetidos: 0 auto 0 auto, se puede dejar como uno: 0 auto
+  */
+  margin: 0 auto;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+.navegacion-principal {
+}
+
+.navegacion-principal a {
 }

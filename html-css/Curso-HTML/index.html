@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diseño Freelance</title>
-    <link rel="preload" href="css/style.css" as="style" />
+    <!--"Normalize" se encarga de que la página se vea mejor, y más consistente a través de los distintos navegadores, en distintos dispotivos. Esta debe de ser la que primero se cargue. Luego las demás librerias y despues styles...-->
+    <link rel="preload" href="styles/normalize.css" as="style" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="preload" href="styles/style.css" as="style" />
     <link href="styles/style.css" rel="stylesheet" />
   </head>
 
@@ -14,15 +20,17 @@
     </header>
 
     <!--Se utiliza nav porque el menu es de un solo nivel, pero si el menu fuera de múltiples niveles, se usa <ul> y dentro <li> -->
-    <nav>
-      <a href="nosotros.html">Inicio</a>
-      <a href="nosotros.html">Sobre mi</a>
-      <a href="nosotros.html">Clientes</a>
-      <a href="nosotros.html">Contacto</a>
-    </nav>
+    <div class="nav-bg">
+      <nav class="navegacion-principal contenedor">
+        <a href="nosotros.html">Inicio</a>
+        <a href="nosotros.html">Sobre mi</a>
+        <a href="nosotros.html">Clientes</a>
+        <a href="nosotros.html">Contacto</a>
+      </nav>
+    </div>
 
     <section>
-      <h2 class="titulo">Diseño y Desarrollo Web Freelancer</h2>
+      <h2 class="titulo">Diseño y Desarrollo Web <span>Freelancer</span></h2>
 
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
