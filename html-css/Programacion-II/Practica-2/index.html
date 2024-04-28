@@ -6,17 +6,29 @@
     <title>Mi información</title>
   </head>
   <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: rgb(31, 28, 21); background-color: rgb(255, 248, 225)">
+    <!-- Script toggle para que un objeto desaparezca o aparezca con una accion-->
+    <script> 
+      function toggle(elementId) {
+        const element = document.getElementById(elementId);
+        if (element.style.display === "none") { 
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
     <header>
       <h1 align="center" style="font-size: 370%">Mi información</h1>
     </header>
 
     <main>
       <section name="Seccion general">
-        <form name="Formulario" style="width: 100%; display: grid; justify-content: center">
+        <form name="Formulario" style="width: 100%; display: grid; justify-content: center" action="index2.html">
           <fieldset style="border-color: rgb(164, 151, 121); border-width: 6px; padding: 20px; flex-direction: column">
             <legend style="font-size: 30px; font-weight: bold">Llena todos los campos!</legend>
 
             <img src="img/logo_utp-rgb_2022.png" width="200px" height="200px" style="margin-left: 20%" />
+            
             <section title="Seccion Info personal">
               <h2>Tu información personal</h2>
 
@@ -82,7 +94,7 @@
                 <label for="arte">Diseño y Arte</label> <br />
 
                 <input type="checkbox" name="3" id="tcr" value="Tecnologia_Red" />
-                <label for="tcr">Tecnologia para coneectividad en la red</label> <br />
+                <label for="tcr">Tecnologia para conectividad en la red</label> <br />
 
                 <input type="checkbox" name="4" id="ii" value="Inv_Innovacion" />
                 <label for="ii">Investigación e Innovación</label> <br />
@@ -110,9 +122,29 @@
                 <span>2.00m+</span>
               </div>
             </section>
+            <section title="Alergia">
+              <h3> Escoger todas las alergias que apliquen</h3>
+                <input type="checkbox" name="chkbox5" id="rin" value="Rinitis" />
+                <label for="rin">Rinitis</label> <br />
+
+                <input type="checkbox" name="chkbox6" id="asma" value="Asma" />
+                <label for="asma">Asma</label> <br />
+
+                <input type="checkbox" name="chkbox7" id="lact" value="Lactosa" />
+                <label for="lact">Lactosa</label> <br />
+
+                <input type="checkbox" id="medic" onclick="toggle('txtarea3')" name="chkbox8"  value="Medicamentos" />
+                <label for="medic">Medicamentos</label> <br />
+                <textarea style="display: none;" id="txtarea3" name="txtarea3" rows="5" cols="30" placeholder="Indique los medicamentos"></textarea> <!-- objeto que desaparece 
+                                                                                                                                                      con el script-->
+
+                <input type="checkbox" id="otros" onclick="toggle('txtarea4')" name="chkbox9"  value="Otros" />
+                <label for="otros">Otros</label> <br />
+                <textarea style="display: none;" id="txtarea4" name="txtarea4" rows="5" cols="30" placeholder="Indique las otras alergias"></textarea><br>
+            </section>
 
             <div style="margin-top: 1%">
-              <input type="submit" value="Enviar" />
+              <input type="submit" value="Enviar"/>
             </div>
           </fieldset>
         </form>
