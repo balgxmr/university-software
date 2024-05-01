@@ -14,6 +14,7 @@
   --oscuro: #212121;
   --primario: rgb(253, 230, 148);
   --secundario: rgb(31, 28, 21);
+  --background: rgb(255, 248, 225);
   --gris: #757575;
 }
 
@@ -24,6 +25,7 @@ html {
 body {
   font-size: 16px;
   font-family: "Inter", sans-serif;
+  background-color: var(--background);
 }
 
 .titulo {
@@ -53,11 +55,16 @@ body {
 }
 
 .nav-bg {
-  background-color: var(--secundario);
+  background-color: var(--primario);
 }
 
 .navegacion-principal {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navegacion-principal a {
+  color: var(--secundario);
+  text-decoration: none;
 }
