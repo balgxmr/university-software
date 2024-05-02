@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMULARIO</title>
+  </head>
+  <body style="background-color: rgb(203, 240, 253)">
+    <header style="display: flex; justify-content: center">
+      <h1>FORMULARIO DE REGISTRO</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2 align="center">Bienvenido al formulario de registro para nuestro restaurante:</h2>
+        <form name="form-registro">
+          <table cellpadding="5" cellspacing="15" align="center">
+            <tr>
+              <td>Nombre:</td>
+              <td>
+                <input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu nombre" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>Apellido:</td>
+              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu apellido" /></td>
+            </tr>
+
+            <tr>
+              <td>Sexo:</td>
+              <td>
+                <input type="radio" id="fem" name="sexo" value="MAS" />
+                <label for="MAS"> M </label>
+
+                <input type="radio" id="fem" name="sexo" value="FEM" />
+                <label for="FEM"> F </label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Dirección:</td>
+              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu dirección" /></td>
+            </tr>
+
+            <tr>
+              <td>Usuario:</td>
+              <td>
+                <input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu nombre de usuario" />
+              </td>
+            </tr>
+
+            <tr>
+              <td>Contraseña:</td>
+              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu contraseña de inicio" /></td>
+            </tr>
+
+            <tr>
+              <td>Seleccione su reserva:</td>
+              <td>
+                <input type="checkbox" name="desayuno" /> Desayuno <br />
+                <input type="checkbox" name="almuerzo" /> Almuerzo <br />
+                <input type="checkbox" name="cena" /> Cena <br />
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="submit" name="submit" value="Enviar formulario" />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
