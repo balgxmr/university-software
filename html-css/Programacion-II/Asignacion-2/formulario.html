@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORMULARIO</title>
+    <!--Importar fuente Inter de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
   </head>
-  <body style="background-color: rgb(203, 240, 253)">
+  <body style="background-color: rgb(203, 240, 253); font-family: Inter, sans-serif; color: rgb(30, 45, 51)">
     <header style="display: flex; justify-content: center">
       <h1>FORMULARIO DE REGISTRO</h1>
     </header>
@@ -14,17 +18,18 @@
       <section>
         <h2 align="center">Bienvenido al formulario de registro para nuestro restaurante:</h2>
         <form name="form-registro">
+          <!--Tabla - Se usa cellpadding y cellspacing para ajustar el padding entre celdas.-->
           <table cellpadding="5" cellspacing="15" align="center">
             <tr>
               <td>Nombre:</td>
               <td>
-                <input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu nombre" />
+                <input style="height: 25px; width: 200px; border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder=" Tu nombre" />
               </td>
             </tr>
 
             <tr>
               <td>Apellido:</td>
-              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu apellido" /></td>
+              <td><input style="height: 25px; width: 200px; border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder=" Tu apellido" /></td>
             </tr>
 
             <tr>
@@ -40,19 +45,19 @@
 
             <tr>
               <td>Dirección:</td>
-              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu dirección" /></td>
+              <td><input style="height: 25px; width: 200px; border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder=" Tu dirección" /></td>
             </tr>
 
             <tr>
               <td>Usuario:</td>
               <td>
-                <input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu nombre de usuario" />
+                <input style="height: 25px; width: 200px; border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder=" Tu nombre de usuario" />
               </td>
             </tr>
 
             <tr>
               <td>Contraseña:</td>
-              <td><input style="border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder="Tu contraseña de inicio" /></td>
+              <td><input style="height: 25px; width: 200px; border-radius: 5px; border-style: ridge; border-color: black" type="text" placeholder=" Tu contraseña de inicio" /></td>
             </tr>
 
             <tr>
@@ -66,12 +71,16 @@
 
             <tr>
               <td>
-                <input type="submit" name="submit" value="Enviar formulario" />
+                <input type="submit" name="submit" value="Enviar formulario" style="font-size: 20px; padding: 14px 40px; border: none; border-radius: 10px; background-color: rgb(30, 45, 51); color: rgb(203, 240, 253)" />
               </td>
             </tr>
           </table>
         </form>
       </section>
     </main>
+
+    <footer>
+      <!--Botón de regreso-->
+    </footer>
   </body>
 </html>
