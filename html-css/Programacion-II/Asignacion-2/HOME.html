@@ -4,56 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HOME</title>
+    <!--Importar fuente Inter de Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
   </head>
-  <body style="background-color: rgb(203, 240, 253)">
-    <header style="text-align: center">
-      <h1 style="font-weight: bold; font-size: 40px">Recetas de Cocina</h1>
+
+  <body style="background-color: rgb(203, 240, 253); font-family: Inter">
+    <header style="background-image: url(PortadaHome.jpg); width: 100%; background-repeat: no-repeat; background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; margin: auto; flex-direction: column">
+      <h1 style="font-size: 70px; color: rgb(30, 45, 51); font-family: Arial">RECETAS DE COCINA</h1>
     </header>
+
     <section style="margin-top: 3%; margin-left: 5%; margin-right: 5%; text-align: center">
-      <h2 style="font-size: 30px">Bienvenidos al sitio de las recetas de cocina más reconocidas en todo Panamá.</h2>
+      <h2 style="color: rgb(30, 45, 51); font-size: 30px">Bienvenidos al sitio de las recetas de cocina más reconocidas en todo Panamá.</h2>
 
       <ul style="display: flex; align-items: center; text-align: center; justify-content: center; list-style-type: none; padding-left: 0">
         <li style="flex-direction: column; padding-left: 1.5%; padding-right: 1.5%; border: 1px solid black">
           <a href="Desayunos.html"
-            ><img src="portada desayuno.jpg" width="300px" height="200px" />
+            ><img src="images/portada desayuno.jpg" width="300px" height="200px" />
             <h1>DESAYUNOS</h1></a
           >
         </li>
         <li style="flex-direction: column; padding-left: 1.5%; padding-right: 1.5%; border: 1px solid black">
           <a href="Almuerzo.html"
-            ><img src="portada almuerzo.jpg" width="300px" height="200px" />
+            ><img src="images/portada almuerzo.jpg" width="300px" height="200px" />
             <h1>ALMUERZO</h1></a
           >
         </li>
         <li style="flex-direction: column; padding-left: 1.5%; padding-right: 1.5%; border: 1px solid black">
           <a href="Cena.html"
-            ><img src="portada cena.jpg" width="300px" height="200px" />
+            ><img src="images/portada cena.jpg" width="300px" height="200px" />
             <h1>CENA</h1></a
           >
         </li>
       </ul>
-      <div style="padding-top: 2%">
-        <a href="Formulario.html" style="font-size: 25px">REGISTRO</a>
+
+      <!-- Div para el boton-->
+      <div style="display: flex; width: 100%; justify-content: center; margin-top: 20px">
+        <a href="Formulario.html">
+          <button style="font-size: 24px; padding: 14px 40px; border-radius: 8px; background-color: rgb(30, 45, 51); color: rgb(203, 240, 253); box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">REGISTRO</button>
+        </a>
       </div>
     </section>
-    <section>
-      <h1 style="color: red; font-size: 30px">MÉXICO Y SU CONSUMO DE ATÚN</h1>
-      <ul style="font-size: 20px; color: blue">
-        <li>El consumo de atún y mariscos se incrementó en un 30% en los últimos 5 años.</li>
-        <li>Se estima que en 30 años incremente la ingesta a nivel global y que el consumo de atún sea mayor al de otras proteínas, como el porcino, vacuno y aves.</li>
-        <li>El atún se ha posicionado como uno de los productos más accesibles por su valor nutritivo y precio para el consumidor.</li>
-        <li>En México, se consumen más de 180 mil latas anualmente</li>
-      </ul>
-      <h1 style="color: red; font-size: 30px">ARROZ EN PANAMÁ</h1>
-      <p style="color: blue; font-size: 20px">El arroz con pollo es un plato típico de España y América Latina1 con variaciones regionales según el país. Consiste en arroz cocinado con pollo, en presas o desmechado, verduras (ají pimentón, zanahoria en cubos, apio, habichuelas, cebolla, maíz desgranado, aceitunas, arvejas, alcaparras), y sazonado con especias (laurel, tomillo, cilantro, ajo)</p>
-    </section>
-    <footer style="margin-top: 3%; font-weight: bold; color: darkblue">
-      <h1 style="font-size: 30px">ASIGNACIÓN #2-HTML</h1>
-      <ul style="font-size: 30px">
-        <li>Richard Herranz</li>
-        <li>Miguel Ortega</li>
-        <li>Jose Encalada</li>
-      </ul>
+
+    <!-- Div para la información-->
+    <div style="display: flex; width: 100%; margin-left: 40px">
+      <div style="display: flex; width: 100%; flex-direction: column">
+        <h1 style="color: red; font-size: 40px; text-align: left">MÉXICO Y SU CONSUMO DE ATÚN</h1>
+        <ul style="font-size: 24px; color: blue">
+          <li>El consumo de atún y mariscos se incrementó en un 30% en los últimos 5 años.</li>
+          <li>Se estima que en 30 años incremente la ingesta a nivel global y que el consumo de atún sea mayor al de otras proteínas, como el porcino, vacuno y aves.</li>
+          <li>El atún se ha posicionado como uno de los productos más accesibles por su valor nutritivo y precio para el consumidor.</li>
+          <li>En México, se consumen más de 180 mil latas anualmente</li>
+        </ul>
+        <h1 style="color: red; font-size: 40px; margin-top: 40px">ARROZ EN PANAMÁ</h1>
+        <p style="font-size: 24px; color: blue">El arroz con pollo es un plato típico de España y América Latina1 con variaciones regionales según el país. Consiste en arroz cocinado con pollo, en presas o desmechado, verduras (ají pimentón, zanahoria en cubos, apio, habichuelas, cebolla, maíz desgranado, aceitunas, arvejas, alcaparras), y sazonado con especias (laurel, tomillo, cilantro, ajo)</p>
+      </div>
+    </div>
+
+    <footer style="color: rgb(203, 240, 253); width: 100%; justify-content: center; display: flex; flex-direction: column; align-items: center; font-family: Arial; background-color: rgb(30, 45, 51)">
+      <h3>ASIGNACIÓN #2 - HTML</h3>
+      <div style="display: flex; width: 100%; justify-content: space-around">
+        <h3>MIGUEL ORTEGA</h3>
+        <h3>JOSE ENCALADA</h3>
+        <h3>RICHARD HERRANZ</h3>
+      </div>
     </footer>
   </body>
 </html>
