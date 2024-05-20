@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letra E</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: rgba(110, 231, 191, 0.561);
+        display: flexbox;
+        font-family: Inter, sans-serif;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+
+      table {
+        font-size: 25px;
+        justify-content: space-around;
+        border-spacing: 0;
+      }
+
+      /* 
+       * (tr) selecciona todas las filas impares dentro de la tabla. 
+       * El pseudoelemento :nth-child() selecciona elementos secundarios 
+       * según su posición entre todos los elementos hermanos 
+       * dentro de un elemento principal.
+       * odd = impar; even = pares.
+      */
+      table tr:nth-child(odd) {
+        background-color: rgba(100, 226, 184, 0.561);
+      }
+
+      td {
+        padding: 80px;
+        font-size: 1.3rem;
+      }
+
+      img {
+        width: 300px;
+        height: 200px;
+        border: 3px solid black;
+      }
+
+      .introduccion {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LETRA E</h1>
+    </header>
+
+    <main>
+      <section class="introduccion" title="intro">
+        <h2>Introducción:</h2>
+        <p>La letra "E" es la segunda vocal y la quinta letra del alfabeto español. Representa un sonido vocálico medio y abierto, siendo una pieza fundamental en la construcción de palabras y expresiones en este idioma. Su versatilidad y omnipresencia la convierten en un elemento esencial para la comunicación..</p>
+
+        <h2>En esta página encontraremos las palabras más comunes para la letra E:</h2>
+      </section>
+
+      <section title="meanings">
+        <table>
+          <tr>
+            <td>1. Escuela: Institución dedicada a la enseñanza y formación de estudiantes en diversos niveles académicos.</td>
+            <td><img src="img/E/escuela.jpg" alt="escuela Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>2. Energía: Capacidad de un sistema para realizar un trabajo o generar un cambio, manifestándose en diversas formas como eléctrica, térmica o cinética..</td>
+            <td><img src="img/E/energia.jpg" alt="energia Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>3. Espacio: Dimensión tridimensional que contiene todos los objetos y eventos físicos del universo, definido por longitud, anchura y altura.</td>
+            <td><img src="img/E/espacio.png" alt="espacio Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>4. Economía: Ciencia que estudia la producción, distribución y consumo de bienes y servicios, así como los procesos que regulan la riqueza de una sociedad.</td>
+            <td><img src="img/E/economia.jpg" alt="economia Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>5. Enciclopedia: Obra de referencia que recopila conocimiento en diversas áreas del saber humano, organizado en forma de artículos o entradas alfabéticas.</td>
+            <td><img src="img/E/enciclopedia.jpg" alt="enciclopedia Foto" /></td>
+          </tr>
+        </table>
+      </section>
+      <footer style="text-align: center; margin-top: 3%; margin-bottom: 3%">
+        <!--Botón de regreso-->
+        <a href="HOME.html" style="text-decoration: none; font-weight: bold; font-size: 20px">REGRESAR</a>
+      </footer>
+    </main>
+  </body>
+</html>

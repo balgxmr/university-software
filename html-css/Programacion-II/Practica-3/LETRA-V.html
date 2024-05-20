@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letra V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: rgba(110, 231, 191, 0.561);
+        display: flexbox;
+        font-family: Inter, sans-serif;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+
+      table {
+        font-size: 25px;
+        justify-content: space-around;
+        border-spacing: 0;
+      }
+
+      /* 
+       * (tr) selecciona todas las filas impares dentro de la tabla. 
+       * El pseudoelemento :nth-child() selecciona elementos secundarios 
+       * según su posición entre todos los elementos hermanos 
+       * dentro de un elemento principal.
+       * odd = impar; even = pares.
+      */
+      table tr:nth-child(odd) {
+        background-color: rgba(100, 226, 184, 0.561);
+      }
+
+      td {
+        padding: 80px;
+        font-size: 1.3rem;
+      }
+
+      img {
+        width: 300px;
+        height: 200px;
+        border: 3px solid black;
+      }
+
+      .introduccion {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LETRA V</h1>
+    </header>
+
+    <main>
+      <section class="introduccion" title="intro">
+        <h2>Introducción:</h2>
+        <p>La letra V, vigesimosegunda del alfabeto español y la decimoséptima consonante, posee una pronunciación peculiar, representada por el fonema /b/ o /β/. Su presencia en el idioma español es significativa, desempeñando un papel crucial en la formación de palabras y en la transmisión de significados. Explorar su origen histórico y su diversidad de usos revela la riqueza lingüística que caracteriza al español.</p>
+
+        <h2>En esta página encontraremos las palabras más comunes para la letra V:</h2>
+      </section>
+
+      <section title="meanings">
+        <table>
+          <tr>
+            <td>1. Viento: Corriente de aire en movimiento que puede ser suave y refrescante o fuerte y poderosa, capaz de mover objetos y causar cambios en el clima.</td>
+            <td><img src="img/V/viento.jpeg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>2. Violeta: Color que se encuentra entre el azul y el morado en el espectro visible, asociado comúnmente con la delicadeza y la nostalgia, además de ser el nombre de una flor con pétalos de tonalidades similares.</td>
+            <td><img src="img/V/violeta.jpeg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>3. Velero: Embarcación impulsada por el viento a través de velas, utilizada tanto para recreación como para competiciones deportivas o travesías marítimas.</td>
+            <td><img src="img/V/Velero.jpeg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>4. Volcán: Formación geológica que surge de la actividad volcánica, caracterizada por la expulsión de lava, ceniza y gases desde su interior, y que puede tener una forma cónica o en forma de domo.</td>
+            <td><img src="img/V/volcan.jpeg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>5. Voraz: Término que describe a un animal o persona que come con ansia y voracidad, devorando su comida rápidamente y sin control.</td>
+            <td><img src="img/V/voraz.jpeg" alt="Jefe Foto" /></td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: 3%; margin-bottom: 3%">
+      <!--Botón de regreso-->
+      <a href="HOME.html" style="text-decoration: none; font-weight: bold; font-size: 20px">REGRESAR</a>
+    </footer>
+  </body>
+</html>

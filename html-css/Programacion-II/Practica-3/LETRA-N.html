@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letra N</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: rgba(110, 231, 191, 0.561);
+        display: flexbox;
+        font-family: Inter, sans-serif;
+      }
+
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+
+      table {
+        font-size: 25px;
+        justify-content: space-around;
+        border-spacing: 0;
+      }
+
+      /* 
+       * (tr) selecciona todas las filas impares dentro de la tabla. 
+       * El pseudoelemento :nth-child() selecciona elementos secundarios 
+       * según su posición entre todos los elementos hermanos 
+       * dentro de un elemento principal.
+       * odd = impar; even = pares.
+      */
+      table tr:nth-child(odd) {
+        background-color: rgba(100, 226, 184, 0.561);
+      }
+
+      td {
+        padding: 80px;
+        font-size: 1.3rem;
+      }
+
+      #word {
+        font-weight: bold;
+      }
+
+      img {
+        width: 300px;
+        height: 200px;
+        border: 3px solid black;
+      }
+
+      .introduccion {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>LETRA N</h1>
+    </header>
+
+    <main>
+      <section class="introduccion" title="intro">
+        <h2>Introducción:</h2>
+        <p>La "N" es la decimocuarta letra del alfabeto español y la novena consonante. Su sonido es nasal alveolar sonoro, representado por el fonema /n/. Es una letra nasal, lo que significa que el aire sale por la nariz al pronunciarla. La "N" se articula presionando la lengua contra el alvéolo (la cresta ósea detrás de los dientes superiores) y dejando que el aire salga por la nariz.</p>
+
+        <h2>En esta página encontraremos las palabras más comunes para la letra N:</h2>
+      </section>
+
+      <section title="meanings">
+        <table>
+          <tr>
+            <td>
+              <span id="word">1. Noche: </span>
+              Período del día comprendido entre la puesta y la salida del sol, caracterizado por la oscuridad.
+            </td>
+            <td><img src="img/n/noche.jpg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span id="word">2. Nombre: </span>
+              Palabra que se emplea para identificar a una persona, animal, lugar o cosa.
+            </td>
+            <td><img src="img/n/nombre.jpg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span id="word">3. No: </span>
+              Palabra negativa que se utiliza para negar o rechazar una afirmación, proposición o pregunta.
+            </td>
+            <td><img src="img/n/no.jpg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span id="word">4. Nuevo: </span>
+              Que acaba de producirse o de aparecer por primera vez.
+            </td>
+            <td><img src="img/n/nuevo.jpg" alt="Jefe Foto" /></td>
+          </tr>
+
+          <tr>
+            <td>
+              <span id="word">5. Nada: </span>
+              Ausencia total de algo. La nada puede referirse a la ausencia de materia, energía o espacio.
+            </td>
+            <td><img src="img/n/nada.jpg" alt="Jefe Foto" /></td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: 3%; margin-bottom: 3%">
+      <!--Botón de regreso-->
+      <a href="HOME.html" style="text-decoration: none; font-weight: bold; font-size: 20px">REGRESAR</a>
+    </footer>
+  </body>
+</html>
