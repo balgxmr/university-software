@@ -14,6 +14,7 @@
   --oscuro: #212121;
   --primario: rgb(253, 230, 148);
   --secundario: rgb(31, 28, 21);
+  --terciario: rgb(164, 144, 72);
   --background: rgb(255, 248, 225);
   --gris: #757575;
 }
@@ -39,7 +40,7 @@ body {
 }
 
 .contenedor {
-  width: 120rem;
+  max-width: 120rem;
   /*
   margin-top: 0px;
   margin-right: auto;
@@ -59,12 +60,34 @@ body {
 }
 
 .navegacion-principal {
-  padding: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+/*
+ * Tamaños que si bien no son un estándar, son como la media (+o-): 
+ * 480px : móviles
+ * 768px : tablets
+ * 1140px: desktop/laptop
+ * 1440px: pantallás aún más grandes
+ */
+
+@media (min-width: 480px) {
+  .navegacion-principal {
+    flex-direction: row;
+  }
 }
 
 .navegacion-principal a {
   color: var(--secundario);
   text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+  background-color: var(--terciario);
+  color: var(--primario);
 }
