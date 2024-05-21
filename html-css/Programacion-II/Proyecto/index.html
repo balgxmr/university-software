@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Academia de Ajedrez</title>
+    <!-- Importar fuente Inter de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
     <style>
@@ -19,9 +20,9 @@
         min-height: 100%;
         margin: 0;
 
-        /* Atributos para ajustar el la imagen/fondo */
+        /* Atributos para ajustar la imagen/fondo */
         background-color: #292826;
-        background-image: url("bg.png");
+        background-image: url("img/bg.png");
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
@@ -66,29 +67,63 @@
       /* Texto de los cuadros */
       div h2 {
         color: #292826;
+        font-weight: 500;
       }
 
       /* TEXTO HOME + CUADROS */
       .seccion-general {
-        margin-top: 100px;
-        margin-left: 100px;
-        margin-right: 100px;
+        margin: 100px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
       }
 
-      /* Cuadros */
+      /* CUADROS PRINCIPALES */
       .card {
         background-color: #d9d9d9;
         padding: 100px 65px 100px 65px;
         border-radius: 10px;
         transition: all 0.3s ease;
+        margin: auto;
       }
 
       .card:hover {
         background-color: #e0e0e0;
         transform: scale(1.1);
+      }
+
+      .seccion-torneo {
+        margin-left: 250px;
+        margin-right: 250px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      /* CUADRO PEQUEÑO (TORNEOS) */
+      .small-card {
+        background-color: #d9d9d9;
+        padding: 0px 60px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        margin: 10px;
+      }
+
+      .small-card:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.1);
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+      /* ESCALA DE IMAGEN */
+      .upsc {
+        scale: 2;
       }
     </style>
   </head>
@@ -103,31 +138,38 @@
       <!-- Cuadros -->
       <section class="seccion-general">
         <div class="card">
+          <img src="img/icons/app_registration_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
           <h2>Registrar</h2>
         </div>
 
         <div class="card">
+          <img src="img/icons/preview_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
           <h2>Consultar</h2>
         </div>
 
         <div class="card">
+          <img src="img/icons/edit_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
           <h2>Modificar</h2>
         </div>
+      </section>
 
-        <!--ANOTHER CARD FOR TORNEOS -->
+      <section class="seccion-torneo">
+        <div class="small-card">
+          <h2>Torneos</h2>
+        </div>
       </section>
     </main>
 
     <footer>
-      <section>
-        <div>
-          <h3>Sesión iniciada como:</h3>
-        </div>
-
-        <div>
-          <h3>Sesión iniciada como:</h3>
-        </div>
-      </section>
+      <table>
+        <tr>
+          <th>Sesión iniciada como:</th>
+        </tr>
+        <tr>
+          <td><img src="img/icons/shield_person_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="Admin Icon" /></td>
+          <td>Administrador</td>
+        </tr>
+      </table>
     </footer>
   </body>
 </html>
