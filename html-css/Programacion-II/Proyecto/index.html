@@ -67,12 +67,12 @@
       /* Texto de los cuadros */
       div h2 {
         color: #292826;
-        font-weight: 500;
+        font-weight: 800;
       }
 
       /* TEXTO HOME + CUADROS */
       .seccion-general {
-        margin: 100px;
+        margin: 30px 300px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -80,11 +80,14 @@
 
       /* CUADROS PRINCIPALES */
       .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         background-color: #d9d9d9;
-        padding: 100px 65px 100px 65px;
+        padding: 80px 70px 50px 70px;
         border-radius: 10px;
         transition: all 0.3s ease;
-        margin: auto;
+        margin: 0px 0 10px 0px;
       }
 
       .card:hover {
@@ -97,16 +100,18 @@
         margin-right: 250px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: center;
       }
 
       /* CUADRO PEQUEÑO (TORNEOS) */
       .small-card {
+        display: flex;
+        flex-direction: row;
         background-color: #d9d9d9;
-        padding: 0px 60px;
+        padding: 0px 30px;
         border-radius: 10px;
         transition: all 0.3s ease;
-        margin: 10px;
+        margin: 0px 10px;
       }
 
       .small-card:hover {
@@ -114,6 +119,7 @@
         transform: scale(1.1);
       }
 
+      /* Para centrar elementos (imagenes) */
       .center {
         display: block;
         margin-left: auto;
@@ -121,55 +127,82 @@
         width: 50%;
       }
 
-      /* ESCALA DE IMAGEN */
+      /* AGRANDAR (upscale) Y ACHICAR (downscale) IMAGEN */
       .upsc {
         scale: 2;
+      }
+
+      .downsc {
+        scale: 0.7;
+      }
+
+      /* Lista del footer */
+      ul {
+        list-style-type: none; /* Elimina los puntos de la lista */
+        padding: 0;
+      }
+
+      li {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      li img {
+        margin-right: 10px;
+        vertical-align: middle; /* Alinea la imagen verticalmente */
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Academia de Ajedrez</h1>
+      <h2>HOME</h2>
     </header>
 
     <main>
-      <h2>HOME</h2>
-
       <!-- Cuadros -->
       <section class="seccion-general">
         <div class="card">
           <img src="img/icons/app_registration_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
+          <h2>...............</h2>
           <h2>Registrar</h2>
+          <img src="img/icons/arrow_forward_ios_48dp_FILL0_wght600_GRAD0_opsz48.svg" alt="" class="center downsc" />
         </div>
 
         <div class="card">
           <img src="img/icons/preview_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
+          <h2>...............</h2>
           <h2>Consultar</h2>
+          <img src="img/icons/arrow_forward_ios_48dp_FILL0_wght600_GRAD0_opsz48.svg" alt="" class="center downsc" />
         </div>
 
         <div class="card">
           <img src="img/icons/edit_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" class="center upsc" />
+          <h2>...............</h2>
           <h2>Modificar</h2>
+          <img src="img/icons/arrow_forward_ios_48dp_FILL0_wght600_GRAD0_opsz48.svg" alt="" class="center downsc" />
         </div>
       </section>
 
+      <!-- Torneo Card -->
       <section class="seccion-torneo">
         <div class="small-card">
-          <h2>Torneos</h2>
+          <img src="img/icons/chess_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="" />
+          <h2 style="margin: 20px 15px">Torneos</h2>
+          <img src="img/icons/arrow_forward_ios_48dp_FILL0_wght600_GRAD0_opsz48.svg" alt="" />
         </div>
       </section>
     </main>
 
     <footer>
-      <table>
-        <tr>
-          <th>Sesión iniciada como:</th>
-        </tr>
-        <tr>
-          <td><img src="img/icons/shield_person_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="Admin Icon" /></td>
-          <td>Administrador</td>
-        </tr>
-      </table>
+      <!-- INFORMACION LOGIN  -->
+      <ul>
+        <li>Sesión iniciada como:</li>
+        <li>
+          <img src="img/icons/shield_person_48dp_FILL0_wght400_GRAD0_opsz48.svg" alt="Admin Icon" />
+          Administrador
+        </li>
+      </ul>
     </footer>
   </body>
 </html>
