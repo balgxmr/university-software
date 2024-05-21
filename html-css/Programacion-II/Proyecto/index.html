@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academia de Ajedrez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <style>
+      html {
+        font-size: 62.5%;
+        height: 100%;
+      }
+
+      body {
+        /* Contenedor flex */
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        margin: 0;
+
+        /* Atributos para ajustar el la imagen/fondo */
+        background-color: #292826;
+        background-image: url("bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+
+        font-family: Inter, "Courier New", Courier, monospace;
+      }
+
+      header {
+        padding-top: 20px;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        justify-content: space-between;
+        padding: 30px 50px;
+      }
+
+      h1 {
+        font-size: 4rem;
+        text-align: center;
+        color: #d9d9d9;
+      }
+
+      h2 {
+        font-size: 3rem;
+        text-align: center;
+        color: #d9d9d9;
+        font-weight: 400;
+      }
+
+      h3 {
+        font-weight: 400;
+      }
+
+      /* Texto de los cuadros */
+      div h2 {
+        color: #292826;
+      }
+
+      /* TEXTO HOME + CUADROS */
+      .seccion-general {
+        margin-top: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      /* Cuadros */
+      .card {
+        background-color: #d9d9d9;
+        padding: 100px 65px 100px 65px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .card:hover {
+        background-color: #e0e0e0;
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Academia de Ajedrez</h1>
+    </header>
+
+    <main>
+      <h2>HOME</h2>
+
+      <!-- Cuadros -->
+      <section class="seccion-general">
+        <div class="card">
+          <h2>Registrar</h2>
+        </div>
+
+        <div class="card">
+          <h2>Consultar</h2>
+        </div>
+
+        <div class="card">
+          <h2>Modificar</h2>
+        </div>
+
+        <!--ANOTHER CARD FOR TORNEOS -->
+      </section>
+    </main>
+
+    <footer>
+      <section>
+        <div>
+          <h3>Sesión iniciada como:</h3>
+        </div>
+
+        <div>
+          <h3>Sesión iniciada como:</h3>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
