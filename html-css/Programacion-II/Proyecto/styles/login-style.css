@@ -1,40 +1,10 @@
-html {
-  font-size: 62.5%;
-  height: 100%;
-}
-
-body {
-  /* Contenedor flex */
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  margin: 0;
-
-  /* Atributos para ajustar la imagen/fondo */
-  background-color: #292826;
-  background-image: url("../img/bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-
-  font-family: Inter, "Courier New", Courier, monospace;
-}
-
-header {
-  padding-top: 20px;
-}
-
-main {
-  flex: 1;
-}
-
 footer {
-  display: flex;
-  flex-direction: row;
-  color: white;
-  justify-content: space-between;
-  padding: 30px 50px;
+  justify-content: center;
+}
+
+footer a {
+  color: #d9d9d9;
+  font-weight: 200;
 }
 
 h1 {
@@ -136,14 +106,4 @@ a {
   font-size: 1.4rem;
   font-weight: 650;
   color: #148059;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-}
-
-footer a {
-  color: #d9d9d9;
-  font-weight: 200;
 }

@@ -1,3 +1,4 @@
+/* CONTENIDO CSS PARA TODAS LAS PAGINAS */
 html {
   font-size: 62.5%;
   height: 100%;
@@ -36,6 +37,8 @@ footer {
   justify-content: space-between;
   padding: 30px 50px;
 }
+
+/* FIN CONTENIDO CSS PARA TODAS LAS PAGINAS */
 
 h1 {
   font-size: 4rem;
