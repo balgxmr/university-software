@@ -1,6 +1,6 @@
 /* CONTENIDO CSS PARA TODAS LAS PAGINAS */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* para que al usar "rem" en fuente/texto, 1rem = 10px */
   height: 100%;
 }
 
@@ -102,6 +102,12 @@ div h2 {
   border-radius: 10px;
   transition: all 0.3s ease;
   margin: 30px 10px;
+}
+
+/* achicar letra del boton logout */
+.small-card,
+.logout h2 {
+  font-size: 2rem;
 }
 
 .small-card:hover {

@@ -39,13 +39,6 @@ div {
   align-items: center;
 }
 
-.contenedor {
-  width: 420px;
-  background-color: #d9d9d9;
-  border-radius: 20px;
-  padding: 40px 60px;
-}
-
 form {
   width: 100%;
   display: flex;
@@ -55,6 +48,21 @@ form {
 
 img {
   scale: 2;
+}
+
+a {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 650;
+  color: #148059;
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 420px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  padding: 40px 60px;
 }
 
 /* Campos de Información */
@@ -70,12 +78,6 @@ img {
   border-radius: 5px;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
-}
-
-a {
-  margin-bottom: 20px;
-  color: #292826;
-  text-decoration: none;
 }
 
 /* Botón Siguiente */
@@ -100,10 +102,4 @@ button.boton {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-a {
-  font-size: 1.4rem;
-  font-weight: 650;
-  color: #148059;
 }
