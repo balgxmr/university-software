@@ -124,7 +124,6 @@ footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
 }
 
 /* AGRANDAR (upscale) Y ACHICAR (downscale) IMAGEN */
@@ -150,6 +149,11 @@ footer {
 .ind_li img {
   margin-right: 10px;
   vertical-align: middle; /* Alinea la imagen verticalmente */
+}
+
+#ind_but {
+  display: flex;
+  flex-direction: row;
 }
 
 a {
