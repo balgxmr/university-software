@@ -16,6 +16,9 @@
   </head>
   <body>
     <header id="reg_cl-header">
+      <div class="contenedor_logo">
+        <img src="img\icons\ACADEMIA.svg" class="logo">
+      </div>
       <h1 id="log_h1">Academia de Ajedrez</h1>
     </header>
 
@@ -55,7 +58,16 @@
               <input type="email" placeholder="Correo electrónico" />
             </div>
             <div class="text-field">
-              <input type="text" placeholder="Tu nivel de ajedrez (H1, H2, H3...)" />
+              <select name="Escoge tu nivel" id="nivel">
+                <option value="" selected disabled>Escoje tu nivel</option>
+                <option value="J">Clase J</option>
+                <option value="I">Clase I</option>
+                <option value="H">Clase H</option>
+                <option value="G">Clase G</option>
+                <option value="F">Clase F</option>
+                <option value="L">Clase A</option>
+                <option value="M">Experto</option>
+              </select>
             </div>
           </form>
         </div>

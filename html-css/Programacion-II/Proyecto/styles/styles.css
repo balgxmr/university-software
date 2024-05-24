@@ -35,6 +35,23 @@ header {
   padding-top: 20px;
 }
 
+/* Logo */
+
+.contenedor_logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
+
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+}
+
 main {
   flex: 1;
 }
@@ -61,6 +78,10 @@ footer {
   font-weight: 400;
 }
 
+.ind_h2 h2{
+  margin: 20px 15px;
+}
+
 /* TEXTO HOME + CUADROS */
 .seccion-general {
   margin-left: 15%;
@@ -68,6 +89,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+ 
 }
 
 /* CUADROS PRINCIPALES */
@@ -102,7 +124,7 @@ footer {
   display: flex;
   flex-direction: row;
   background-color: #d9d9d9;
-  padding: 0px 30px;
+  padding: 0px 20px;
   border-radius: 10px;
   transition: all 0.3s ease;
   margin: 30px 10px;
@@ -136,6 +158,12 @@ footer {
 }
 
 /* Lista del footer */
+
+#ind_but {
+  display: flex;
+  flex-direction: row;
+}
+
 .ind_ul {
   list-style-type: none; /* Elimina los puntos de la lista */
   padding: 0;
@@ -149,11 +177,6 @@ footer {
 .ind_li img {
   margin-right: 10px;
   vertical-align: middle; /* Alinea la imagen verticalmente */
-}
-
-#ind_but {
-  display: flex;
-  flex-direction: row;
 }
 
 a {
@@ -276,7 +299,7 @@ button.boton {
  * ------------------------------------------------
  * 
  * 
- * PAGINA INDEX CSS 
+ * PAGINA registar-cliente CSS 
  * 
  * 
  * ------------------------------------------------
@@ -378,6 +401,18 @@ button.boton {
   outline: none;
 }
 
+.text-field select {
+  width: 100%;
+  padding: 0px 50px 0 0;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  outline: none;
+  background-color: #ececec;
+}
+
 .foot_back {
   display: flex;
   flex-direction: row;
@@ -406,3 +441,197 @@ button.boton {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+/* 
+ * ------------------------------------------------
+ * 
+ * 
+ * PAGINA Registrar y Consultar CSS
+ * 
+ * 
+ * ------------------------------------------------
+ */
+
+ #registrar-opciones{
+  margin-top: 100px;
+  margin-bottom: 60px;
+  margin-left: 15%;
+  margin-right: 15%;
+  display: flex;
+  background-color: #0B6142;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+ }
+
+ .card-registrar{
+  background-color: #d9d9d9;
+  padding: 80px 70px 50px 70px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin: 0px;
+ }
+
+ .menu-opciones-registro{
+    width: 100%;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+ .reg_h1{
+  font-size: 3rem;
+  color: #d9d9d9;
+  }
+
+ .reg_h2{
+  font-size: 2rem;
+  color: #d9d9d9;
+ }
+
+ .opciones-registro-botones{
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
+  
+ }
+
+ .aside-registro{
+  width: 48%;
+  
+ }
+
+ .aside-registro img{
+  margin-right: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+ }
+
+ .small-card-registro{
+  display: flex;
+  flex-direction: row;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  transition: all 0.3s ease;
+ } 
+
+ .small-card-registro:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+ }
+
+
+ /* 
+ * ------------------------------------------------
+ * 
+ * 
+ * PAGINA consultar-cliente CSS 
+ * 
+ * 
+ * ------------------------------------------------
+ */
+
+ .modificarhead {
+  display: flex;
+  justify-content: space-around;
+}
+#mod_h1{
+  padding:1%;
+  padding-left: 30%;
+  font-size: 3rem;
+  color: #d9d9d9;
+
+}
+.seccion-modificar {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 70%;
+  justify-content: center;
+  align-items: center;
+
+}
+.client-info {
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin: 10px 0px;
+  
+  justify-content: center;
+  padding-left: 3%;
+}
+table{
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+  justify-content: space-around;
+}
+th, td {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-right:30px;
+  padding-left: 60px;
+  font-size: 13px;
+  text-align: center;
+  border: 1px solid #000000;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-width: 1%;
+}
+#thead{
+  font-size: 20px;
+}
+/*
+ *-------------------------------------------------
+ *
+ * Barra de busqueda
+ *
+ *-------------------------------------------------
+ *
+*/
+.search-container {
+  padding-top: 2.5%;
+  padding-left: 3%;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.search-form {
+  display: flex;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 0;
+  width: 500px;
+}
+
+.search-container button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #1ca110;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px 0 0 4px;
+}
+.search-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.search-container button:hover {
+  background-color: #4cae4c;
+}
+.footermod{
+  justify-content: space-around;
+}
+.export{
+  position: relative;
+}
+ 
