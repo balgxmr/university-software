@@ -1,0 +1,114 @@
+.calendario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fondo_calendario {
+  background-color: #ececec;
+}
+
+.titulo-calendario {
+  padding: 0;
+  margin: 2% 0 0 0;
+  font-size: 4rem;
+  color: #001d38;
+}
+
+.color_titulo {
+  background-color: #cecece;
+}
+
+.subtitulo-calendario {
+  font-weight: 400;
+  color: #003366;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 2%;
+  font-size: 2rem;
+}
+
+.tabla-calendario {
+  width: 60%;
+  border: 2px solid #006400;
+}
+
+.calendario th,
+.calendario td {
+  border: 2px solid #006400;
+  text-align: center;
+  width: 14%;
+  height: 100px;
+}
+
+.celdas {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.soldadura {
+  background-color: #629bd3;
+}
+
+.soldadura:hover {
+  background-color: #a9d0f7;
+}
+
+.electronica {
+  background-color: #99cc00;
+}
+
+.electronica:hover {
+  background-color: #d6f382;
+}
+
+.programacion {
+  background-color: #ffa500;
+}
+
+.programacion:hover {
+  background-color: #f7c568;
+}
+
+.titulo-horario {
+  margin: 4% 0 2% 0;
+  font-size: 3rem;
+}
+
+.horario {
+  width: 60%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.item-horario {
+  border: 2px solid #000;
+  padding: 3%;
+}
+
+.boton {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 4% 0 7% 0;
+  background-color: #006300;
+  color: #fff;
+  text-align: center;
+  padding: 2% 4%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #004b00;
+}

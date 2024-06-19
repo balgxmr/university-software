@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/css/style2.css" />
+    <title>Registro de Estudiante</title>
+  </head>
+  <body>
+    <header class="container1_home">
+      <img src="img/Logo_univ.png" width="240px" height="150px" />
+
+      <div class="container2_home">
+        <h1>Universidad Pueblo</h1>
+        <h2>Universidad tecnica en electrica, mecanica, construccion</h2>
+      </div>
+    </header>
+
+    <main style="display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%">
+      <section>
+        <div class="container1_prof">
+          <h1>Registro de Estudiantes</h1>
+          <p>Bienvenido Estudiante al registro de la universidad del pueblo, en la cual se parten clases de carreras tecnicas dahd ahdh sahsh sha dsjiubibf9eurfbruf r9rubfrufr9ufrubfr9unfrnf;</p>
+          <img src="img/Univ_estudiante.png" height="380px" width="100%" />
+          <p>Por favor, completa el formulario para registrar un nuevo profesor.</p>
+          <form action="Estudiante_Registro.jsp" method="post" class="registro-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="cedula">Cédula:</label>
+            <input type="text" id="cedula" name="cedula" required />
+
+            <label for="ano_electivo">ano a cursar:</label>
+            <input type="text" id="ano_electivo" name="ano_electivo" required />
+
+            <label for="centro_regional">Centro Regional:</label>
+            <select id="centro_regional" name="centro_regional" required>
+              <option value="panama">Panamá</option>
+              <option value="cocle">Coclé</option>
+              <option value="colon">Colón</option>
+              <option value="veraguas">Veraguas</option>
+              <option value="los_santos">Los Santos</option>
+              <option value="bocas_del_toro">Bocas del Toro</option>
+              <option value="chiriqui">Chiriquí</option>
+            </select>
+
+            <label for="cursos">Cursos a los que desea ingresar :</label>
+            <br /><input type="checkbox" name="cursos" value="Soldadura" />Soldadura<br />
+            <br /><input type="checkbox" name="cursos" value="Soldadura" />electrica<br />
+            <br /><input type="checkbox" name="cursos" value="Soldadura" />Cocina<br />
+            <br /><input type="checkbox" name="cursos" value="Soldadura" />Programacion<br />
+
+            <button type="submit">Registrar</button>
+          </form>
+        </div>
+        <a href="home.html"><button class="button1">Regresar a HOME</button> </a>
+      </section>
+    </main>
+  </body>
+</html>

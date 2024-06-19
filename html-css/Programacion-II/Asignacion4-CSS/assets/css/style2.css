@@ -1,0 +1,90 @@
+body {
+  background-color: #006400;
+}
+
+.container1_home {
+  background-color: white;
+  width: 100%;
+  display: flex;
+}
+
+.container2_home {
+  display: flex;
+  flex-direction: column; /* Apila los elementos uno encima del otro */
+  align-items: center; /* Centra los elementos horizontalmente dentro de container2 */
+  text-align: center; /* Alinea el texto centralmente */
+  width: 80%;
+}
+
+.container1_prof {
+  width: 900px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 60px;
+}
+
+.container1_prof p {
+  font-size: 120px;
+  color: #0066ff;
+}
+
+.registro-form {
+  margin-bottom: 20px;
+}
+
+.registro-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.registro-form input,
+.registro-form select {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.registro-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mensaje-confirmacion {
+  display: none;
+  margin-top: 20px;
+}
+
+.mensaje-confirmacion p {
+  font-weight: bold;
+  color: green;
+}
+
+.mensaje-confirmacion a {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.button1 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0066ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.xd {
+  font-size: 100px;
+  color: #0066ff;
+}
