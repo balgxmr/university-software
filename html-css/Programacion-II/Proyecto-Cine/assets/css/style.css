@@ -133,6 +133,7 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+/* FIN: General */
 
 /* Seccion Home */
 
@@ -502,4 +503,37 @@ button:hover {
 }
 .card-info.movie.boleto button {
   width: 20%;
+}
+
+/* 
+ *
+ * 
+ *
+ * PAGINA ASIENTOS CSS
+ * 
+ * 
+ */
+.card-info.form h4 {
+  margin: 0 1%;
+  font-size: 1rem;
+  color: #444444;
+}
+.asiento-disp {
+  fill: #0196d5;
+}
+.asiento-ocup {
+  fill: #d94e4e;
+}
+.asiento-contexto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.asiento-seleccion {
+  display: flex;
+  justify-content: center;
+}
+.asiento-seleccion img,
+.asiento-contexto img {
+  width: 40px;
 }
