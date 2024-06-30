@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <!-- Iconos: Font-Awesome -->
     <script src="https://kit.fontawesome.com/5ddbd215bf.js" crossorigin="anonymous"></script>
-    <title>Iniciar Reserva</title>
+    <title>Factura</title>
   </head>
   <body>
     <header class="header">
@@ -27,28 +27,30 @@
     </header>
 
     <main>
-      <section class="cards">
-        <form action="./peliculas.html" class="card form">
+      <section class="cards factura">
+        <form action="./post_factura.html" class="card form factura">
           <div class="card-info form">
-            <h2>Iniciar Reserva</h2>
-            <h3>Datos personales del cliente</h3>
+            <h2>FACTURA</h2>
+            <hr />
+            <div class="factura-cliente-info">
+              <h3>Cliente:</h3>
+              <h3>Película:</h3>
+              <h3>Cine:</h3>
+              <h3>Sala:</h3>
+              <h3>Horario:</h3>
+            </div>
 
-            <h4 class="card form-field">Cédula</h4>
-            <input type="text" class="form-input" placeholder="Ingresa la cédula" value="" />
+            <div class="boleto-info">
+              <h3>Niño:</h3>
+              <h3>Adulto:</h3>
+              <h3>Tercera Edad:</h3>
+            </div>
 
-            <h4 class="card form-field">Nombre</h4>
-            <input type="text" class="form-input" placeholder="Ingresa el nombre" />
-
-            <h4 class="card form-field">Dirección</h4>
-            <input type="text" class="form-input" placeholder="Ingresa la dirección" />
-
-            <h4 class="card form-field">Correo</h4>
-            <input type="email" class="form-input" placeholder="Ingresa el correo electrónico" />
-
-            <h4 class="card form-field">Teléfono</h4>
-            <input type="number" class="form-input" placeholder="Ingresa el número de teléfono" />
-
-            <button type="submit" name="login" value="login">Iniciar Sesión</button>
+            <div class="precio-info">
+              <h3>Subotal:</h3>
+              <h3>Total:</h3>
+            </div>
+            <button type="submit" name="asientos" value="asientos">Siguiente</button>
           </div>
         </form>
       </section>
