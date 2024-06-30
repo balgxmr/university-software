@@ -537,3 +537,27 @@ button:hover {
 .asiento-contexto img {
   width: 40px;
 }
+/* 
+ *
+ * 
+ *
+ * PAGINA CLIENTE_EXISTE CSS
+ * 
+ * 
+ */
+
+.card-info.form.cliente_ex,
+.card.form.cliente_ex {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.card.form.cliente_ex {
+  flex-direction: column;
+}
+.card.form.cliente_ex h3 {
+  margin-top: 5%;
+}
+.card-info.form.cliente_ex {
+  gap: 5%;
+}
