@@ -66,7 +66,6 @@ button {
   color: white;
   border: none;
   padding: 1rem 2rem;
-  margin-top: 1rem;
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
@@ -101,6 +100,40 @@ button:hover {
   text-align: start;
 }
 
+.divisor {
+  margin: auto;
+  width: 80%;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 30%;
+  height: 50px;
+}
+
+.select-box {
+  border: none;
+  appearance: none;
+  padding: 0 30px 0 15px;
+  width: 100%;
+  color: #080e17;
+  background-color: #ffffff;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.select-container .icon-container {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Seccion Home */
 
 .home-info {
@@ -126,6 +159,10 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.overlay p {
+  margin-bottom: 2%;
+}
+
 /* Seccion cartelera */
 
 .cartelera {
@@ -144,12 +181,22 @@ button:hover {
   display: flex;
   justify-content: space-around;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .box {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.box a {
+  text-decoration: none;
+}
+
+.box:hover {
+  transform: scale(1.05); /* Aumenta el tamaño del contenedor al hacer hover */
 }
 
 .box h3 {
@@ -173,82 +220,30 @@ button:hover {
   border-radius: 0 0 10px 10px;
 }
 
-.divisor {
-  color: #929292;
-  width: 70%;
+/* cards para noticias */
+
+#new-sect-header {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 3%;
 }
 
-/* contenedor para las noticias */
-.contenedor_noticia {
-  padding-top: 1%;
-  padding-bottom: 10%;
-  display: flex;
+.cards.news {
   align-items: center;
-  align-content: center;
-  justify-content: center;
-  width: 100%;
   flex-direction: column;
 }
 
-.contenedor_noticia h2 {
-  color: #fff;
-  font-size: 40px;
-  margin-top: 30px;
+.card.new {
+  width: 75%;
 }
 
-#noticias h1 {
-  color: #ffd575;
-  margin-left: 10px;
-  width: 40px;
-  height: 3px;
-  background: #ffd575;
+.card.new img {
+  border-radius: 4px 0 0 4px;
+  width: 400px;
+  height: auto;
 }
 
-.contenedor_div_noticia {
-  background-color: #ffffff;
-  width: 1150px;
-  height: 320px;
-  display: flex;
-  border: 1px solid #d2d2d2;
-  border-radius: 8px;
-  box-sizing: border-box;
-  padding: 25px;
-  transition: box-shadow 0.3s ease;
-  margin-top: 50px;
-  margin-bottom: 10px;
-}
-
-.contenedor_div_noticia img {
-  border-radius: 4px;
-}
-
-.contenedor_div_noticia:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
-}
-
-.contenedor_div_noticia_tema {
-  padding: 10px 25px 25px 25px;
-}
-.contenedor_div_noticia_tema h4 {
-  color: #8f8f8f;
-  margin-left: 10px;
-}
-.contenedor_div_noticia_tema h2 {
-  color: #00026c;
-  font-family: Arial;
-  margin-left: 10px;
-  font-size: 21px;
-}
-.contenedor_div_noticia_tema h3 {
-  color: #565656;
-  font-family: Arial;
-  margin-left: 10px;
-  text-align: justify;
-  font-weight: lighter;
-  font-size: 15px;
-}
-.contenedor_div_noticia_tema button {
-  margin-left: 10px;
+.card.new button {
   color: #00026c;
   background-color: #ffffff00;
   border: 2px solid #00026c;
@@ -256,18 +251,27 @@ button:hover {
   font-size: 18px;
   cursor: pointer;
   transition: 0.3s;
-}
-.contenedor_div_noticia_tema button {
   font-weight: 400;
 }
 
-.contenedor_div_noticia_tema button:hover {
+.card.new button:hover {
   font-weight: bold;
   background-color: #cacaca;
   padding: 10px 70px;
 }
 
-/* fin: contenedores para noticias */
+.card-info.new {
+  padding: 2% 5%;
+  margin: 0;
+}
+
+.card-info.new h3 {
+  margin: 1.3% 0 2% 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* fin: cards noticias */
 
 /* 
  *
@@ -277,6 +281,8 @@ button:hover {
  * 
  * 
  */
+
+/* Fondo con bg image y con opacity */
 #admin-login-bg {
   background-image: url("../img/4-4.jpg");
   background-repeat: no-repeat;
@@ -294,7 +300,10 @@ button:hover {
   z-index: -1;
 }
 
+/* formulario */
 .card.form {
+  margin-top: 5%;
+  margin-bottom: auto;
   width: 40%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -317,6 +326,8 @@ button:hover {
 }
 
 .card-info.form h4 {
+  margin: 0;
+  padding: 0;
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -348,4 +359,125 @@ button:hover {
 
 .form-input:not(:last-child) {
   margin-bottom: 20px;
+}
+
+/* 
+ *
+ * 
+ *
+ * PAGINA PELICULA V1 CSS
+ * 
+ * 
+ */
+
+#movie-sect-header {
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+}
+
+.cards.movies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card.movie {
+  width: 60%;
+}
+
+.card.movie img {
+  border-radius: 4px 0 0 4px;
+  width: auto;
+  height: 350px;
+}
+
+.card.movie h2 {
+  margin: 2% 0;
+}
+
+.card.movie h3 {
+  font-weight: 400;
+  margin: 2% 0 5% 0;
+}
+
+.card-info.movie {
+  padding: 2% 5%;
+  width: 100%;
+}
+
+.card-info.movie table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.card-info.movie th,
+.card-info.movie td {
+  text-align: left;
+}
+
+.card-info.movie th {
+  font-weight: bold;
+}
+
+.card-info.movie button {
+  margin: 2% 0;
+  width: 50%;
+}
+
+/* 
+ *
+ * 
+ *
+ * PAGINA SALAS V1 CSS
+ * 
+ * 
+ */
+.container-sect {
+  width: 60%;
+  display: flex;
+  margin: 3% 3% 0 10%;
+}
+
+.card.sala {
+  width: 80%;
+}
+
+.card-info.sala {
+  padding: 3%;
+  width: 100%;
+}
+
+.card-info.sala img {
+  width: 220px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card-info.sala h2 {
+  font-size: 2rem;
+  margin-bottom: 1%;
+}
+
+.card-info.sala h3 {
+  font-weight: 500;
+  margin-bottom: 3%;
+}
+
+.card-info.sala h4 {
+  font-weight: 400;
+}
+
+.all-sala-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3%;
+  margin-top: 1%;
+}
+
+.card-sala {
+  text-align: center;
 }
