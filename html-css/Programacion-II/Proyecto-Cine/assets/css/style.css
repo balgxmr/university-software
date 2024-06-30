@@ -390,8 +390,8 @@ button:hover {
 
 .card.movie img {
   border-radius: 4px 0 0 4px;
-  width: auto;
-  height: 350px;
+  width: 250px;
+  height: auto;
 }
 
 .card.movie h2 {
