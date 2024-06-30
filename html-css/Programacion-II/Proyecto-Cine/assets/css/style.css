@@ -342,7 +342,7 @@ button:hover {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #8d8d8d;
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.3s;
@@ -480,4 +480,26 @@ button:hover {
 
 .card-sala {
   text-align: center;
+}
+
+/* 
+ *
+ * 
+ *
+ * PAGINA BOLETOS CSS
+ * 
+ * 
+ */
+.card-info.movie.boleto h2 {
+  font-size: 2.5rem;
+}
+.card-info.movie.boleto h3 {
+  margin: 2% 0;
+}
+.card-info.movie.boleto h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.card-info.movie.boleto button {
+  width: 20%;
 }
