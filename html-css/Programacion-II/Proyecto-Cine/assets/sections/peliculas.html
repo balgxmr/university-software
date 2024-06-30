@@ -27,10 +27,33 @@
     </header>
 
     <main>
-      <div id="movie-sect-header">
-        <h2>PELICULAS DISPONIBLES</h2>
-        <input class="form-input" type="text" placeholder="Buscar pelicula..." />
-      </div>
+      <!-- Formulario para seleccionar sucursal -->
+      <form class="container-sect movie">
+        <div class="select-container">
+          <select name="sucursal" id="sucursal" class="select-box">
+            <option value="">Selecciona una sucursal</option>
+            <option value="losandes">Los Andes Mall</option>
+            <option value="altaplaza">Altaplaza Mall</option>
+            <option value="albrook">Albrook Mall</option>
+          </select>
+          <div class="icon-container">
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+        </div>
+
+        <div class="select-container">
+          <select name="sucursal" id="sucursal" class="select-box">
+            <option value="">Selecciona una fecha</option>
+            <option value="losandes">6 de julio</option>
+            <option value="altaplaza">7 de julio</option>
+            <option value="albrook">8 de julio</option>
+          </select>
+          <div class="icon-container">
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+        </div>
+        <button type="submit">Seleccionar</button>
+      </form>
 
       <!-- .cards.movies start -->
       <section class="cards movies">
@@ -42,7 +65,7 @@
             <hr />
             <h3>Horarios</h3>
 
-            <!-- METHOD:POST? A -->
+            <!-- METHOD:POST? -->
             <form action="./boletos.html">
               <table>
                 <tr>
