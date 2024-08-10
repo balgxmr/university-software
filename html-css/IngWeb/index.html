@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <!-- Fuente Poppins de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <!-- Iconos: Font-Awesome -->
+    <script src="https://kit.fontawesome.com/5ddbd215bf.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Formulario - Laboratorio #1</h1>
+    </header>
+
+    <!-- Inicio sección principal -->
+    <main class="mainContainer">
+      <form class="formulario">
+        <!-- Fieldset para los Datos Personales -->
+        <!-- <i class="fa-solid fa-user icon"></i> -->
+        <fieldset class="fieldset">
+          <legend>Datos Personales</legend>
+
+          <label for="nombre">Nombre completo: *</label>
+          <input type="text" id="nombre" placeholder="Introduce tu nombre completo" required autofocus />
+
+          <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="fecha-nacimiento" />
+
+          <label for="cedula">Cédula:</label>
+          <input type="text" id="cedula" placeholder="Introduce tu cédula" />
+
+          <label for="genero">Género:</label>
+          <select id="genero">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+          </select>
+
+          <label for="nacionalidad">Nacionalidad:</label>
+          <input type="text" id="nacionalidad" placeholder="Introduce tu nacionalidad" />
+
+          <label for="estado-civil">Estado civil:</label>
+          <select id="estado-civil">
+            <option value="soltero">Soltero/a</option>
+            <option value="casado">Casado/a</option>
+            <option value="divorciado">Divorciado/a</option>
+            <option value="viudo">Viudo/a</option>
+          </select>
+
+          <label for="licencia">¿Posee usted licencia de conducir?</label>
+          <select id="licencia" name="licencia">
+            <option value="si">Sí</option>
+            <option value="no">No</option>
+          </select>
+        </fieldset>
+
+        <!-- Fieldset para la Preferencia Salarial -->
+        <!-- <i class="fa-solid fa-money-bill-1 icon"></i> -->
+        <fieldset class="fieldset">
+          <legend>Preferencia Salarial</legend>
+
+          <label for="salario">Salario bruto pretendido:</label>
+          <input type="number" id="salario" placeholder="Introduce tu salario bruto pretendido" />
+        </fieldset>
+
+        <!-- Fieldset para los Datos de Contacto -->
+        <fieldset class="fieldset">
+          <legend>Datos de Contacto</legend>
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="phone" placeholder="Introduce tu número de telefono" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Introduce tu correo electrónico" />
+
+          <label for="direccion">Dirección:</label>
+          <textarea id="direccion"></textarea>
+        </fieldset>
+
+        <!-- Fieldset para las Experiencias Laborales -->
+        <fieldset class="fieldset">
+          <legend>Experiencias Laborales</legend>
+
+          <label for="experiencia">Describir completamente el puesto:</label>
+          <textarea id="experiencia"></textarea>
+        </fieldset>
+
+        <!-- Fieldset para la Educación -->
+        <fieldset class="fieldset">
+          <legend>Educación</legend>
+
+          <label for="primaria">Primaria:</label>
+          <input type="text" id="primaria" placeholder="Introduce tu nivel de educación primaria" />
+
+          <label for="secundaria">Secundaria:</label>
+          <input type="text" id="secundaria" placeholder="Introduce tu nivel de educación secundaria" />
+
+          <label for="universitaria">Universitaria:</label>
+          <input type="text" id="universitaria" placeholder="Introduce tu nivel de tu educación universitaria" />
+        </fieldset>
+
+        <!-- Fieldset para los Idiomas -->
+        <fieldset class="fieldset">
+          <legend>Idiomas</legend>
+
+          <label>Selecciona tus idiomas:</label>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="es" />
+            <label for="es">Español</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="en" />
+            <label for="en">Inglés</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="pt" />
+            <label for="pt">Portugués</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="ch" />
+            <label for="ch">Chino</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="alm" />
+            <label for="alm">Alemán</label>
+          </div>
+
+          <div>
+            <input type="text" id="others" placeholder="Otros" />
+          </div>
+        </fieldset>
+
+        <!-- Fieldset para la info en Informática -->
+        <fieldset class="fieldset">
+          <legend>Informática</legend>
+
+          <label>Selecciona los lenguajes relacionados al desarrollo web que manejas:</label>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="html" />
+            <label for="html">HTML</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="css" />
+            <label for="css">CSS</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="javascript" />
+            <label for="javascript">JavaScript</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="php" />
+            <label for="php">PHP</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="python" />
+            <label for="python">Python</label>
+          </div>
+
+          <div class="checkbox-container">
+            <input type="checkbox" value="java" />
+            <label for="java">Java</label>
+          </div>
+        </fieldset>
+
+        <!-- FIeldset para poner las Referencias -->
+        <fieldset class="fieldset">
+          <legend>Referencias</legend>
+
+          <label for="referencias">Referencias personales (si las tiene):</label>
+          <textarea id="referencias"></textarea>
+        </fieldset>
+
+        <!-- Fieldset para poder cargar una Hoja de Vida -->
+        <fieldset class="fieldset">
+          <legend>Cargar una hoja de vida</legend>
+
+          <label for="cv">Subir archivo:</label>
+          <input type="file" id="cv" accept=".pdf,.doc,.docx" />
+        </fieldset>
+
+        <h5>Los campos con * son obligatorios.</h5>
+
+        <!-- Botón Enviar -->
+        <input type="submit" value="Enviar" />
+      </form>
+    </main>
+    <!-- Fin sección principal -->
+
+    <footer class="footer">
+      <h5>© José Encalada - Todos los derechos reservados.</h5>
+    </footer>
+  </body>
+</html>
