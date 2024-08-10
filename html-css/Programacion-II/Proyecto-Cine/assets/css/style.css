@@ -31,6 +31,9 @@ body {
   text-decoration: none;
 }
 #header-title {
+  display: flex;
+  align-items: center;
+  /* gap: 5%; */
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -38,6 +41,10 @@ body {
 #header-title a {
   text-decoration: none;
   color: #fff;
+}
+#header-title img {
+  height: 70px;
+  width: auto;
 }
 .header-info {
   display: flex;
