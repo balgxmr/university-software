@@ -1,0 +1,111 @@
+:root {
+  --primario: #9c27b0;
+  --primarioOscuro: #89119d;
+  --secundario: #ffce00;
+  --secundarioOscuro: rgb(233, 287, 2);
+  --blanco: #fff;
+  --negro: #000;
+  --fuentePrincipal: "Staatliches", cursive;
+  --fuenteSecundaria: "Poppins", sans-serif;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Para que 1rem = 10px*/
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Globales */
+body {
+  background-color: var(--primario);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+p {
+  font-size: 1.8rem;
+  font-family: var(--fuenteSecundaria);
+  color: var(--blanco);
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* Especificos */
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+}
+.header__logo {
+  margin: 3rem 0;
+}
+
+/* Navegacion */
+.navegacion {
+  background-color: var(--primarioOscuro);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.navegacion__url {
+  font-family: var(--fuentePrincipal);
+  color: var(--blanco);
+  font-size: 3rem;
+  transition: 0.15s ease;
+}
+.navegacion__url:hover,
+.navegacion__url--activo {
+  color: var(--secundario);
+}
+
+/* Main */
+.mainContainer {
+}
+.mainContainer__title {
+  font-family: var(--fuentePrincipal);
+  font-size: 5rem;
+  color: var(--secundario);
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primarioOscuro);
+  padding: 1rem 0;
+  margin: 2rem 0;
+}
+.footer__texto {
+  color: var(--blanco);
+  font-family: var(--fuentePrincipal);
+  font-size: 2.2rem;
+  text-align: center;
+}
