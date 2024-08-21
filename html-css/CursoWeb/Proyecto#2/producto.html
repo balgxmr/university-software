@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrontEnd Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="./index.html">
+        <img class="header__logo" src="./assets/img/logo.png" alt="FrontEndLogo" />
+      </a>
+    </header>
+
+    <nav class="navegacion">
+      <a class="navegacion__url" href="./index.html">Tienda</a>
+      <a class="navegacion__url navegacion__url--activo" href="./nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+      <h1>ReactJS</h1>
+
+      <div class="camisa">
+        <img src="./assets/img/3.jpg" alt="ImagenProducto" class="camisa__imagen" />
+
+        <div class="camisa__contenido">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, reprehenderit eius nesciunt mollitia dolores vitae tempora animi error quam, nisi optio maiores aperiam quibusdam qui totam dolor expedita! Eligendi, nihil!</p>
+
+          <form class="formulario">
+            <select name="camisa" id="camisa" class="formulario__campo">
+              <!-- selected = seleccionado por defecto y disabled no deja escogerlo -->
+              <option disabled selected>-- Seleccionar Talla --</option>
+              <option value="Chica">Chica</option>
+              <option value="Mediana">Mediana</option>
+              <option value="Grande">Grande</option>
+            </select>
+
+            <input class="formulario__campo" type="number" min="1" placeholder="Cantidad" />
+            <input class="formulario__submit" type="submit" value="Agregar al carrito" />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__texto">FrontEnd Store. Todos los derechos reservados. 2024</p>
+    </footer>
+  </body>
+</html>
