@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <h1>Condicionales de JS</h1>
+
+    <div>
+      <input type="password" id="clave" value="" />
+
+      <!-- Forma #1 - Directa -->
+      <!-- <button
+        onclick="
+      /* Aqui puedo escribir código JS*/
+      const cajita = document.querySelector('#clave');
+      const claveValida = 'g81';
+
+      if (cajita.value === claveValida) {
+        alert('La clave es correcta')
+      }
+      
+      ">
+        Validar
+      </button> -->
+
+      <!-- Forma #2 - eventListener + JS externo -->
+      <button id="btnValidar">Validar</button>
+    </div>
+
+    <div>
+      <p id="secret-result"></p>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
