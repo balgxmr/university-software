@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 2.5rem;
+}
+
+section {
+  margin: 2.5rem 1rem;
+}
+
+div {
+  margin: 1rem;
+}
+
+ul,
+li {
+  font-size: 2rem;
+}
+
+.articulo,
+.card {
+  width: 250px;
+  padding: 10px;
+  background: lightgray;
+  border-radius: 10px;
+}
+.articulo button {
+  margin: 1rem 0;
+}
