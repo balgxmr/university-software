@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.student {
+  margin: 1rem;
+  border: 1px solid rgb(128, 128, 128);
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  box-shadow: 1px 1px rgb(161, 161, 161);
+  background-color: #313131;
+  border-radius: 5px;
+}
+
+.student p {
+  color: #fff;
+}
