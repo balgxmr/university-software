@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2.	Escribir un documento XML que almacene la siguiente información y se muestre como aparece a continuación. Dentro de la estructura del documento XML, la información de continente debe ser un atributo -->
+<ciudades>
+  <ciudad continente="Asia">
+    <nombre>Osaka</nombre>
+    <pais>Japón</pais>
+  </ciudad>
+  <ciudad continente="Oceanía">
+    <nombre>Melbourne</nombre>
+    <pais>Australia</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Amsterdam</nombre>
+    <pais>Holanda</pais>
+  </ciudad>
+  <ciudad continente="América">
+    <nombre>Toronto</nombre>
+    <pais>Canadá</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Frankfurt</nombre>
+    <pais>Alemania</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Ginebra</nombre>
+    <pais>Suiza</pais>
+  </ciudad>
+  <ciudad continente="América">
+    <nombre>Vancouver</nombre>
+    <pais>Canadá</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Zurich</nombre>
+    <pais>Suiza</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Copennhague</nombre>
+    <pais>Dinamarca</pais>
+  </ciudad>
+  <ciudad continente="Europa">
+    <nombre>Viena</nombre>
+    <pais>Austria</pais>
+  </ciudad>
+</ciudades>

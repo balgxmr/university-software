@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- José E. - Sin utilizar atributos, crear un documento XML bien formado que describa una lista de marcadores de páginas web, sabiendo que se desea que la información de cada página sea el nombre, una descripción breve y su URL. Deben ser al menos 10 páginas. Se debe mostrar la información en una página PHP cuyo formato sea de su propia autoria.-->
+<marcadores>
+  <marcador>
+    <name>Google</name>
+    <description>Es el motor de búsqueda más popular en todo el mundo.</description>
+    <url>https://google.com</url>
+  </marcador>
+  <marcador>
+      <name>Wikipedia</name>
+      <description>La enciclopedia libre y colaborativa.</description>
+      <url>https://www.wikipedia.org</url>
+  </marcador>
+  <marcador>
+    <name>YouTube</name>
+    <description>Sitio web dedicado a compartir videos.</description>
+    <url>https://youtube.com</url>
+  </marcador>
+  <marcador>
+    <name>GitHub</name>
+    <description>Plataforma para alojamiento de código.</description>
+    <url>https://www.github.com</url>
+  </marcador>
+  <marcador>
+    <name>Stack Overflow</name>
+    <description>Comunidad de preguntas y respuestas sobre programación.</description>
+    <url>https://stackoverflow.com</url>
+  </marcador>
+  <marcador>
+    <name>MDN Web Docs</name>
+    <description>Documentación para desarrolladores web.</description>
+    <url>https://developer.mozilla.org</url>
+  </marcador>
+  <marcador>
+    <name>PHP.net</name>
+    <description>Sitio oficial del lenguaje PHP.</description>
+    <url>https://www.php.net</url>
+  </marcador>
+  <marcador>
+    <name>W3Schools</name>
+    <description>Recursos educativos de tecnologías web.</description>
+    <url>https://www.w3schools.com</url>
+  </marcador>
+  <marcador>
+    <name>UTP</name>
+    <description>Universidad Tecnológica de Panamá</description>
+    <url>https://utp.ac.pa</url>
+  </marcador>
+  <marcador>
+    <name>FreeCodeCamp</name>
+    <description>Aprende a programar de forma gratuita.</description>
+    <url>https://www.freecodecamp.org</url>
+  </marcador>
+</marcadores>
